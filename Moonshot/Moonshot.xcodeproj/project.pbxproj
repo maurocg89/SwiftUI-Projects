@@ -22,6 +22,8 @@
 		34EB543B2A17C51700F2A41E /* ScrollViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543A2A17C51700F2A41E /* ScrollViewPlayground.swift */; };
 		34EB543D2A17C53A00F2A41E /* NavigationLinkPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543C2A17C53A00F2A41E /* NavigationLinkPlayground.swift */; };
 		34EB543F2A17C55700F2A41E /* CodablePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543E2A17C55700F2A41E /* CodablePlayground.swift */; };
+		50B2D2F12A21BB280080A938 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2D2F02A21BB280080A938 /* MissionView.swift */; };
+		50B2D2F32A21C8330080A938 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2D2F22A21C8330080A938 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		34EB543A2A17C51700F2A41E /* ScrollViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPlayground.swift; sourceTree = "<group>"; };
 		34EB543C2A17C53A00F2A41E /* NavigationLinkPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkPlayground.swift; sourceTree = "<group>"; };
 		34EB543E2A17C55700F2A41E /* CodablePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePlayground.swift; sourceTree = "<group>"; };
+		50B2D2F02A21BB280080A938 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = SOURCE_ROOT; };
+		50B2D2F22A21C8330080A938 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		34D701C22A1BB44500A9E98A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50B2D2F02A21BB280080A938 /* MissionView.swift */,
+				50B2D2F22A21C8330080A938 /* AstronautView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,9 +223,11 @@
 				34D701C72A1BC45900A9E98A /* Color-Theme.swift in Sources */,
 				3418C2C32A095FF20098C232 /* ContentView.swift in Sources */,
 				34D701BD2A1BB0F200A9E98A /* Astronaut.swift in Sources */,
+				50B2D2F12A21BB280080A938 /* MissionView.swift in Sources */,
 				34EB543B2A17C51700F2A41E /* ScrollViewPlayground.swift in Sources */,
 				34D701BF2A1BB17B00A9E98A /* Bundle-Decodable.swift in Sources */,
 				34EB54392A17C4E400F2A41E /* GeometryReaderPlayground.swift in Sources */,
+				50B2D2F32A21C8330080A938 /* AstronautView.swift in Sources */,
 				34EB543F2A17C55700F2A41E /* CodablePlayground.swift in Sources */,
 				34D701C52A1BB5A900A9E98A /* Mission.swift in Sources */,
 				3418C2C12A095FF20098C232 /* MoonshotApp.swift in Sources */,
