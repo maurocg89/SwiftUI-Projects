@@ -12,6 +12,8 @@
 		34B4443A29E4C9DA0002524E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B4443929E4C9DA0002524E /* Assets.xcassets */; };
 		34B4443D29E4C9DA0002524E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B4443C29E4C9DA0002524E /* Preview Assets.xcassets */; };
 		34B4444429E4DAE20002524E /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 34B4444329E4DAE20002524E /* SleepCalculator.mlmodel */; };
+		50BDF9712A27C4FC0053AF81 /* StepperPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9702A27C4FC0053AF81 /* StepperPlayground.swift */; };
+		50BDF9732A27C5AB0053AF81 /* DatePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9722A27C5AB0053AF81 /* DatePlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		34B4443929E4C9DA0002524E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34B4443C29E4C9DA0002524E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34B4444329E4DAE20002524E /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		50BDF9702A27C4FC0053AF81 /* StepperPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperPlayground.swift; sourceTree = "<group>"; };
+		50BDF9722A27C5AB0053AF81 /* DatePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				34B4444329E4DAE20002524E /* SleepCalculator.mlmodel */,
 				34B4443929E4C9DA0002524E /* Assets.xcassets */,
 				34B4443B29E4C9DA0002524E /* Preview Content */,
+				50BDF9702A27C4FC0053AF81 /* StepperPlayground.swift */,
+				50BDF9722A27C5AB0053AF81 /* DatePlayground.swift */,
 			);
 			path = BetterRest;
 			sourceTree = "<group>";
@@ -141,7 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B4444429E4DAE20002524E /* SleepCalculator.mlmodel in Sources */,
+				50BDF9732A27C5AB0053AF81 /* DatePlayground.swift in Sources */,
 				34B4443829E4C9D80002524E /* ContentView.swift in Sources */,
+				50BDF9712A27C4FC0053AF81 /* StepperPlayground.swift in Sources */,
 				34B4443629E4C9D80002524E /* BetterRestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
