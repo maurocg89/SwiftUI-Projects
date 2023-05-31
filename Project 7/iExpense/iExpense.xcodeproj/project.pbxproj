@@ -15,6 +15,12 @@
 		3451F8582A06AF2300531571 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F8572A06AF2300531571 /* ExpenseItem.swift */; };
 		3451F85A2A06AF6600531571 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F8592A06AF6600531571 /* Expenses.swift */; };
 		3451F85E2A06B32100531571 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F85D2A06B32100531571 /* AddView.swift */; };
+		50BDF9872A27D5AD0053AF81 /* StateStructsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */; };
+		50BDF9892A27D8EE0053AF81 /* StateObjectPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */; };
+		50BDF98B2A27D9530053AF81 /* SheetPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */; };
+		50BDF98D2A27D9F70053AF81 /* OnDeletePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF98C2A27D9F70053AF81 /* OnDeletePlayground.swift */; };
+		50BDF98F2A27DAA50053AF81 /* UserDefaultsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF98E2A27DAA50053AF81 /* UserDefaultsPlayground.swift */; };
+		50BDF9912A27DBCA0053AF81 /* CodablePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9902A27DBCA0053AF81 /* CodablePlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		3451F8572A06AF2300531571 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		3451F8592A06AF6600531571 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		3451F85D2A06B32100531571 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStructsPlayground.swift; sourceTree = "<group>"; };
+		50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectPlayground.swift; sourceTree = "<group>"; };
+		50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPlayground.swift; sourceTree = "<group>"; };
+		50BDF98C2A27D9F70053AF81 /* OnDeletePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeletePlayground.swift; sourceTree = "<group>"; };
+		50BDF98E2A27DAA50053AF81 /* UserDefaultsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPlayground.swift; sourceTree = "<group>"; };
+		50BDF9902A27DBCA0053AF81 /* CodablePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,12 @@
 				3451F8552A06AA3900531571 /* PlaygroundView.swift */,
 				3451F84B2A06899100531571 /* Assets.xcassets */,
 				3451F84D2A06899100531571 /* Preview Content */,
+				50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */,
+				50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */,
+				50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */,
+				50BDF98C2A27D9F70053AF81 /* OnDeletePlayground.swift */,
+				50BDF98E2A27DAA50053AF81 /* UserDefaultsPlayground.swift */,
+				50BDF9902A27DBCA0053AF81 /* CodablePlayground.swift */,
 			);
 			path = iExpense;
 			sourceTree = "<group>";
@@ -167,9 +185,15 @@
 			files = (
 				3451F85A2A06AF6600531571 /* Expenses.swift in Sources */,
 				3451F84A2A06898F00531571 /* ContentView.swift in Sources */,
+				50BDF98D2A27D9F70053AF81 /* OnDeletePlayground.swift in Sources */,
+				50BDF98F2A27DAA50053AF81 /* UserDefaultsPlayground.swift in Sources */,
 				3451F85E2A06B32100531571 /* AddView.swift in Sources */,
+				50BDF98B2A27D9530053AF81 /* SheetPlayground.swift in Sources */,
+				50BDF9892A27D8EE0053AF81 /* StateObjectPlayground.swift in Sources */,
 				3451F8562A06AA3900531571 /* PlaygroundView.swift in Sources */,
 				3451F8482A06898F00531571 /* iExpenseApp.swift in Sources */,
+				50BDF9912A27DBCA0053AF81 /* CodablePlayground.swift in Sources */,
+				50BDF9872A27D5AD0053AF81 /* StateStructsPlayground.swift in Sources */,
 				3451F8582A06AF2300531571 /* ExpenseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

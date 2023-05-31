@@ -11,6 +11,12 @@
 		3406FE8D29F57BBB0015FF2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406FE8C29F57BBB0015FF2B /* ContentView.swift */; };
 		3406FE8F29F57BBD0015FF2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3406FE8E29F57BBD0015FF2B /* Assets.xcassets */; };
 		3406FE9229F57BBD0015FF2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3406FE9129F57BBD0015FF2B /* Preview Assets.xcassets */; };
+		50BDF97B2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF97A2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift */; };
+		50BDF97D2A27D22C0053AF81 /* BindingAnimationsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF97C2A27D22C0053AF81 /* BindingAnimationsPlayground.swift */; };
+		50BDF97F2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF97E2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift */; };
+		50BDF9812A27D2C70053AF81 /* GestureAnimationsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9802A27D2C70053AF81 /* GestureAnimationsPlayground.swift */; };
+		50BDF9832A27D30E0053AF81 /* ShowHideViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9822A27D30E0053AF81 /* ShowHideViewPlayground.swift */; };
+		50BDF9852A27D4320053AF81 /* CustomTransitionViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9842A27D4320053AF81 /* CustomTransitionViewPlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		3406FE8C29F57BBB0015FF2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3406FE8E29F57BBD0015FF2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3406FE9129F57BBD0015FF2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50BDF97A2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplicitAnimationsPlayground.swift; sourceTree = "<group>"; };
+		50BDF97C2A27D22C0053AF81 /* BindingAnimationsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingAnimationsPlayground.swift; sourceTree = "<group>"; };
+		50BDF97E2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimationsPlayground.swift; sourceTree = "<group>"; };
+		50BDF9802A27D2C70053AF81 /* GestureAnimationsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureAnimationsPlayground.swift; sourceTree = "<group>"; };
+		50BDF9822A27D30E0053AF81 /* ShowHideViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHideViewPlayground.swift; sourceTree = "<group>"; };
+		50BDF9842A27D4320053AF81 /* CustomTransitionViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewPlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,12 @@
 				3406FE8C29F57BBB0015FF2B /* ContentView.swift */,
 				3406FE8E29F57BBD0015FF2B /* Assets.xcassets */,
 				3406FE9029F57BBD0015FF2B /* Preview Content */,
+				50BDF97A2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift */,
+				50BDF97C2A27D22C0053AF81 /* BindingAnimationsPlayground.swift */,
+				50BDF97E2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift */,
+				50BDF9802A27D2C70053AF81 /* GestureAnimationsPlayground.swift */,
+				50BDF9822A27D30E0053AF81 /* ShowHideViewPlayground.swift */,
+				50BDF9842A27D4320053AF81 /* CustomTransitionViewPlayground.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -138,7 +156,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3406FE8D29F57BBB0015FF2B /* ContentView.swift in Sources */,
+				50BDF97D2A27D22C0053AF81 /* BindingAnimationsPlayground.swift in Sources */,
+				50BDF9832A27D30E0053AF81 /* ShowHideViewPlayground.swift in Sources */,
 				3406FE8B29F57BBB0015FF2B /* AnimationsApp.swift in Sources */,
+				50BDF97F2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift in Sources */,
+				50BDF9852A27D4320053AF81 /* CustomTransitionViewPlayground.swift in Sources */,
+				50BDF97B2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift in Sources */,
+				50BDF9812A27D2C70053AF81 /* GestureAnimationsPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
