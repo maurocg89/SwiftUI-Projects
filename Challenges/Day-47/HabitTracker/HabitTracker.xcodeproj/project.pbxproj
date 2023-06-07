@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505B42DB2A2A3D3E000C566F /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42DA2A2A3D3E000C566F /* AddActivityView.swift */; };
+		505B42DD2A2A3D79000C566F /* ActivitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42DC2A2A3D79000C566F /* ActivitiesListView.swift */; };
+		505B42DF2A2A428A000C566F /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42DE2A2A428A000C566F /* ActivityItem.swift */; };
+		505B42E12A2A429A000C566F /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42E02A2A429A000C566F /* Activities.swift */; };
+		505B42E42A2A4C59000C566F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42E32A2A4C59000C566F /* Constants.swift */; };
+		505B42E62A2A5405000C566F /* ActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42E52A2A5405000C566F /* ActivityItemView.swift */; };
+		505B42E82A2A5CD4000C566F /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B42E72A2A5CD4000C566F /* ActivityDetailView.swift */; };
 		505CD00A2A28F8960096A0C7 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CD0092A28F8960096A0C7 /* HabitTrackerApp.swift */; };
 		505CD00C2A28F8960096A0C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CD00B2A28F8960096A0C7 /* ContentView.swift */; };
 		505CD00E2A28F8970096A0C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505CD00D2A28F8970096A0C7 /* Assets.xcassets */; };
@@ -36,6 +43,13 @@
 
 /* Begin PBXFileReference section */
 		0746189C253505169A7BAE3C /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		505B42DA2A2A3D3E000C566F /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		505B42DC2A2A3D79000C566F /* ActivitiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListView.swift; sourceTree = "<group>"; };
+		505B42DE2A2A428A000C566F /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		505B42E02A2A429A000C566F /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
+		505B42E32A2A4C59000C566F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		505B42E52A2A5405000C566F /* ActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemView.swift; sourceTree = "<group>"; };
+		505B42E72A2A5CD4000C566F /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
 		505CD0062A28F8960096A0C7 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CD0092A28F8960096A0C7 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		505CD00B2A28F8960096A0C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +100,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		505B42D82A2A3CE2000C566F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				505B42DA2A2A3D3E000C566F /* AddActivityView.swift */,
+				505B42DC2A2A3D79000C566F /* ActivitiesListView.swift */,
+				505B42E52A2A5405000C566F /* ActivityItemView.swift */,
+				505B42E72A2A5CD4000C566F /* ActivityDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		505B42D92A2A3CEA000C566F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				505B42DE2A2A428A000C566F /* ActivityItem.swift */,
+				505B42E02A2A429A000C566F /* Activities.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		505B42E22A2A452E000C566F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				505B42E32A2A4C59000C566F /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		505CCFFD2A28F8960096A0C7 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +153,9 @@
 		505CD0082A28F8960096A0C7 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				505B42E22A2A452E000C566F /* Utilities */,
+				505B42D92A2A3CEA000C566F /* Models */,
+				505B42D82A2A3CE2000C566F /* Views */,
 				505CD0092A28F8960096A0C7 /* HabitTrackerApp.swift */,
 				505CD00B2A28F8960096A0C7 /* ContentView.swift */,
 				505CD00D2A28F8970096A0C7 /* Assets.xcassets */,
@@ -329,8 +374,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505B42E62A2A5405000C566F /* ActivityItemView.swift in Sources */,
+				505B42DB2A2A3D3E000C566F /* AddActivityView.swift in Sources */,
+				505B42DF2A2A428A000C566F /* ActivityItem.swift in Sources */,
+				505B42E12A2A429A000C566F /* Activities.swift in Sources */,
 				505CD00C2A28F8960096A0C7 /* ContentView.swift in Sources */,
+				505B42E42A2A4C59000C566F /* Constants.swift in Sources */,
 				505CD00A2A28F8960096A0C7 /* HabitTrackerApp.swift in Sources */,
+				505B42DD2A2A3D79000C566F /* ActivitiesListView.swift in Sources */,
+				505B42E82A2A5CD4000C566F /* ActivityDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
