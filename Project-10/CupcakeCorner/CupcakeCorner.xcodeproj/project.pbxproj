@@ -12,6 +12,9 @@
 		50490BD22A3143E4002A21C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50490BD12A3143E4002A21C3 /* Assets.xcassets */; };
 		50490BD62A3143E4002A21C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50490BD52A3143E4002A21C3 /* Preview Assets.xcassets */; };
 		504F7D212A533F5C00D66D48 /* ValidateFormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F7D202A533F5C00D66D48 /* ValidateFormsView.swift */; };
+		504F7D252A53419200D66D48 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F7D242A53419200D66D48 /* Order.swift */; };
+		504F7D272A5347F200D66D48 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F7D262A5347F200D66D48 /* AddressView.swift */; };
+		504F7D292A5349F400D66D48 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F7D282A5349F400D66D48 /* CheckoutView.swift */; };
 		507C364A2A4F46D100B42BCF /* UserCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C36492A4F46D100B42BCF /* UserCodable.swift */; };
 		507C36502A4F4ACB00B42BCF /* UrlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C364F2A4F4ACB00B42BCF /* UrlSessionView.swift */; };
 		507C36522A4F4F7800B42BCF /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C36512A4F4F7800B42BCF /* AsyncImageView.swift */; };
@@ -25,6 +28,9 @@
 		50490BD32A3143E4002A21C3 /* CupcakeCorner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CupcakeCorner.entitlements; sourceTree = "<group>"; };
 		50490BD52A3143E4002A21C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		504F7D202A533F5C00D66D48 /* ValidateFormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFormsView.swift; sourceTree = "<group>"; };
+		504F7D242A53419200D66D48 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		504F7D262A5347F200D66D48 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		504F7D282A5349F400D66D48 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		507C36492A4F46D100B42BCF /* UserCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodable.swift; sourceTree = "<group>"; };
 		507C364F2A4F4ACB00B42BCF /* UrlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionView.swift; sourceTree = "<group>"; };
 		507C36512A4F4F7800B42BCF /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 		50490BCC2A3143E3002A21C3 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				504F7D232A53416D00D66D48 /* Models */,
+				504F7D222A53416800D66D48 /* Views */,
 				507C36482A4F46BD00B42BCF /* Playground */,
 				50490BCD2A3143E3002A21C3 /* CupcakeCornerApp.swift */,
 				50490BCF2A3143E3002A21C3 /* ContentView.swift */,
@@ -76,6 +84,23 @@
 				50490BD52A3143E4002A21C3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		504F7D222A53416800D66D48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				504F7D262A5347F200D66D48 /* AddressView.swift */,
+				504F7D282A5349F400D66D48 /* CheckoutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		504F7D232A53416D00D66D48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				504F7D242A53419200D66D48 /* Order.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		507C36482A4F46BD00B42BCF /* Playground */ = {
@@ -172,7 +197,10 @@
 				50490BCE2A3143E3002A21C3 /* CupcakeCornerApp.swift in Sources */,
 				507C364A2A4F46D100B42BCF /* UserCodable.swift in Sources */,
 				507C36522A4F4F7800B42BCF /* AsyncImageView.swift in Sources */,
+				504F7D272A5347F200D66D48 /* AddressView.swift in Sources */,
 				507C36502A4F4ACB00B42BCF /* UrlSessionView.swift in Sources */,
+				504F7D252A53419200D66D48 /* Order.swift in Sources */,
+				504F7D292A5349F400D66D48 /* CheckoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
