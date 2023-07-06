@@ -21,6 +21,7 @@
 		50B681F82A57145D00209A3C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681F72A57145D00209A3C /* DataController.swift */; };
 		50B681FB2A571B1100209A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681FA2A571B1100209A3C /* RatingView.swift */; };
 		50B681FE2A5725AA00209A3C /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681FD2A5725AA00209A3C /* EmojiRatingView.swift */; };
+		50B682002A572CBE00209A3C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681FF2A572CBE00209A3C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		50B681F72A57145D00209A3C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50B681FA2A571B1100209A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		50B681FD2A5725AA00209A3C /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		50B681FF2A572CBE00209A3C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				50B681F52A56FBED00209A3C /* AddBookView.swift */,
+				50B681FF2A572CBE00209A3C /* DetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				50B681FE2A5725AA00209A3C /* EmojiRatingView.swift in Sources */,
 				50B681EE2A56EBDA00209A3C /* CoreDataPlayground.swift in Sources */,
 				50B681E42A56E65700209A3C /* TextEditorPlayground.swift in Sources */,
+				50B682002A572CBE00209A3C /* DetailView.swift in Sources */,
 				50B681F82A57145D00209A3C /* DataController.swift in Sources */,
 				50B681F12A56F47600209A3C /* BookwormPlayground.xcdatamodeld in Sources */,
 				5089D8FE2A55CFFC0083845F /* BookwormApp.swift in Sources */,
