@@ -16,6 +16,7 @@ struct AddBookView: View {
     @State private var rating = 3
     @State private var genre = ""
     @State private var review = ""
+    @State private var date = Date.now
 
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
@@ -23,7 +24,7 @@ struct AddBookView: View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Name of book", text: $title)
+                    TextField("Title of the book", text: $title)
                     TextField("Author's name", text: $author)
 
                     Picker("Genre", selection: $genre) {
@@ -44,11 +45,12 @@ struct AddBookView: View {
                     Button("Save") {
                         let newBook = Book(context: moc)
                         newBook.id = UUID()
-                        newBook.title = title
-                        newBook.author = author
+                        newBook.title = title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Unknown Title" : title
+                        newBook.author = author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Unknown Author" : author
                         newBook.genre = genre
                         newBook.rating = Int16(rating)
-                        newBook.review = review
+                        newBook.review = review.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Empty Review" : review
+                        newBook.date = date
 
                         try? moc.save()
                         dismiss()
