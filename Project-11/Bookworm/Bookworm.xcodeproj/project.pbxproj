@@ -17,6 +17,10 @@
 		50B681EC2A56EA0200209A3C /* DataControllerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681EB2A56EA0200209A3C /* DataControllerPlayground.swift */; };
 		50B681EE2A56EBDA00209A3C /* CoreDataPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681ED2A56EBDA00209A3C /* CoreDataPlayground.swift */; };
 		50B681F12A56F47600209A3C /* BookwormPlayground.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50B681EF2A56F47600209A3C /* BookwormPlayground.xcdatamodeld */; };
+		50B681F62A56FBED00209A3C /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681F52A56FBED00209A3C /* AddBookView.swift */; };
+		50B681F82A57145D00209A3C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681F72A57145D00209A3C /* DataController.swift */; };
+		50B681FB2A571B1100209A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681FA2A571B1100209A3C /* RatingView.swift */; };
+		50B681FE2A5725AA00209A3C /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B681FD2A5725AA00209A3C /* EmojiRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		50B681EB2A56EA0200209A3C /* DataControllerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerPlayground.swift; sourceTree = "<group>"; };
 		50B681ED2A56EBDA00209A3C /* CoreDataPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPlayground.swift; sourceTree = "<group>"; };
 		50B681F02A56F47600209A3C /* BookwormPlayground.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookwormPlayground.xcdatamodel; sourceTree = "<group>"; };
+		50B681F52A56FBED00209A3C /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		50B681F72A57145D00209A3C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		50B681FA2A571B1100209A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		50B681FD2A5725AA00209A3C /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,8 @@
 		50B681F22A56F49300209A3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50B681FC2A571B8200209A3C /* Screens */,
+				50B681F92A571AFA00209A3C /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,9 +140,27 @@
 		50B681F42A56F4A100209A3C /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				50B681F72A57145D00209A3C /* DataController.swift */,
 				50B681E82A56E7EB00209A3C /* Bookworm.xcdatamodeld */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		50B681F92A571AFA00209A3C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				50B681FA2A571B1100209A3C /* RatingView.swift */,
+				50B681FD2A5725AA00209A3C /* EmojiRatingView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		50B681FC2A571B8200209A3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				50B681F52A56FBED00209A3C /* AddBookView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B681FB2A571B1100209A3C /* RatingView.swift in Sources */,
 				5089D9002A55CFFC0083845F /* ContentView.swift in Sources */,
+				50B681F62A56FBED00209A3C /* AddBookView.swift in Sources */,
 				50B681EC2A56EA0200209A3C /* DataControllerPlayground.swift in Sources */,
+				50B681FE2A5725AA00209A3C /* EmojiRatingView.swift in Sources */,
 				50B681EE2A56EBDA00209A3C /* CoreDataPlayground.swift in Sources */,
 				50B681E42A56E65700209A3C /* TextEditorPlayground.swift in Sources */,
+				50B681F82A57145D00209A3C /* DataController.swift in Sources */,
 				50B681F12A56F47600209A3C /* BookwormPlayground.xcdatamodeld in Sources */,
 				5089D8FE2A55CFFC0083845F /* BookwormApp.swift in Sources */,
 				5089D90E2A55D11E0083845F /* BindingPlayground.swift in Sources */,
