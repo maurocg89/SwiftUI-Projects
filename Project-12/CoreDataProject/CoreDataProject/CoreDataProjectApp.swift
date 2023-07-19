@@ -13,7 +13,10 @@ struct CoreDataProjectApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OneToManyRelationshipView()
+//            DynamicFilteringView()
+//            NSPredicatePlaygroundView()
+//            ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

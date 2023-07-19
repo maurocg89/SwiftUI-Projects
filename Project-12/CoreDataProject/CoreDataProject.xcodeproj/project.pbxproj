@@ -16,6 +16,15 @@
 		50321C2F2A588DA900982BB8 /* HashablePlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50321C2E2A588DA900982BB8 /* HashablePlaygroundView.swift */; };
 		50321C322A589F6800982BB8 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50321C302A589F6800982BB8 /* Movie+CoreDataClass.swift */; };
 		50321C332A589F6800982BB8 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50321C312A589F6800982BB8 /* Movie+CoreDataProperties.swift */; };
+		507DA2C42A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DA2C32A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift */; };
+		507DA2C72A6752E00040CFE1 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DA2C52A6752E00040CFE1 /* Singer+CoreDataClass.swift */; };
+		507DA2C82A6752E00040CFE1 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DA2C62A6752E00040CFE1 /* Singer+CoreDataProperties.swift */; };
+		507DA2CA2A6753350040CFE1 /* DynamicFilteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DA2C92A6753350040CFE1 /* DynamicFilteringView.swift */; };
+		507E47DD2A68425500C2EFB8 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47D92A68425500C2EFB8 /* Country+CoreDataClass.swift */; };
+		507E47DE2A68425500C2EFB8 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47DA2A68425500C2EFB8 /* Country+CoreDataProperties.swift */; };
+		507E47DF2A68425500C2EFB8 /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47DB2A68425500C2EFB8 /* Candy+CoreDataClass.swift */; };
+		507E47E02A68425500C2EFB8 /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47DC2A68425500C2EFB8 /* Candy+CoreDataProperties.swift */; };
+		507E47E22A68442C00C2EFB8 /* OneToManyRelationshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		50321C2E2A588DA900982BB8 /* HashablePlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashablePlaygroundView.swift; sourceTree = "<group>"; };
 		50321C302A589F6800982BB8 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50321C312A589F6800982BB8 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		507DA2C32A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPredicatePlaygroundView.swift; sourceTree = "<group>"; };
+		507DA2C52A6752E00040CFE1 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		507DA2C62A6752E00040CFE1 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		507DA2C92A6753350040CFE1 /* DynamicFilteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteringView.swift; sourceTree = "<group>"; };
+		507E47D92A68425500C2EFB8 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		507E47DA2A68425500C2EFB8 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		507E47DB2A68425500C2EFB8 /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		507E47DC2A68425500C2EFB8 /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToManyRelationshipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,12 @@
 		50321C272A58883500982BB8 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				507E47D92A68425500C2EFB8 /* Country+CoreDataClass.swift */,
+				507E47DA2A68425500C2EFB8 /* Country+CoreDataProperties.swift */,
+				507E47DB2A68425500C2EFB8 /* Candy+CoreDataClass.swift */,
+				507E47DC2A68425500C2EFB8 /* Candy+CoreDataProperties.swift */,
+				507DA2C52A6752E00040CFE1 /* Singer+CoreDataClass.swift */,
+				507DA2C62A6752E00040CFE1 /* Singer+CoreDataProperties.swift */,
 				50321C302A589F6800982BB8 /* Movie+CoreDataClass.swift */,
 				50321C312A589F6800982BB8 /* Movie+CoreDataProperties.swift */,
 				50321C282A58884F00982BB8 /* DataController.swift */,
@@ -94,8 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				50321C272A58883500982BB8 /* DataModel */,
-				50321C2E2A588DA900982BB8 /* HashablePlaygroundView.swift */,
 				50321C1A2A5887FC00982BB8 /* ContentView.swift */,
+				50321C2E2A588DA900982BB8 /* HashablePlaygroundView.swift */,
+				507DA2C32A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift */,
+				507DA2C92A6753350040CFE1 /* DynamicFilteringView.swift */,
+				507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -171,12 +198,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				50321C1B2A5887FC00982BB8 /* ContentView.swift in Sources */,
+				507E47E22A68442C00C2EFB8 /* OneToManyRelationshipView.swift in Sources */,
 				50321C2F2A588DA900982BB8 /* HashablePlaygroundView.swift in Sources */,
+				507E47DE2A68425500C2EFB8 /* Country+CoreDataProperties.swift in Sources */,
+				507E47DD2A68425500C2EFB8 /* Country+CoreDataClass.swift in Sources */,
+				507DA2C72A6752E00040CFE1 /* Singer+CoreDataClass.swift in Sources */,
 				50321C292A58884F00982BB8 /* DataController.swift in Sources */,
+				507E47E02A68425500C2EFB8 /* Candy+CoreDataProperties.swift in Sources */,
 				50321C2C2A58888400982BB8 /* CoreDataProject.xcdatamodeld in Sources */,
+				507DA2C82A6752E00040CFE1 /* Singer+CoreDataProperties.swift in Sources */,
+				507DA2C42A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift in Sources */,
 				50321C322A589F6800982BB8 /* Movie+CoreDataClass.swift in Sources */,
+				507DA2CA2A6753350040CFE1 /* DynamicFilteringView.swift in Sources */,
 				50321C332A589F6800982BB8 /* Movie+CoreDataProperties.swift in Sources */,
 				50321C192A5887FC00982BB8 /* CoreDataProjectApp.swift in Sources */,
+				507E47DF2A68425500C2EFB8 /* Candy+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
