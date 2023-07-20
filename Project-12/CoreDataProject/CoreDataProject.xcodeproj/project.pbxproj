@@ -25,6 +25,8 @@
 		507E47DF2A68425500C2EFB8 /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47DB2A68425500C2EFB8 /* Candy+CoreDataClass.swift */; };
 		507E47E02A68425500C2EFB8 /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47DC2A68425500C2EFB8 /* Candy+CoreDataProperties.swift */; };
 		507E47E22A68442C00C2EFB8 /* OneToManyRelationshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */; };
+		507E47E52A68655400C2EFB8 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47E42A68655400C2EFB8 /* ChallengeView.swift */; };
+		507E47E72A68656C00C2EFB8 /* FilteredListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E47E62A68656C00C2EFB8 /* FilteredListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		507E47DB2A68425500C2EFB8 /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
 		507E47DC2A68425500C2EFB8 /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneToManyRelationshipView.swift; sourceTree = "<group>"; };
+		507E47E42A68655400C2EFB8 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		507E47E62A68656C00C2EFB8 /* FilteredListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		50321C172A5887FC00982BB8 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				507E47E32A68652500C2EFB8 /* Challenge */,
 				50321C2D2A588D9800982BB8 /* Playground */,
 				50321C182A5887FC00982BB8 /* CoreDataProjectApp.swift */,
 				50321C1C2A5887FD00982BB8 /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				507E47E12A68442C00C2EFB8 /* OneToManyRelationshipView.swift */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		507E47E32A68652500C2EFB8 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				507E47E42A68655400C2EFB8 /* ChallengeView.swift */,
+				507E47E62A68656C00C2EFB8 /* FilteredListView.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +216,13 @@
 				50321C2F2A588DA900982BB8 /* HashablePlaygroundView.swift in Sources */,
 				507E47DE2A68425500C2EFB8 /* Country+CoreDataProperties.swift in Sources */,
 				507E47DD2A68425500C2EFB8 /* Country+CoreDataClass.swift in Sources */,
+				507E47E52A68655400C2EFB8 /* ChallengeView.swift in Sources */,
 				507DA2C72A6752E00040CFE1 /* Singer+CoreDataClass.swift in Sources */,
 				50321C292A58884F00982BB8 /* DataController.swift in Sources */,
 				507E47E02A68425500C2EFB8 /* Candy+CoreDataProperties.swift in Sources */,
 				50321C2C2A58888400982BB8 /* CoreDataProject.xcdatamodeld in Sources */,
 				507DA2C82A6752E00040CFE1 /* Singer+CoreDataProperties.swift in Sources */,
+				507E47E72A68656C00C2EFB8 /* FilteredListView.swift in Sources */,
 				507DA2C42A674F3C0040CFE1 /* NSPredicatePlaygroundView.swift in Sources */,
 				50321C322A589F6800982BB8 /* Movie+CoreDataClass.swift in Sources */,
 				507DA2CA2A6753350040CFE1 /* DynamicFilteringView.swift in Sources */,

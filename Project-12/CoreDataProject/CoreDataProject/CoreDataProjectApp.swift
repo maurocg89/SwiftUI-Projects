@@ -13,7 +13,8 @@ struct CoreDataProjectApp: App {
 
     var body: some Scene {
         WindowGroup {
-            OneToManyRelationshipView()
+            ChallengeView()
+//            OneToManyRelationshipView()
 //            DynamicFilteringView()
 //            NSPredicatePlaygroundView()
 //            ContentView()
