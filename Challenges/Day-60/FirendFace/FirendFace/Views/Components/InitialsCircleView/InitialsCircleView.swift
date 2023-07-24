@@ -9,11 +9,16 @@ import SwiftUI
 
 struct InitialsCircleView: View {
     let initials: String
+    let isActive: Bool
 
     var body: some View {
         ZStack(alignment: .center) {
             LinearGradient(colors: [Color(.gray), Color(.lightGray)], startPoint: .top, endPoint: .bottom)
                 .clipShape(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(isActive ? Color.green : Color.gray, lineWidth: 2)
+                )
 
             Text(initials)
                 .font(.headline)
@@ -25,6 +30,6 @@ struct InitialsCircleView: View {
 
 struct InitialsCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        InitialsCircleView(initials: "MG")
+        InitialsCircleView(initials: "MG", isActive: false)
     }
 }

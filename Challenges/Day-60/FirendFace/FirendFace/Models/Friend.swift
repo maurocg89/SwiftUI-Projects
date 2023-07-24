@@ -10,4 +10,9 @@ import Foundation
 struct Friend: Codable {
     var id = ""
     var name = ""
+
+//    init(from cachedFriend: CachedFriend) {
+//        self.id = cachedFriend.id ?? UUID().uuidString
+//        self.name = cachedFriend.wrappedName
+//    }
 }

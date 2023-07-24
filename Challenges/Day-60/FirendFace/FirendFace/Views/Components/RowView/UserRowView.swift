@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct UserRowView: View {
-    let user: User
-
-    var userInitials: String {
-        let nameComponents = user.name.components(separatedBy: .whitespaces)
-        return "\(nameComponents.first?.first ?? " ")\(nameComponents.last?.first ?? " ")"
-    }
+    let user: CachedUser
 
     var body: some View {
         HStack {
-            InitialsCircleView(initials: userInitials)
+            InitialsCircleView(initials: user.userInitials, isActive: user.isActive)
                 .frame(width: 40, height: 40)
 
             VStack(alignment: .leading) {
-                Text(user.name)
+                Text(user.wrappedName)
                     .fontWeight(.bold)
                 
-                Text("Active: \(String(user.isActive))")
+                Text(user.isActive ? "Active" : "Offline")
+                    .foregroundColor(user.isActive ? Color.green : Color(.lightGray))
+                    .fontWeight(.semibold)
+                    .font(.footnote)
             }
         }
     }
@@ -32,6 +30,6 @@ struct UserRowView: View {
 
 struct UserRowView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRowView(user: User())
+        UserRowView(user: CachedUser())
     }
 }

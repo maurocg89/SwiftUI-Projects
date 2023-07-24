@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+
     var body: some View {
         NavigationView {
             UserListView()
+                .environment(\.managedObjectContext, moc)
         }
     }
 }
