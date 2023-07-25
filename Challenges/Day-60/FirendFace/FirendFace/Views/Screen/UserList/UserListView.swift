@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-// TODO: Add a search bar
 struct UserListView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor<CachedUser>(\.name)]) var cachedUsers: FetchedResults<CachedUser>
 
     @StateObject private var usersWrapper = UserListWrapper()
+    @State private var searchText = ""
     @State private var isLoading = false
 
     var body: some View {
@@ -29,6 +29,8 @@ struct UserListView: View {
                             UserRowView(user: cachedUser)
                         }
                     }
+//                    .searchable(text: $searchText)
+                    .searchable(text: query)
                 }
             }
             
@@ -36,7 +38,7 @@ struct UserListView: View {
                 ProgressView()
             } else {
                 if cachedUsers.isEmpty {
-                    Text("There are no users")
+                    Text("No users found")
                 }
             }
         }
@@ -83,6 +85,28 @@ struct UserListView: View {
             }
             if moc.hasChanges {
                 try? moc.save()
+            }
+        }
+    }
+
+    // Two options to use searchable
+    var searchResult: [CachedUser] {
+        if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return cachedUsers.compactMap { $0 }
+        } else {
+            return cachedUsers.filter { $0.wrappedName.contains(searchText) }
+        }
+    }
+
+    var query: Binding<String> {
+        Binding {
+            searchText
+        } set: { newValue in
+            searchText = newValue
+            if newValue.isEmpty {
+                cachedUsers.nsPredicate = NSPredicate(value: true)
+            } else {
+                cachedUsers.nsPredicate = NSPredicate(format: "name CONTAINS[cd] %@", newValue)
             }
         }
     }
