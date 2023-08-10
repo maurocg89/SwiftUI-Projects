@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImagePickerPlaygroundView: View {
     @State private var image: Image?
+    @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
 
     var body: some View {
@@ -20,10 +21,31 @@ struct ImagePickerPlaygroundView: View {
             Button("Select Image") {
                 showingImagePicker = true
             }
+            .padding()
+
+            Button("Save Image") {
+                if inputImage != nil {
+                    saveImage()
+                }
+            }
+            .padding()
         }
         .sheet(isPresented: $showingImagePicker) {
-            ImagePicker()
+            ImagePicker(image: $inputImage)
         }
+        .onChange(of: inputImage) { _ in
+            loadImage()
+        }
+    }
+
+    func loadImage() {
+        guard let inputImage else { return }
+        image = Image(uiImage: inputImage)
+    }
+
+    func saveImage() {
+        let imageSaver = ImageSaver()
+        imageSaver.writeToPhotoAlbum(image: inputImage!)
     }
 }
 

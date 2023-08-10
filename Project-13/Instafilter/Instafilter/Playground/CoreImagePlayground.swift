@@ -35,7 +35,7 @@ struct CoreImagePlayground: View {
 //        let currentFilter3 = CIFilter.crystallize()
 //        let currentFilter4 = CIFilter.twirlDistortion()
 
-//        currentFilter.inputImage = beginImage
+        currentFilter.inputImage = beginImage
 //        currentFilter.intensity = 1
 
 //        currentFilter2.inputImage = beginImage
