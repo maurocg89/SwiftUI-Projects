@@ -12,6 +12,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
+    @State private var radiusFilter = 0.5
+    @State private var scaleFilter = 0.5
+    @State private var showIntensitySlider = true
+    @State private var showRadiusSlider = true
+    @State private var showScaleSlider = true
 
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
@@ -41,23 +46,54 @@ struct ContentView: View {
                     showingImagePicker = true
                 }
 
-                HStack {
-                    Text("Intensity")
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity) { _ in
-                            applyProcessing()
-                        }
+                if image != nil {
+                    Text("Current Filter: \(currentFilter.name)")
+                        .padding(.vertical)
                 }
-                .padding(.vertical)
+
+                if showIntensitySlider {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: $filterIntensity)
+                            .onChange(of: filterIntensity) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.vertical)
+                }
+
+                if showRadiusSlider {
+                    HStack {
+                        Text("Radius")
+                        Slider(value: $radiusFilter)
+                            .onChange(of: radiusFilter) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.bottom)
+                }
+
+                if showScaleSlider {
+                    HStack {
+                        Text("Scale")
+                        Slider(value: $scaleFilter)
+                            .onChange(of: scaleFilter) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.bottom)
+                }
 
                 HStack {
                     Button("Change Filter") {
                         showingFilterSheet = true
                     }
+                    .disabled(buttonDisabled)
 
                     Spacer()
 
                     Button("Save", action: save)
+                        .disabled(buttonDisabled)
                 }
             }
             .padding([.horizontal, .bottom])
@@ -76,9 +112,18 @@ struct ContentView: View {
                 Button("Sepia Tone") { setFilter(.sepiaTone()) }
                 Button("Unsharp Mask") { setFilter(.unsharpMask()) }
                 Button("Vignette") { setFilter(.vignette()) }
-                Button("Cancel", role: .cancel) { }
+                Group {
+                    Button("Color Clamp") { setFilter(.colorClamp()) }
+                    Button("Comic Effect") { setFilter(.comicEffect()) }
+                    Button("Exposure Adjust") { setFilter(.exposureAdjust()) }
+                    Button("Cancel", role: .cancel) { }
+                }
             }
         }
+    }
+
+    var buttonDisabled: Bool {
+        image == nil
     }
 
     func loadImage() {
@@ -108,12 +153,21 @@ struct ContentView: View {
 
         if inputKeys.contains(kCIInputIntensityKey) {
             currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
+            showIntensitySlider = true
+        } else {
+            showIntensitySlider = false
         }
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+            currentFilter.setValue(radiusFilter * 200, forKey: kCIInputRadiusKey)
+            showRadiusSlider = true
+        } else {
+            showRadiusSlider = false
         }
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(scaleFilter * 10, forKey: kCIInputScaleKey)
+            showScaleSlider = true
+        } else {
+            showScaleSlider = false
         }
 
         guard let outputImage = currentFilter.outputImage else { return }
