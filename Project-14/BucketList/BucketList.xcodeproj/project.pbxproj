@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A52A903D1800449AF8 /* FileManager+Functions.swift */; };
+		503893A82A9069FC00449AF8 /* MapKitPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */; };
+		503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */; };
 		50463F182A8EF285000D632E /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F172A8EF285000D632E /* BucketListApp.swift */; };
 		50463F1A2A8EF285000D632E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F192A8EF285000D632E /* ContentView.swift */; };
 		50463F1C2A8EF286000D632E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50463F1B2A8EF286000D632E /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		503893A52A903D1800449AF8 /* FileManager+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Functions.swift"; sourceTree = "<group>"; };
+		503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitPlaygroundView.swift; sourceTree = "<group>"; };
+		503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAndFaceIdPlaygroundView.swift; sourceTree = "<group>"; };
 		50463F142A8EF285000D632E /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50463F172A8EF285000D632E /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		50463F192A8EF285000D632E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				50463F272A8EF4E7000D632E /* ComparablePlaygroundView.swift */,
 				50463F292A8F0C64000D632E /* FileManagerPlaygroundView.swift */,
 				50463F2B2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift */,
+				503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */,
+				503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503893A82A9069FC00449AF8 /* MapKitPlaygroundView.swift in Sources */,
 				50463F282A8EF4E7000D632E /* ComparablePlaygroundView.swift in Sources */,
 				50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */,
+				503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
 				503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */,
 				50463F2C2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift in Sources */,
@@ -301,6 +309,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -341,6 +350,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
