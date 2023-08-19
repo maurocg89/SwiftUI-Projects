@@ -31,8 +31,36 @@ struct FileManagerPlaygroundView: View {
     }
 }
 
+struct FileManagerPlaygroundView2: View {
+    @State private var showingAlert = false
+    @State private var fileContent = ""
+    let fileName = "test.txt"
+
+    var body: some View {
+        VStack {
+            Button("Save File") {
+                FileManager.default.saveFile(fileName, "Hello World!")
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.mint)
+
+            Button("Load File") {
+                fileContent = FileManager.default.getFile(fileName)
+                showingAlert = true
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.accentColor)
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text(fileContent), dismissButton: .default(Text("OK")))
+        }
+
+    }
+}
+
+
 struct FileManagerPlaygroundView_Previews: PreviewProvider {
     static var previews: some View {
-        FileManagerPlaygroundView()
+        FileManagerPlaygroundView2()
     }
 }

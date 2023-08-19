@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A52A903D1800449AF8 /* FileManager+Functions.swift */; };
 		50463F182A8EF285000D632E /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F172A8EF285000D632E /* BucketListApp.swift */; };
 		50463F1A2A8EF285000D632E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F192A8EF285000D632E /* ContentView.swift */; };
 		50463F1C2A8EF286000D632E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50463F1B2A8EF286000D632E /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		503893A52A903D1800449AF8 /* FileManager+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Functions.swift"; sourceTree = "<group>"; };
 		50463F142A8EF285000D632E /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50463F172A8EF285000D632E /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		50463F192A8EF285000D632E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		503893A42A903D0700449AF8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				503893A52A903D1800449AF8 /* FileManager+Functions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		50463F0B2A8EF285000D632E = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		50463F162A8EF285000D632E /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
+				503893A42A903D0700449AF8 /* Extensions */,
 				50463F262A8EF2CE000D632E /* Playground */,
 				50463F172A8EF285000D632E /* BucketListApp.swift */,
 				50463F192A8EF285000D632E /* ContentView.swift */,
@@ -159,6 +170,7 @@
 				50463F282A8EF4E7000D632E /* ComparablePlaygroundView.swift in Sources */,
 				50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
+				503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */,
 				50463F2C2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift in Sources */,
 				50463F182A8EF285000D632E /* BucketListApp.swift in Sources */,
 			);
