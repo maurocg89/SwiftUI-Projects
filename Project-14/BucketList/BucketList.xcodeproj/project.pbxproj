@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501AA9752A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9742A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift */; };
+		501AA9772A97B4B80087B31B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9762A97B4B80087B31B /* Location.swift */; };
+		501AA9792A97C9D80087B31B /* LocationEditPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9782A97C9D80087B31B /* LocationEditPlaygroundView.swift */; };
 		503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A52A903D1800449AF8 /* FileManager+Functions.swift */; };
 		503893A82A9069FC00449AF8 /* MapKitPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */; };
 		503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501AA9742A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImprovedAnnotationsPlaygroundView.swift; sourceTree = "<group>"; };
+		501AA9762A97B4B80087B31B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		501AA9782A97C9D80087B31B /* LocationEditPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditPlaygroundView.swift; sourceTree = "<group>"; };
 		503893A52A903D1800449AF8 /* FileManager+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Functions.swift"; sourceTree = "<group>"; };
 		503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitPlaygroundView.swift; sourceTree = "<group>"; };
 		503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAndFaceIdPlaygroundView.swift; sourceTree = "<group>"; };
@@ -97,8 +103,11 @@
 				50463F272A8EF4E7000D632E /* ComparablePlaygroundView.swift */,
 				50463F292A8F0C64000D632E /* FileManagerPlaygroundView.swift */,
 				50463F2B2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift */,
-				503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */,
 				503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */,
+				503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */,
+				501AA9742A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift */,
+				501AA9782A97C9D80087B31B /* LocationEditPlaygroundView.swift */,
+				501AA9762A97B4B80087B31B /* Location.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -175,7 +184,10 @@
 			files = (
 				503893A82A9069FC00449AF8 /* MapKitPlaygroundView.swift in Sources */,
 				50463F282A8EF4E7000D632E /* ComparablePlaygroundView.swift in Sources */,
+				501AA9772A97B4B80087B31B /* Location.swift in Sources */,
+				501AA9752A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift in Sources */,
 				50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */,
+				501AA9792A97C9D80087B31B /* LocationEditPlaygroundView.swift in Sources */,
 				503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
 				503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */,
