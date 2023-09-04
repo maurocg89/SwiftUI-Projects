@@ -20,6 +20,7 @@
 		50463F282A8EF4E7000D632E /* ComparablePlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F272A8EF4E7000D632E /* ComparablePlaygroundView.swift */; };
 		50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F292A8F0C64000D632E /* FileManagerPlaygroundView.swift */; };
 		50463F2C2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F2B2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift */; };
+		50B52A002AA64A4C00D5146A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B529FF2AA64A4C00D5146A /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		50463F272A8EF4E7000D632E /* ComparablePlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparablePlaygroundView.swift; sourceTree = "<group>"; };
 		50463F292A8F0C64000D632E /* FileManagerPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPlaygroundView.swift; sourceTree = "<group>"; };
 		50463F2B2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsViewStatePlaygroundView.swift; sourceTree = "<group>"; };
+		50B529FF2AA64A4C00D5146A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				503893A42A903D0700449AF8 /* Extensions */,
+				50B529FE2AA64A3800D5146A /* Models */,
 				50463F262A8EF2CE000D632E /* Playground */,
 				50463F172A8EF285000D632E /* BucketListApp.swift */,
 				50463F192A8EF285000D632E /* ContentView.swift */,
@@ -110,6 +113,14 @@
 				501AA9762A97B4B80087B31B /* Location.swift */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		50B529FE2AA64A3800D5146A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50B529FF2AA64A4C00D5146A /* Result.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				501AA9752A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift in Sources */,
 				50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */,
 				501AA9792A97C9D80087B31B /* LocationEditPlaygroundView.swift in Sources */,
+				50B52A002AA64A4C00D5146A /* Result.swift in Sources */,
 				503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
 				503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */,
