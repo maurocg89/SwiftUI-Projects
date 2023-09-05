@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Make generics methods
 extension FileManager {
 
     static var documentsDirectory: URL {
