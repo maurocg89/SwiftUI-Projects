@@ -9,14 +9,12 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
-    @State private var locations = [Location]()
 
-    @State private var selectedPlace: Location?
+    @StateObject private var viewModel = ViewModel()
 
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+            Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     VStack {
                         Image(systemName: "star.circle")
@@ -30,7 +28,7 @@ struct MapView: View {
                             .fixedSize()
                     }
                     .onTapGesture {
-                        selectedPlace = location
+                        viewModel.selectedPlace = location
                     }
                 }
             }
@@ -48,8 +46,7 @@ struct MapView: View {
                     Spacer()
 
                     Button {
-                        let newLocation = Location(id: UUID(), name: "New Location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
-                        locations.append(newLocation)
+                        viewModel.addLocation()
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -62,11 +59,9 @@ struct MapView: View {
                 }
             }
         }
-        .sheet(item: $selectedPlace) { place in
+        .sheet(item: $viewModel.selectedPlace) { place in
             LocationEditView(location: place) { newLocation in
-                if let index = locations.firstIndex(of: place) {
-                    locations[index] = newLocation
-                }
+                viewModel.update(location: newLocation)
             }
         }
     }

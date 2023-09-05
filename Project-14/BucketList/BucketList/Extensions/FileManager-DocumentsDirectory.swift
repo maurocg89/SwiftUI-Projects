@@ -9,8 +9,13 @@ import Foundation
 
 extension FileManager {
 
+    static var documentsDirectory: URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+
     func saveFile(_ fileName: String, _ content: String) {
-        let url = getDocumentsDirectory().appending(path: fileName)
+        let url = Self.documentsDirectory.appending(path: fileName)
         do {
             try content.write(to: url, atomically: true, encoding: .utf8)
         } catch {
@@ -19,7 +24,7 @@ extension FileManager {
     }
 
     func getFile(_ fileName: String) -> String {
-        let url = getDocumentsDirectory().appending(path: fileName)
+        let url = Self.documentsDirectory.appending(path: fileName)
         do {
             let input = try String(contentsOf: url)
             return input
@@ -27,10 +32,4 @@ extension FileManager {
             fatalError("Failed to get \(fileName). Error: \(error.localizedDescription)")
         }
     }
-
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-
 }

@@ -10,7 +10,7 @@
 		501AA9752A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9742A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift */; };
 		501AA9772A97B4B80087B31B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9762A97B4B80087B31B /* Location.swift */; };
 		501AA9792A97C9D80087B31B /* LocationEditPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AA9782A97C9D80087B31B /* LocationEditPlaygroundView.swift */; };
-		503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A52A903D1800449AF8 /* FileManager+Functions.swift */; };
+		503893A62A903D1800449AF8 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A52A903D1800449AF8 /* FileManager-DocumentsDirectory.swift */; };
 		503893A82A9069FC00449AF8 /* MapKitPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */; };
 		503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */; };
 		50463F182A8EF285000D632E /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50463F172A8EF285000D632E /* BucketListApp.swift */; };
@@ -23,13 +23,14 @@
 		50B52A002AA64A4C00D5146A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B529FF2AA64A4C00D5146A /* Result.swift */; };
 		50B52A032AA64F3000D5146A /* LocationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B52A022AA64F3000D5146A /* LocationEditView.swift */; };
 		50B52A052AA64F9A00D5146A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B52A042AA64F9A00D5146A /* MapView.swift */; };
+		50D82DB72AA79F5A003FA149 /* MapView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D82DB62AA79F5A003FA149 /* MapView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		501AA9742A97B3600087B31B /* MapImprovedAnnotationsPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImprovedAnnotationsPlaygroundView.swift; sourceTree = "<group>"; };
 		501AA9762A97B4B80087B31B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		501AA9782A97C9D80087B31B /* LocationEditPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditPlaygroundView.swift; sourceTree = "<group>"; };
-		503893A52A903D1800449AF8 /* FileManager+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Functions.swift"; sourceTree = "<group>"; };
+		503893A52A903D1800449AF8 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		503893A72A9069FC00449AF8 /* MapKitPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitPlaygroundView.swift; sourceTree = "<group>"; };
 		503893AA2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAndFaceIdPlaygroundView.swift; sourceTree = "<group>"; };
 		50463F142A8EF285000D632E /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		50B529FF2AA64A4C00D5146A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		50B52A022AA64F3000D5146A /* LocationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditView.swift; sourceTree = "<group>"; };
 		50B52A042AA64F9A00D5146A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		50D82DB62AA79F5A003FA149 /* MapView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 		503893A42A903D0700449AF8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				503893A52A903D1800449AF8 /* FileManager+Functions.swift */,
+				503893A52A903D1800449AF8 /* FileManager-DocumentsDirectory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -89,7 +91,6 @@
 				50463F262A8EF2CE000D632E /* Playground */,
 				50B52A012AA64EF900D5146A /* Views */,
 				50463F172A8EF285000D632E /* BucketListApp.swift */,
-				50463F192A8EF285000D632E /* ContentView.swift */,
 				50463F1B2A8EF286000D632E /* Assets.xcassets */,
 				50463F1D2A8EF286000D632E /* BucketList.entitlements */,
 				50463F1E2A8EF286000D632E /* Preview Content */,
@@ -131,10 +132,36 @@
 		50B52A012AA64EF900D5146A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				50B52A022AA64F3000D5146A /* LocationEditView.swift */,
-				50B52A042AA64F9A00D5146A /* MapView.swift */,
+				50D82DB52AA79F48003FA149 /* ContentView */,
+				50D82DB82AA7A0D8003FA149 /* MapView */,
+				50D82DB92AA7A105003FA149 /* LocationEditView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		50D82DB52AA79F48003FA149 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				50463F192A8EF285000D632E /* ContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		50D82DB82AA7A0D8003FA149 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				50B52A042AA64F9A00D5146A /* MapView.swift */,
+				50D82DB62AA79F5A003FA149 /* MapView-ViewModel.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		50D82DB92AA7A105003FA149 /* LocationEditView */ = {
+			isa = PBXGroup;
+			children = (
+				50B52A022AA64F3000D5146A /* LocationEditView.swift */,
+			);
+			path = LocationEditView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,10 +241,11 @@
 				50463F2A2A8F0C64000D632E /* FileManagerPlaygroundView.swift in Sources */,
 				501AA9792A97C9D80087B31B /* LocationEditPlaygroundView.swift in Sources */,
 				50B52A002AA64A4C00D5146A /* Result.swift in Sources */,
+				50D82DB72AA79F5A003FA149 /* MapView-ViewModel.swift in Sources */,
 				50B52A052AA64F9A00D5146A /* MapView.swift in Sources */,
 				503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
-				503893A62A903D1800449AF8 /* FileManager+Functions.swift in Sources */,
+				503893A62A903D1800449AF8 /* FileManager-DocumentsDirectory.swift in Sources */,
 				50463F2C2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift in Sources */,
 				50463F182A8EF285000D632E /* BucketListApp.swift in Sources */,
 				50B52A032AA64F3000D5146A /* LocationEditView.swift in Sources */,
