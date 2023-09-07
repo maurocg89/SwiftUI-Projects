@@ -16,24 +16,20 @@ extension MapView {
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
 
-        let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
+        let savedFileName = "SavedPlaces"
 
         init() {
-            do {
-                let data = try Data(contentsOf: savePath)
-                locations = try JSONDecoder().decode([Location].self, from: data)
-            } catch {
+            let locationsSaved: [Location]?
+            locationsSaved = FileManager().getData(savedFileName)
+            guard locationsSaved != nil, !locationsSaved!.isEmpty else {
                 locations = []
+                return
             }
+            locations = locationsSaved!
         }
 
         func save() {
-            do {
-                let data = try JSONEncoder().encode(locations)
-                try data.write(to: savePath, options: [.atomic, .completeFileProtection])
-            } catch {
-                print("Unable to save data.")
-            }
+            FileManager().saveData(savedFileName, locations)
         }
 
         func addLocation() {
