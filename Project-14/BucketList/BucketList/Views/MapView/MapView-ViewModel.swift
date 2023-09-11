@@ -49,6 +49,13 @@ extension MapView {
             }
         }
 
+        func delete(location: Location) {
+            if let index = locations.firstIndex(of: location) {
+                locations.remove(at: index)
+                save()
+            }
+        }
+
         func authenticate() {
             let context = LAContext()
             var error: NSError?

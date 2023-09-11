@@ -11,6 +11,7 @@ struct LocationEditView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: ViewModel
     var onSave: (Location) -> Void
+    var onDelete: (Location) -> Void
 
     var body: some View {
         NavigationView {
@@ -39,13 +40,23 @@ struct LocationEditView: View {
             }
             .navigationTitle("Place details")
             .toolbar {
-                Button("Save") {
-                    var newLocation = viewModel.location
-                    newLocation.id = UUID()
-                    newLocation.name = viewModel.name
-                    newLocation.description = viewModel.description
-                    onSave(newLocation)
-                    dismiss()
+                Menu {
+                    Button("Save") {
+                        var newLocation = viewModel.location
+                        newLocation.id = UUID()
+                        newLocation.name = viewModel.name
+                        newLocation.description = viewModel.description
+                        onSave(newLocation)
+                        dismiss()
+                    }
+                    Button(role: .destructive) {
+                        onDelete(viewModel.location)
+                        dismiss()
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                } label: {
+                    Label("Menu", systemImage: "ellipsis.circle")
                 }
             }
             .task {
@@ -63,14 +74,15 @@ struct LocationEditView: View {
 //        _description = State(initialValue: location.description)
 //    }
 
-    init(location: Location, onSave: @escaping (Location) -> Void) {
+    init(location: Location, onSave: @escaping (Location) -> Void, onDelete: @escaping (Location) -> Void) {
         self._viewModel = StateObject(wrappedValue: ViewModel(location: location))
         self.onSave = onSave
+        self.onDelete = onDelete
     }
 }
 
 struct LocationEditView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationEditView(location: Location.example) { _ in }
+        LocationEditView(location: Location.example, onSave: {_ in }) { _ in }
     }
 }
