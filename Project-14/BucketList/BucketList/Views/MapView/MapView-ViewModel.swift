@@ -12,9 +12,11 @@ import MapKit
 extension MapView {
     @MainActor class ViewModel: ObservableObject {
         @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
-        @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
-        @Published var isUnlocked = false
+        @Published var showAlert = false
+        @Published private(set) var locations: [Location]
+        @Published private(set) var isUnlocked = false
+        @Published private(set) var alertMessage = ""
 
         let savedFileName = "SavedPlaces"
 
@@ -61,6 +63,10 @@ extension MapView {
                         }
                     } else {
                         // error
+                        Task { @MainActor in
+                            self.showAlert = true
+                            self.alertMessage = "There was an error trying to unlock your places. Try again please."
+                        }
                     }
                 }
             } else {

@@ -23,6 +23,7 @@
 		50B52A002AA64A4C00D5146A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B529FF2AA64A4C00D5146A /* Result.swift */; };
 		50B52A032AA64F3000D5146A /* LocationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B52A022AA64F3000D5146A /* LocationEditView.swift */; };
 		50B52A052AA64F9A00D5146A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B52A042AA64F9A00D5146A /* MapView.swift */; };
+		50B9360F2AAD38D500A11668 /* LocationEditView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B9360E2AAD38D500A11668 /* LocationEditView-ViewModel.swift */; };
 		50D82DB72AA79F5A003FA149 /* MapView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D82DB62AA79F5A003FA149 /* MapView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		50B529FF2AA64A4C00D5146A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		50B52A022AA64F3000D5146A /* LocationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditView.swift; sourceTree = "<group>"; };
 		50B52A042AA64F9A00D5146A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		50B9360E2AAD38D500A11668 /* LocationEditView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEditView-ViewModel.swift"; sourceTree = "<group>"; };
 		50D82DB62AA79F5A003FA149 /* MapView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				50B52A022AA64F3000D5146A /* LocationEditView.swift */,
+				50B9360E2AAD38D500A11668 /* LocationEditView-ViewModel.swift */,
 			);
 			path = LocationEditView;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				503893AB2A906D6500449AF8 /* TouchAndFaceIdPlaygroundView.swift in Sources */,
 				50463F1A2A8EF285000D632E /* ContentView.swift in Sources */,
 				503893A62A903D1800449AF8 /* FileManager-DocumentsDirectory.swift in Sources */,
+				50B9360F2AAD38D500A11668 /* LocationEditView-ViewModel.swift in Sources */,
 				50463F2C2A8F0FBF000D632E /* EnumsViewStatePlaygroundView.swift in Sources */,
 				50463F182A8EF285000D632E /* BucketListApp.swift in Sources */,
 				50B52A032AA64F3000D5146A /* LocationEditView.swift in Sources */,
