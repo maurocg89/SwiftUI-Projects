@@ -31,8 +31,26 @@ struct RatingView: View {
                     .onTapGesture {
                         rating = number
                     }
+//                    .accessibilityLabel("\(number == 1 ? "1 star" : "\(number) stars")")
+//                    .accessibilityRemoveTraits(.isImage)
+//                    .accessibilityAddTraits(number > rating ? .isButton : [.isButton, .isSelected])
             }
         }
+        .accessibilityElement()
+        .accessibilityLabel("Rating")
+//        .accessibilityValue(rating == 1 ? "1 Star" : "\(rating) stars")
+        .accessibilityValue("^[\(rating) star](inflect: true)")
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment:
+                if rating < maxRating { rating += 1 }
+            case .decrement:
+                if rating > 1 { rating -= 1 }
+            default:
+                break
+            }
+        }
+
     }
 
     func image(for number: Int) -> Image {

@@ -44,10 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				34B55A6429E30DF2003EE918 /* GuessTheFlag */,
-				50E8BCAA2A278DB5001A79A0 /* ColorsAndFramePlayground.swift */,
-				50E8BCAC2A279057001A79A0 /* GradientPlayground.swift */,
-				50E8BCAE2A27912A001A79A0 /* ButtonsAndImagesPlayground.swift */,
-				50E8BCB02A279223001A79A0 /* AlertMessagePlayground.swift */,
 				34B55A6329E30DF2003EE918 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +59,7 @@
 		34B55A6429E30DF2003EE918 /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
+				50E515662ABF3C2500FDD91C /* Playground */,
 				34B55A6529E30DF2003EE918 /* GuessTheFlagApp.swift */,
 				34B55A6729E30DF2003EE918 /* ContentView.swift */,
 				34B55A6929E30DF5003EE918 /* Assets.xcassets */,
@@ -77,6 +74,17 @@
 				34B55A6C29E30DF5003EE918 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50E515662ABF3C2500FDD91C /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				50E8BCAA2A278DB5001A79A0 /* ColorsAndFramePlayground.swift */,
+				50E8BCAC2A279057001A79A0 /* GradientPlayground.swift */,
+				50E8BCAE2A27912A001A79A0 /* ButtonsAndImagesPlayground.swift */,
+				50E8BCB02A279223001A79A0 /* AlertMessagePlayground.swift */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

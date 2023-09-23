@@ -59,14 +59,12 @@
 		34E3CAA829F43E3500EC6B2A /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
+				50E515672ABF3D5200FDD91C /* Playground */,
 				34E3CAA929F43E3500EC6B2A /* WordScrambleApp.swift */,
 				34E3CAAB29F43E3500EC6B2A /* ContentView.swift */,
 				34E3CAAD29F43E3700EC6B2A /* Assets.xcassets */,
 				34E3CAB729F44C7400EC6B2A /* start.txt */,
 				34E3CAAF29F43E3700EC6B2A /* Preview Content */,
-				50BDF9742A27CCAE0053AF81 /* ListPlayground.swift */,
-				50BDF9762A27CEF70053AF81 /* BundlePlayground.swift */,
-				50BDF9782A27CFC80053AF81 /* StringComponentsPlayground.swift */,
 			);
 			path = WordScramble;
 			sourceTree = "<group>";
@@ -77,6 +75,16 @@
 				34E3CAB029F43E3700EC6B2A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50E515672ABF3D5200FDD91C /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				50BDF9742A27CCAE0053AF81 /* ListPlayground.swift */,
+				50BDF9762A27CEF70053AF81 /* BundlePlayground.swift */,
+				50BDF9782A27CFC80053AF81 /* StringComponentsPlayground.swift */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
