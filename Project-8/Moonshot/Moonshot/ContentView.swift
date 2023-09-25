@@ -67,6 +67,8 @@ struct ListLayout: View {
                 .background(NavigationLink("", destination: MissionView(mission: mission, astronauts: astronauts)).opacity(0))
                 .listRowBackground(Color.darkBackground)
                 .listRowSeparator(.hidden)
+                .accessibility(addTraits: .isLink)
+                .accessibility(removeTraits: .isButton)
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)

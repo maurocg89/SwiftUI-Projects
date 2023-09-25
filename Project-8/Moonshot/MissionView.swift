@@ -20,7 +20,7 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    Image(mission.image)
+                    Image(decorative: mission.image)
                         .resizable()
                         .scaledToFill()
                         .frame(maxWidth: geometry.size.width * 0.6)

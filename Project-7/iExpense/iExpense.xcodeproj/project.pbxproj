@@ -71,18 +71,13 @@
 		3451F8462A06898F00531571 /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
+				50EF35672AC1C71300E730AC /* Playground */,
 				3451F85C2A06B11600531571 /* Views */,
 				3451F85B2A06B10700531571 /* Models */,
 				3451F8472A06898F00531571 /* iExpenseApp.swift */,
 				3451F8552A06AA3900531571 /* PlaygroundView.swift */,
 				3451F84B2A06899100531571 /* Assets.xcassets */,
 				3451F84D2A06899100531571 /* Preview Content */,
-				50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */,
-				50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */,
-				50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */,
-				50BDF98C2A27D9F70053AF81 /* OnDeletePlayground.swift */,
-				50BDF98E2A27DAA50053AF81 /* UserDefaultsPlayground.swift */,
-				50BDF9902A27DBCA0053AF81 /* CodablePlayground.swift */,
 			);
 			path = iExpense;
 			sourceTree = "<group>";
@@ -111,6 +106,19 @@
 				3451F85D2A06B32100531571 /* AddView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		50EF35672AC1C71300E730AC /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */,
+				50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */,
+				50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */,
+				50BDF98C2A27D9F70053AF81 /* OnDeletePlayground.swift */,
+				50BDF98E2A27DAA50053AF81 /* UserDefaultsPlayground.swift */,
+				50BDF9902A27DBCA0053AF81 /* CodablePlayground.swift */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

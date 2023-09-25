@@ -45,11 +45,11 @@ struct ContentView: View {
         expenses.items.remove(atOffsets: objectsToDelete)
     }
     
-    func removePersonalItems(at offsets: IndexSet) {
+    func removePersonalItems(at offsets: IndexSet) {
         removeItems(at: offsets, in: expenses.personalItems)
     }
     
-    func removeBusinessItems(at offsets: IndexSet) {
+    func removeBusinessItems(at offsets: IndexSet) {
         removeItems(at: offsets, in: expenses.businessItems)
     }
 }
@@ -64,9 +64,9 @@ struct ExpenseItemView: View {
                     .font(.headline)
                 Text(item.type)
             }
-            
+
             Spacer()
-            
+
             CapsuleAmountText(amount: item.amount)
         }
     }
@@ -81,6 +81,8 @@ struct ExpenseSection: View {
         Section(title) {
             ForEach(expenses) { item in
                 ExpenseItemView(item: item)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("\(item.name) ^[\(item.amount.formatted()) Dollar](inflect: true)")
             }
             .onDelete(perform: deleteItems)
         }

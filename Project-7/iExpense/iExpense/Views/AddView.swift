@@ -27,7 +27,8 @@ struct AddView: View {
                         Text($0)
                     }
                 }
-                
+//                TextField("Amount", value: $amount, format: .number)
+//                    .keyboardType(.decimalPad)
                 TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
             }
@@ -35,6 +36,7 @@ struct AddView: View {
             .toolbar {
                 Button("Save") {
                     let item = ExpenseItem(name: name, type: type, amount: amount)
+                    debugPrint("AMOUNT: \(amount)")
                     expenses.items.append(item)
                     dismiss()
                 }
