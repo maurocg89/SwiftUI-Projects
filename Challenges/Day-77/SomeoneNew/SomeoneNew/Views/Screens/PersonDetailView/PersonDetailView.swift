@@ -8,16 +8,49 @@
 import SwiftUI
 
 struct PersonDetailView: View {
-    let person: Person
+    @StateObject private var viewModel = ViewModel()
+    var selectedPersonId: UUID
 
     var body: some View {
-        ZStack {
-            backgroundColor()
-            Text(person.name)
+        NavigationStack {
+            ZStack {
+                backgroundColor()
+                VStack {
+                    Group {
+                        if viewModel.selectedPerson.image != nil {
+                            Image(uiImage: viewModel.selectedPerson.image!)
+                                .resizable()
+                                .clipShape(Circle())
+                        } else {
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .foregroundStyle(Color.black
+                                    .opacity(0.7))
+                        }
+                    }
+                    .frame(width: 140, height: 140, alignment: .top)
+
+                    Text("\(viewModel.selectedPerson.name) \(viewModel.selectedPerson.lastName)" )
+                        .font(.title)
+                        .bold()
+
+                    Spacer()
+                }
+                .toolbar(content: {
+                    NavigationLink(destination: {
+                        EditPersonView(selectedPersonId: viewModel.selectedPerson.id)
+                    }, label: {
+                        Text("Edit")
+                    })
+                })
+            }
+            .onAppear {
+                viewModel.getPersonUpdated(selectedPersonId)
+            }
         }
     }
 }
 
 #Preview {
-    PersonDetailView(person: Person.example)
+    PersonDetailView(selectedPersonId: Person.example.id)
 }

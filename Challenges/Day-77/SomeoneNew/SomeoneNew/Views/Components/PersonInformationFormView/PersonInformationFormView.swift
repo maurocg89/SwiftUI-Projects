@@ -1,24 +1,28 @@
 //
-//  AddPersonView.swift
+//  PersonInformationFormView.swift
 //  SomeoneNew
 //
-//  Created by Mauro Grillo on 27/10/2023.
+//  Created by Mauro Grillo on 28/11/2023.
 //
 
 import SwiftUI
 
-struct AddPersonView: View {
-    @StateObject private var viewModel = ViewModel()
+struct PersonInformationFormView: View {
     @Environment(\.dismiss) var dismiss
+    var isDetailView: Bool
+    @Binding var inputImage: UIImage?
+    @Binding var newPersonName: String
+    @Binding var newPersonLastName: String
+    @Binding var showAddImageSheet: Bool
+    var buttonAction: (() -> Void)?
 
     var body: some View {
         ZStack {
-            Color(uiColor: .systemGray6)
-                .ignoresSafeArea()
+            backgroundColor()
             VStack {
                 ZStack {
-                    if viewModel.inputImage != nil {
-                        Image(uiImage: viewModel.inputImage!)
+                    if inputImage != nil {
+                        Image(uiImage: inputImage!)
                             .resizable()
                             .clipShape(Circle())
                             .overlay(
@@ -29,7 +33,7 @@ struct AddPersonView: View {
                                     .foregroundStyle(.white)
                                     .clipShape(ContainerRelativeShape()).padding(4)
                                     .minimumScaleFactor(0.1)
-                                , alignment: .bottom)
+                            , alignment: .bottom)
                     } else {
                         Image(systemName: "photo.circle")
                             .resizable()
@@ -47,23 +51,25 @@ struct AddPersonView: View {
                 }
                 .frame(width: 140, height: 140, alignment: .center)
                 .onTapGesture {
-                    viewModel.showAddImageSheet = true
+                    showAddImageSheet = true
                 }
 
                 Form {
                     Section {
-                        TextField("Name", text: $viewModel.newPersonName)
-                        TextField("Last Name", text: $viewModel.newPersonLastName)
+                        TextField("Name", text: $newPersonName)
+                        TextField("Last Name", text: $newPersonLastName)
                     } header: {
                         Text("Person Information")
                     }
 
-                    Section {
-                        Button("Add person") {
-                            viewModel.addPerson()
-                            dismiss()
+                    if !isDetailView {
+                        Section {
+                            Button("Add person") {
+                                buttonAction?()
+                                dismiss()
+                            }
+                            .disabled(!isFormValid())
                         }
-                        .disabled(false)
                     }
                 }
                 .scrollDisabled(true)
@@ -73,15 +79,30 @@ struct AddPersonView: View {
 
                 Spacer()
             }
-            .sheet(isPresented: $viewModel.showAddImageSheet, content: {
-                ImagePicker(image: $viewModel.inputImage)
+            .sheet(isPresented: $showAddImageSheet, content: {
+                ImagePicker(image: $inputImage)
             })
-            //            .onChange(of: viewModel.inputImage) { _ in }
         }
+        .toolbar(content: {
+            if isDetailView {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        buttonAction?()
+                        dismiss()
+                    }
+                    .disabled(!isFormValid())
+                }
+            }
+        })
+    }
 
+    func isFormValid() -> Bool {
+        return !newPersonName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        && !newPersonLastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        && inputImage != nil
     }
 }
 
 #Preview {
-    AddPersonView()
+    PersonInformationFormView(isDetailView: false, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
 }

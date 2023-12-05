@@ -21,7 +21,7 @@ extension AddPersonView {
 
         init() {
             let peopleSaved: [Person]?
-            peopleSaved = FileManager().getData(savedFileName)
+            peopleSaved = FileManager().getData(FilesNames.SAVED_PEOPLE.rawValue)
             guard peopleSaved != nil, !peopleSaved!.isEmpty else {
                 people = []
                 return
@@ -30,13 +30,11 @@ extension AddPersonView {
         }
 
         func save() {
-            FileManager().saveData(savedFileName, people)
+            FileManager().saveData(FilesNames.SAVED_PEOPLE.rawValue, people)
         }
 
         func addPerson() {
-            if isFormValid() {
-                addPerson(name: self.newPersonName, lastName: self.newPersonLastName, image: self.inputImage!)
-            }
+            addPerson(name: self.newPersonName, lastName: self.newPersonLastName, image: self.inputImage!)
         }
 
         private func addPerson(name: String, lastName: String = "", image: UIImage) {
@@ -47,12 +45,6 @@ extension AddPersonView {
             let newPerson = Person(id: UUID(), name: name, lastName: lastName, imageData: imageData)
             people.append(newPerson)
             save()
-        }
-
-        func isFormValid() -> Bool {
-            return !newPersonName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty 
-            && !newPersonLastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            && inputImage != nil
         }
     }
 }

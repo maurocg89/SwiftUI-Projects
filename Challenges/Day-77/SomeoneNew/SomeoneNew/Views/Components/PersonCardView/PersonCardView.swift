@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PersonCardView: View {
-    let person: Person
+    @Binding var person: Person
 
     var body: some View {
         VStack {
@@ -43,5 +43,5 @@ struct PersonCardView: View {
 }
 
 #Preview {
-    PersonCardView(person: Person.example)
+    PersonCardView(person: .constant(Person.example))
 }

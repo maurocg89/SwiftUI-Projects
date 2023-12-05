@@ -15,8 +15,14 @@
 		5062D06F2ADCDCDB00B24FBC /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062D06E2ADCDCDB00B24FBC /* GridLayout.swift */; };
 		5062D0712ADCDD1400B24FBC /* PeopleListView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062D0702ADCDD1400B24FBC /* PeopleListView-ViewModel.swift */; };
 		5062D0732ADCEC3A00B24FBC /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062D0722ADCEC3A00B24FBC /* FileManagerError.swift */; };
+		509672D42B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */; };
+		509672D82B1A438000ACB9E9 /* PeopleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D72B1A438000ACB9E9 /* PeopleServices.swift */; };
 		50AD2BC42B162D830083191C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC32B162D830083191C /* Color+Extension.swift */; };
 		50AD2BC62B162E130083191C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC52B162E130083191C /* View+Extension.swift */; };
+		50AD2BCE2B18D6F80083191C /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BCD2B18D6F80083191C /* EditPersonView.swift */; };
+		50AD2BD02B18D7240083191C /* EditPersonView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BCF2B18D7240083191C /* EditPersonView-ViewModel.swift */; };
+		50AD2BD22B18E86C0083191C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BD12B18E86C0083191C /* Constants.swift */; };
+		50AD2BD42B1901F40083191C /* PersonInformationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BD32B1901F40083191C /* PersonInformationFormView.swift */; };
 		50C7ABBB2AEBF79B00A08055 /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7ABBA2AEBF79B00A08055 /* AddPersonView.swift */; };
 		50C7ABBD2AEC094D00A08055 /* AddPerson-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7ABBC2AEC094D00A08055 /* AddPerson-ViewModel.swift */; };
 		50C91D502ADE433A0071B0E0 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C91D4F2ADE433A0071B0E0 /* PersonCardView.swift */; };
@@ -36,8 +42,14 @@
 		5062D06E2ADCDCDB00B24FBC /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		5062D0702ADCDD1400B24FBC /* PeopleListView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeopleListView-ViewModel.swift"; sourceTree = "<group>"; };
 		5062D0722ADCEC3A00B24FBC /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
+		509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonDetailView-ViewModel.swift"; sourceTree = "<group>"; };
+		509672D72B1A438000ACB9E9 /* PeopleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleServices.swift; sourceTree = "<group>"; };
 		50AD2BC32B162D830083191C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		50AD2BC52B162E130083191C /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		50AD2BCD2B18D6F80083191C /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
+		50AD2BCF2B18D7240083191C /* EditPersonView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditPersonView-ViewModel.swift"; sourceTree = "<group>"; };
+		50AD2BD12B18E86C0083191C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50AD2BD32B1901F40083191C /* PersonInformationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationFormView.swift; sourceTree = "<group>"; };
 		50C7ABBA2AEBF79B00A08055 /* AddPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
 		50C7ABBC2AEC094D00A08055 /* AddPerson-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPerson-ViewModel.swift"; sourceTree = "<group>"; };
 		50C91D4F2ADE433A0071B0E0 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				50C91D512ADE46460071B0E0 /* PersonDetailView.swift */,
+				509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */,
 			);
 			path = PersonDetailView;
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 			children = (
 				50C7ABB92AEBF78700A08055 /* AddPersonView */,
 				5062D06A2ADCDA5000B24FBC /* ContentView */,
+				50AD2BCC2B18D6DD0083191C /* EditPersonView */,
 				5062D0692ADCDA4400B24FBC /* PersonDetailView */,
 				5062D0682ADCDA2A00B24FBC /* PeopleListView */,
 			);
@@ -108,10 +122,44 @@
 		5062D0772ADCF26000B24FBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				50C91D4E2ADE43240071B0E0 /* PersonCardView */,
 				5062D06D2ADCDCA200B24FBC /* GridLayoutView */,
+				50C91D4E2ADE43240071B0E0 /* PersonCardView */,
+				50AD2BC72B163A7C0083191C /* PersonInformationFormView */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		509672D52B1A436400ACB9E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				509672D62B1A437300ACB9E9 /* People */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		509672D62B1A437300ACB9E9 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				509672D72B1A438000ACB9E9 /* PeopleServices.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		50AD2BC72B163A7C0083191C /* PersonInformationFormView */ = {
+			isa = PBXGroup;
+			children = (
+				50AD2BD32B1901F40083191C /* PersonInformationFormView.swift */,
+			);
+			path = PersonInformationFormView;
+			sourceTree = "<group>";
+		};
+		50AD2BCC2B18D6DD0083191C /* EditPersonView */ = {
+			isa = PBXGroup;
+			children = (
+				50AD2BCD2B18D6F80083191C /* EditPersonView.swift */,
+				50AD2BCF2B18D7240083191C /* EditPersonView-ViewModel.swift */,
+			);
+			path = EditPersonView;
 			sourceTree = "<group>";
 		};
 		50B8E8D32AC7258700785E43 /* Views */ = {
@@ -147,6 +195,7 @@
 			children = (
 				5062D0602ADCCC0500B24FBC /* ImagePicker.swift */,
 				5062D0622ADCCD3E00B24FBC /* ImageSaver.swift */,
+				50AD2BD12B18E86C0083191C /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,6 +240,7 @@
 				50B8E8D42AC7467F00785E43 /* Models */,
 				50B8E8D62AC7469500785E43 /* Utils */,
 				50B8E8D32AC7258700785E43 /* Views */,
+				509672D52B1A436400ACB9E9 /* Services */,
 				50EDFD4F2AC4640E008C95A9 /* SomeoneNewApp.swift */,
 				50EDFD532AC4640F008C95A9 /* Assets.xcassets */,
 				50EDFD552AC4640F008C95A9 /* SomeoneNew.entitlements */,
@@ -281,18 +331,24 @@
 				50AD2BC42B162D830083191C /* Color+Extension.swift in Sources */,
 				50AD2BC62B162E130083191C /* View+Extension.swift in Sources */,
 				5062D06C2ADCDA7B00B24FBC /* PeopleListView.swift in Sources */,
+				509672D82B1A438000ACB9E9 /* PeopleServices.swift in Sources */,
+				50AD2BCE2B18D6F80083191C /* EditPersonView.swift in Sources */,
 				5062D0612ADCCC0500B24FBC /* ImagePicker.swift in Sources */,
 				50EDFD522AC4640E008C95A9 /* ContentView.swift in Sources */,
 				50EDFD502AC4640E008C95A9 /* SomeoneNewApp.swift in Sources */,
 				5062D0652ADCD73100B24FBC /* FileManager+Extension.swift in Sources */,
 				50C7ABBB2AEBF79B00A08055 /* AddPersonView.swift in Sources */,
+				50AD2BD02B18D7240083191C /* EditPersonView-ViewModel.swift in Sources */,
 				50C91D502ADE433A0071B0E0 /* PersonCardView.swift in Sources */,
 				5062D06F2ADCDCDB00B24FBC /* GridLayout.swift in Sources */,
 				5062D0712ADCDD1400B24FBC /* PeopleListView-ViewModel.swift in Sources */,
 				5062D0732ADCEC3A00B24FBC /* FileManagerError.swift in Sources */,
+				509672D42B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift in Sources */,
+				50AD2BD22B18E86C0083191C /* Constants.swift in Sources */,
 				50C7ABBD2AEC094D00A08055 /* AddPerson-ViewModel.swift in Sources */,
 				50C91D522ADE46460071B0E0 /* PersonDetailView.swift in Sources */,
 				5062D0632ADCCD3E00B24FBC /* ImageSaver.swift in Sources */,
+				50AD2BD42B1901F40083191C /* PersonInformationFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

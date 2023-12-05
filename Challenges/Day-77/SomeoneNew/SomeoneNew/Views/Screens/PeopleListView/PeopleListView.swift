@@ -15,7 +15,7 @@ struct PeopleListView: View {
             ZStack {
                 backgroundColor()
                 VStack {
-                    GridLayout(people: viewModel.people)
+                    GridLayout(people: $viewModel.people)
                         .padding(.vertical)
                         .navigationTitle("List of people")
                         .toolbar(content: {

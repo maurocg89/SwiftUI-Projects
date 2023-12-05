@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GridLayout: View {
-    let people: [Person]
+    @Binding var people: [Person]
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
@@ -16,9 +16,9 @@ struct GridLayout: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(people) { person in
+                ForEach($people) { person in
                     NavigationLink {
-                        PersonDetailView(person: person)
+                        PersonDetailView(selectedPersonId: person.id)
                     } label: {
                         PersonCardView(person: person)
                     }
@@ -30,5 +30,5 @@ struct GridLayout: View {
 }
 
 #Preview {
-    GridLayout(people: Person.examplePeople)
+    GridLayout(people: .constant(Person.examplePeople))
 }
