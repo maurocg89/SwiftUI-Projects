@@ -24,7 +24,7 @@ extension EditPersonView {
             guard inputImage != nil, let imageData = inputImage!.jpegData(compressionQuality: compressionQuality) else {
                 return
             }
-            let personUpdated = Person(id: selectedPerson.id, name: selectedPerson.name, lastName: selectedPerson.lastName, imageData: imageData)
+            let personUpdated = Person(id: selectedPerson.id, name: selectedPerson.name, lastName: selectedPerson.lastName, description: selectedPerson.description, imageData: imageData)
             self.update(personUpdated: personUpdated)
         }
 

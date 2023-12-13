@@ -33,6 +33,15 @@ struct PersonDetailView: View {
                     Text("\(viewModel.selectedPerson.name) \(viewModel.selectedPerson.lastName)" )
                         .font(.title)
                         .bold()
+                    
+                    Form {
+                        Section("Description") {
+                            TextField("", text: $viewModel.selectedPerson.description, axis: .vertical)
+                                .lineLimit(5...)
+                                .disabled(true)
+                        }
+                    }
+                    .scrollDisabled(true)
 
                     Spacer()
                 }

@@ -13,6 +13,7 @@ struct PersonInformationFormView: View {
     @Binding var inputImage: UIImage?
     @Binding var newPersonName: String
     @Binding var newPersonLastName: String
+    @Binding var newPersonDescription: String
     @Binding var showAddImageSheet: Bool
     var buttonAction: (() -> Void)?
 
@@ -62,6 +63,14 @@ struct PersonInformationFormView: View {
                         Text("Person Information")
                     }
 
+                    Section {
+                        TextField("Description", text: $newPersonDescription, axis: .vertical)
+                            .lineLimit(5...)
+
+                    } header: {
+                        Text("Description")
+                    }
+
                     if !isDetailView {
                         Section {
                             Button("Add person") {
@@ -73,7 +82,7 @@ struct PersonInformationFormView: View {
                     }
                 }
                 .scrollDisabled(true)
-                .frame(height: 300)
+                .frame(maxHeight: .infinity)
                 .navigationTitle("")
                 .navigationBarTitleDisplayMode(.inline)
 
@@ -104,5 +113,5 @@ struct PersonInformationFormView: View {
 }
 
 #Preview {
-    PersonInformationFormView(isDetailView: false, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
+    PersonInformationFormView(isDetailView: false, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), newPersonDescription: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
 }

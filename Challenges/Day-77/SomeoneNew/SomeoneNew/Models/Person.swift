@@ -12,6 +12,7 @@ struct Person: Identifiable, Codable, Equatable {
     var id: UUID
     var name: String
     var lastName: String
+    var description: String
     var imageData: Data
 
     static func ==(lhs: Person, rhs: Person) -> Bool {
@@ -24,13 +25,13 @@ extension Person {
         UIImage(data: imageData)
     }
 
-    static let example = Person(id: UUID(), name: "Mauro", lastName: "Grillo", imageData: Data())
+    static let example = Person(id: UUID(), name: "Mauro", lastName: "Grillo", description: "I met him in the park", imageData: Data())
 
     static let examplePeople: [Person] = [
-        Person(id: UUID(), name: "John", lastName: "Doe", imageData: Data()),
-        Person(id: UUID(), name: "Sean", lastName: "Allen", imageData: Data()),
-        Person(id: UUID(), name: "Paul", lastName: "Hudson", imageData: Data()),
-        Person(id: UUID(), name: "Steve", lastName: "Jobs", imageData: Data()),
-        Person(id: UUID(), name: "Taylor", lastName: "Swift", imageData: Data())
+        Person(id: UUID(), name: "John", lastName: "Doe", description: "I met him in the park", imageData: Data()),
+        Person(id: UUID(), name: "Sean", lastName: "Allen", description: "iOS Developer and Content creator", imageData: Data()),
+        Person(id: UUID(), name: "Paul", lastName: "Hudson", description: "iOS Developer and Content creator", imageData: Data()),
+        Person(id: UUID(), name: "Steve", lastName: "Jobs", description: "Co-Founder of Apple", imageData: Data()),
+        Person(id: UUID(), name: "Taylor", lastName: "Swift", description: "Singer", imageData: Data())
     ]
 }

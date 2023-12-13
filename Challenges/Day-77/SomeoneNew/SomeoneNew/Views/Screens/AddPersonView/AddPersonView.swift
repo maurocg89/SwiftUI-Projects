@@ -13,72 +13,11 @@ struct AddPersonView: View {
 
     var body: some View {
         ZStack {
-            Color(uiColor: .systemGray6)
-                .ignoresSafeArea()
-            VStack {
-                ZStack {
-                    if viewModel.inputImage != nil {
-                        Image(uiImage: viewModel.inputImage!)
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(
-                                Text("Edit")
-                                    .background(Color.black.opacity(0.6))
-                                    .lineLimit(1)
-                                    .font(.headline)
-                                    .foregroundStyle(.white)
-                                    .clipShape(ContainerRelativeShape()).padding(4)
-                                    .minimumScaleFactor(0.1)
-                                , alignment: .bottom)
-                    } else {
-                        Image(systemName: "photo.circle")
-                            .resizable()
-                            .foregroundStyle(Color.gray)
-                            .overlay(
-                                Text("Add picture")
-                                    .background(Color.gray)
-                                    .lineLimit(1)
-                                    .font(.headline)
-                                    .foregroundStyle(.white)
-                                    .clipShape(ContainerRelativeShape()).padding()
-                                    .minimumScaleFactor(0.1)
-                                , alignment: .bottom)
-                    }
-                }
-                .frame(width: 140, height: 140, alignment: .center)
-                .onTapGesture {
-                    viewModel.showAddImageSheet = true
-                }
-
-                Form {
-                    Section {
-                        TextField("Name", text: $viewModel.newPersonName)
-                        TextField("Last Name", text: $viewModel.newPersonLastName)
-                    } header: {
-                        Text("Person Information")
-                    }
-
-                    Section {
-                        Button("Add person") {
-                            viewModel.addPerson()
-                            dismiss()
-                        }
-                        .disabled(false)
-                    }
-                }
-                .scrollDisabled(true)
-                .frame(height: 300)
-                .navigationTitle("")
-                .navigationBarTitleDisplayMode(.inline)
-
-                Spacer()
-            }
-            .sheet(isPresented: $viewModel.showAddImageSheet, content: {
-                ImagePicker(image: $viewModel.inputImage)
+            backgroundColor()
+            PersonInformationFormView(isDetailView: false, inputImage: $viewModel.inputImage, newPersonName: $viewModel.newPersonName, newPersonLastName: $viewModel.newPersonLastName, newPersonDescription: $viewModel.newPersonDescritpion, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {
+                viewModel.addPerson()
             })
-            //            .onChange(of: viewModel.inputImage) { _ in }
         }
-
     }
 }
 

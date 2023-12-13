@@ -14,7 +14,7 @@ struct EditPersonView: View {
     var body: some View {
         ZStack {
             backgroundColor()
-            PersonInformationFormView(isDetailView: true, inputImage: $viewModel.inputImage, newPersonName: $viewModel.selectedPerson.name, newPersonLastName: $viewModel.selectedPerson.lastName, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {
+            PersonInformationFormView(isDetailView: true, inputImage: $viewModel.inputImage, newPersonName: $viewModel.selectedPerson.name, newPersonLastName: $viewModel.selectedPerson.lastName, newPersonDescription: $viewModel.selectedPerson.description, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {
                 viewModel.updatePerson()
             })
         }

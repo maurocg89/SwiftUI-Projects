@@ -13,6 +13,7 @@ extension AddPersonView {
         @Published var showAddImageSheet = false
         @Published var newPersonName = ""
         @Published var newPersonLastName = ""
+        @Published var newPersonDescritpion = ""
         @Published var inputImage: UIImage?
         @Published private(set) var people: [Person]
 
@@ -34,15 +35,15 @@ extension AddPersonView {
         }
 
         func addPerson() {
-            addPerson(name: self.newPersonName, lastName: self.newPersonLastName, image: self.inputImage!)
+            addPerson(name: self.newPersonName, lastName: self.newPersonLastName, description: self.newPersonDescritpion, image: self.inputImage!)
         }
 
-        private func addPerson(name: String, lastName: String = "", image: UIImage) {
+        private func addPerson(name: String, lastName: String = "", description: String = "", image: UIImage) {
             guard let imageData = image.jpegData(compressionQuality: compressionQuality) else {
                 // showError
                 return
             }
-            let newPerson = Person(id: UUID(), name: name, lastName: lastName, imageData: imageData)
+            let newPerson = Person(id: UUID(), name: name, lastName: lastName, description: description, imageData: imageData)
             people.append(newPerson)
             save()
         }
