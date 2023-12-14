@@ -17,6 +17,7 @@ extension PeopleListView {
 //        private(set) var people: [Person]
     @MainActor class ViewModel: ObservableObject {
         @Published var people: [Person]
+        @Published var showingGrid = false
 
         init() {
             people = PeopleServices.shared.getPeople()

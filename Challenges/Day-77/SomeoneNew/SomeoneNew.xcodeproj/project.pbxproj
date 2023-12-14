@@ -17,6 +17,7 @@
 		5062D0732ADCEC3A00B24FBC /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062D0722ADCEC3A00B24FBC /* FileManagerError.swift */; };
 		509672D42B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */; };
 		509672D82B1A438000ACB9E9 /* PeopleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D72B1A438000ACB9E9 /* PeopleServices.swift */; };
+		50A7C37E2B2A02300030D037 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C37D2B2A02300030D037 /* ListLayout.swift */; };
 		50AD2BC42B162D830083191C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC32B162D830083191C /* Color+Extension.swift */; };
 		50AD2BC62B162E130083191C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC52B162E130083191C /* View+Extension.swift */; };
 		50AD2BCE2B18D6F80083191C /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BCD2B18D6F80083191C /* EditPersonView.swift */; };
@@ -44,6 +45,7 @@
 		5062D0722ADCEC3A00B24FBC /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
 		509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonDetailView-ViewModel.swift"; sourceTree = "<group>"; };
 		509672D72B1A438000ACB9E9 /* PeopleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleServices.swift; sourceTree = "<group>"; };
+		50A7C37D2B2A02300030D037 /* ListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
 		50AD2BC32B162D830083191C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		50AD2BC52B162E130083191C /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		50AD2BCD2B18D6F80083191C /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		5062D0772ADCF26000B24FBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				50A7C37C2B2A01660030D037 /* ListLayoutView */,
 				5062D06D2ADCDCA200B24FBC /* GridLayoutView */,
 				50C91D4E2ADE43240071B0E0 /* PersonCardView */,
 				50AD2BC72B163A7C0083191C /* PersonInformationFormView */,
@@ -143,6 +146,14 @@
 				509672D72B1A438000ACB9E9 /* PeopleServices.swift */,
 			);
 			path = People;
+			sourceTree = "<group>";
+		};
+		50A7C37C2B2A01660030D037 /* ListLayoutView */ = {
+			isa = PBXGroup;
+			children = (
+				50A7C37D2B2A02300030D037 /* ListLayout.swift */,
+			);
+			path = ListLayoutView;
 			sourceTree = "<group>";
 		};
 		50AD2BC72B163A7C0083191C /* PersonInformationFormView */ = {
@@ -339,6 +350,7 @@
 				5062D0652ADCD73100B24FBC /* FileManager+Extension.swift in Sources */,
 				50C7ABBB2AEBF79B00A08055 /* AddPersonView.swift in Sources */,
 				50AD2BD02B18D7240083191C /* EditPersonView-ViewModel.swift in Sources */,
+				50A7C37E2B2A02300030D037 /* ListLayout.swift in Sources */,
 				50C91D502ADE433A0071B0E0 /* PersonCardView.swift in Sources */,
 				5062D06F2ADCDCDB00B24FBC /* GridLayout.swift in Sources */,
 				5062D0712ADCDD1400B24FBC /* PeopleListView-ViewModel.swift in Sources */,

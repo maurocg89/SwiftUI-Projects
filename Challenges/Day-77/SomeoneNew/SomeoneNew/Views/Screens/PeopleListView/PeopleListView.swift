@@ -15,18 +15,29 @@ struct PeopleListView: View {
             ZStack {
                 backgroundColor()
                 VStack {
-                    GridLayout(people: $viewModel.people)
-                        .padding(.vertical)
-                        .navigationTitle("List of people")
-                        .toolbar(content: {
-                            NavigationLink(destination: {
-                                AddPersonView()
-                            }, label: {
-                                Image(systemName: "plus")
-                            })
-                        })
+                    if viewModel.showingGrid {
+                        GridLayout(people: $viewModel.people)
+                    } else {
+                        ListLayout(people: $viewModel.people)
+                    }
                     Button("Reset Data", role: .destructive) {
                         viewModel.resetData()
+                    }
+                }
+                .padding(viewModel.showingGrid ? 10 : 0)
+                .navigationTitle("List of people")
+                .toolbar(id: "options") {
+                    ToolbarItem(id: "add", placement: .primaryAction) {
+                        NavigationLink(destination: {
+                            AddPersonView()
+                        }, label: {
+                            Image(systemName: "plus")
+                        })
+                    }
+                    ToolbarItem(id: "list", placement: .secondaryAction) {
+                        Button(viewModel.showingGrid ? "Show List" : "Show Grid") {
+                            viewModel.showingGrid.toggle()
+                            }
                     }
                 }
             }

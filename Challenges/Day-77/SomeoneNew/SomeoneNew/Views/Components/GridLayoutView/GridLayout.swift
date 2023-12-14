@@ -20,7 +20,7 @@ struct GridLayout: View {
                     NavigationLink {
                         PersonDetailView(selectedPersonId: person.id)
                     } label: {
-                        PersonCardView(person: person)
+                        PersonCardView(person: person, showingGrid: true)
                     }
                 }
             } // LazyVGrid
