@@ -18,6 +18,11 @@
 		509672D42B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */; };
 		509672D82B1A438000ACB9E9 /* PeopleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509672D72B1A438000ACB9E9 /* PeopleServices.swift */; };
 		50A7C37E2B2A02300030D037 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C37D2B2A02300030D037 /* ListLayout.swift */; };
+		50A7C3812B2B2B0E0030D037 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C3802B2B2B0E0030D037 /* MapView.swift */; };
+		50A7C3832B2B2F610030D037 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C3822B2B2F610030D037 /* Location.swift */; };
+		50A7C3872B2B7D7C0030D037 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C3862B2B7D7C0030D037 /* LocationFetcher.swift */; };
+		50A7C38B2B3091790030D037 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C38A2B3091790030D037 /* LocationManager.swift */; };
+		50A7C38E2B31F4950030D037 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7C38D2B31F4950030D037 /* LocationButton.swift */; };
 		50AD2BC42B162D830083191C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC32B162D830083191C /* Color+Extension.swift */; };
 		50AD2BC62B162E130083191C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BC52B162E130083191C /* View+Extension.swift */; };
 		50AD2BCE2B18D6F80083191C /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2BCD2B18D6F80083191C /* EditPersonView.swift */; };
@@ -46,6 +51,11 @@
 		509672D32B1A41D600ACB9E9 /* PersonDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonDetailView-ViewModel.swift"; sourceTree = "<group>"; };
 		509672D72B1A438000ACB9E9 /* PeopleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleServices.swift; sourceTree = "<group>"; };
 		50A7C37D2B2A02300030D037 /* ListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
+		50A7C3802B2B2B0E0030D037 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		50A7C3822B2B2F610030D037 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		50A7C3862B2B7D7C0030D037 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		50A7C38A2B3091790030D037 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		50A7C38D2B31F4950030D037 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		50AD2BC32B162D830083191C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		50AD2BC52B162E130083191C /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		50AD2BCD2B18D6F80083191C /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
@@ -124,8 +134,9 @@
 		5062D0772ADCF26000B24FBC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				50A7C37C2B2A01660030D037 /* ListLayoutView */,
 				5062D06D2ADCDCA200B24FBC /* GridLayoutView */,
+				50A7C37C2B2A01660030D037 /* ListLayoutView */,
+				50A7C37F2B2B2AF70030D037 /* MapView */,
 				50C91D4E2ADE43240071B0E0 /* PersonCardView */,
 				50AD2BC72B163A7C0083191C /* PersonInformationFormView */,
 			);
@@ -154,6 +165,23 @@
 				50A7C37D2B2A02300030D037 /* ListLayout.swift */,
 			);
 			path = ListLayoutView;
+			sourceTree = "<group>";
+		};
+		50A7C37F2B2B2AF70030D037 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				50A7C38C2B31F47A0030D037 /* LocationButton */,
+				50A7C3802B2B2B0E0030D037 /* MapView.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		50A7C38C2B31F47A0030D037 /* LocationButton */ = {
+			isa = PBXGroup;
+			children = (
+				50A7C38D2B31F4950030D037 /* LocationButton.swift */,
+			);
+			path = LocationButton;
 			sourceTree = "<group>";
 		};
 		50AD2BC72B163A7C0083191C /* PersonInformationFormView */ = {
@@ -187,6 +215,7 @@
 			children = (
 				5062D0662ADCD93300B24FBC /* Person.swift */,
 				5062D0722ADCEC3A00B24FBC /* FileManagerError.swift */,
+				50A7C3822B2B2F610030D037 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +236,8 @@
 				5062D0602ADCCC0500B24FBC /* ImagePicker.swift */,
 				5062D0622ADCCD3E00B24FBC /* ImageSaver.swift */,
 				50AD2BD12B18E86C0083191C /* Constants.swift */,
+				50A7C38A2B3091790030D037 /* LocationManager.swift */,
+				50A7C3862B2B7D7C0030D037 /* LocationFetcher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -339,11 +370,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5062D0672ADCD93300B24FBC /* Person.swift in Sources */,
+				50A7C3812B2B2B0E0030D037 /* MapView.swift in Sources */,
 				50AD2BC42B162D830083191C /* Color+Extension.swift in Sources */,
 				50AD2BC62B162E130083191C /* View+Extension.swift in Sources */,
 				5062D06C2ADCDA7B00B24FBC /* PeopleListView.swift in Sources */,
 				509672D82B1A438000ACB9E9 /* PeopleServices.swift in Sources */,
+				50A7C38E2B31F4950030D037 /* LocationButton.swift in Sources */,
 				50AD2BCE2B18D6F80083191C /* EditPersonView.swift in Sources */,
+				50A7C3832B2B2F610030D037 /* Location.swift in Sources */,
 				5062D0612ADCCC0500B24FBC /* ImagePicker.swift in Sources */,
 				50EDFD522AC4640E008C95A9 /* ContentView.swift in Sources */,
 				50EDFD502AC4640E008C95A9 /* SomeoneNewApp.swift in Sources */,
@@ -359,8 +393,10 @@
 				50AD2BD22B18E86C0083191C /* Constants.swift in Sources */,
 				50C7ABBD2AEC094D00A08055 /* AddPerson-ViewModel.swift in Sources */,
 				50C91D522ADE46460071B0E0 /* PersonDetailView.swift in Sources */,
+				50A7C38B2B3091790030D037 /* LocationManager.swift in Sources */,
 				5062D0632ADCCD3E00B24FBC /* ImageSaver.swift in Sources */,
 				50AD2BD42B1901F40083191C /* PersonInformationFormView.swift in Sources */,
+				50A7C3872B2B7D7C0030D037 /* LocationFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +530,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SomeoneNew requires user’s location for better user experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -533,6 +570,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SomeoneNew requires user’s location for better user experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

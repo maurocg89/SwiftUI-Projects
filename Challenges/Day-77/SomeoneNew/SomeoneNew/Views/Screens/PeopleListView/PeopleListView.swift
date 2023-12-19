@@ -34,10 +34,14 @@ struct PeopleListView: View {
                             Image(systemName: "plus")
                         })
                     }
-                    ToolbarItem(id: "list", placement: .secondaryAction) {
-                        Button(viewModel.showingGrid ? "Show List" : "Show Grid") {
-                            viewModel.showingGrid.toggle()
+                    ToolbarItem(id: "list", placement: .topBarLeading) {
+                        Menu {
+                            Button(viewModel.showingGrid ? "Show List" : "Show Grid") {
+                                viewModel.showingGrid.toggle()
                             }
+                        } label: {
+                            Label("Options", systemImage: "ellipsis.circle")
+                        }
                     }
                 }
             }

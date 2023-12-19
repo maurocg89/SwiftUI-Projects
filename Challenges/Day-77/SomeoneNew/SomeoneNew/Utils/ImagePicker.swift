@@ -8,6 +8,7 @@
 import PhotosUI
 import SwiftUI
 
+// TODO: Add an option to take a photo
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonDetailView: View {
     @StateObject private var viewModel = ViewModel()
+    @State private var pickerTab = 0
     var selectedPersonId: UUID
 
     var body: some View {
@@ -16,32 +17,22 @@ struct PersonDetailView: View {
             ZStack {
                 backgroundColor()
                 VStack {
-                    Group {
-                        if viewModel.selectedPerson.image != nil {
-                            Image(uiImage: viewModel.selectedPerson.image!)
-                                .resizable()
-                                .clipShape(Circle())
-                        } else {
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .foregroundStyle(Color.black
-                                    .opacity(0.7))
-                        }
+                    Picker("", selection: $pickerTab) {
+                        Text("Detail").tag(0)
+                        Text("Event Location").tag(1)
                     }
-                    .frame(width: 140, height: 140, alignment: .top)
+                    .pickerStyle(.segmented)
+                    .padding()
 
-                    Text("\(viewModel.selectedPerson.name) \(viewModel.selectedPerson.lastName)" )
-                        .font(.title)
-                        .bold()
-                    
-                    Form {
-                        Section("Description") {
-                            TextField("", text: $viewModel.selectedPerson.description, axis: .vertical)
-                                .lineLimit(5...)
-                                .disabled(true)
+                    if pickerTab == 0 {
+                        detailView
+                    } else {
+                        if viewModel.selectedPerson.location != nil {
+                            MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, newLocationName: $viewModel.newLocationName, isDetailView: true, buttonAction: nil)
+                        } else {
+                            Text("There is no location")
                         }
                     }
-                    .scrollDisabled(true)
 
                     Spacer()
                 }
@@ -56,6 +47,37 @@ struct PersonDetailView: View {
             .onAppear {
                 viewModel.getPersonUpdated(selectedPersonId)
             }
+        }
+    }
+
+    private var detailView: some View {
+        VStack {
+            Group {
+                if viewModel.selectedPerson.image != nil {
+                    Image(uiImage: viewModel.selectedPerson.image!)
+                        .resizable()
+                        .clipShape(Circle())
+                } else {
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .foregroundStyle(Color.black
+                            .opacity(0.7))
+                }
+            }
+            .frame(width: 140, height: 140, alignment: .top)
+
+            Text("\(viewModel.selectedPerson.name) \(viewModel.selectedPerson.lastName)" )
+                .font(.title)
+                .bold()
+
+            Form {
+                Section("Description") {
+                    TextField("", text: $viewModel.selectedPerson.description, axis: .vertical)
+                        .lineLimit(5...)
+                        .disabled(true)
+                }
+            }
+            .scrollDisabled(true)
         }
     }
 }
