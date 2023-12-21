@@ -17,13 +17,8 @@ struct PersonDetailView: View {
             ZStack {
                 backgroundColor()
                 VStack {
-                    Picker("", selection: $pickerTab) {
-                        Text("Detail").tag(0)
-                        Text("Event Location").tag(1)
-                    }
-                    .pickerStyle(.segmented)
-                    .padding()
-
+                    PickerTabView(pickerTabSelection: $pickerTab)
+                    
                     if pickerTab == 0 {
                         detailView
                     } else {

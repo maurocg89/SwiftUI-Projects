@@ -21,6 +21,7 @@ struct PersonInformationFormView: View {
     @Binding var newPersonLastName: String
     @Binding var newPersonDescription: String
     @Binding var showAddImageSheet: Bool
+//    @Binding var person: Person
     var buttonAction: (() -> Void)?
 
     var body: some View {

@@ -26,6 +26,8 @@ extension Person {
         UIImage(data: imageData)
     }
 
+    static let empty = Person(id: UUID(), name: "", lastName: "", description: "", imageData: Data())
+
     static let example = Person(id: UUID(), name: "Mauro", lastName: "Grillo", description: "I met him in the park", imageData: Data(), location: Location.example)
 
     static let examplePeople: [Person] = [

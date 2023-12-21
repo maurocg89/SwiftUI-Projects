@@ -16,13 +16,8 @@ struct EditPersonView: View {
         ZStack {
             backgroundColor()
             VStack {
-                Picker("", selection: $pickerTab) {
-                    Text("Detail").tag(0)
-                    Text("Event Location").tag(1)
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                
+                PickerTabView(pickerTabSelection: $pickerTab)
+
                 if pickerTab == 0 {
                     PersonInformationFormView(mode: .edit, inputImage: $viewModel.inputImage, newPersonName: $viewModel.selectedPerson.name, newPersonLastName: $viewModel.selectedPerson.lastName, newPersonDescription: $viewModel.selectedPerson.description, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {})
                 } else {

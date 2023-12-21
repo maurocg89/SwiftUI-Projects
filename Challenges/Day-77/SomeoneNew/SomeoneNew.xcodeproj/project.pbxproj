@@ -38,6 +38,7 @@
 		50EDFD542AC4640F008C95A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50EDFD532AC4640F008C95A9 /* Assets.xcassets */; };
 		50EDFD582AC4640F008C95A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50EDFD572AC4640F008C95A9 /* Preview Assets.xcassets */; };
 		50FF6ED82B3462B200097679 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF6ED72B3462B200097679 /* Binding+Extension.swift */; };
+		50FF6EDB2B34855E00097679 /* PickerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF6EDA2B34855E00097679 /* PickerTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		50EDFD552AC4640F008C95A9 /* SomeoneNew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SomeoneNew.entitlements; sourceTree = "<group>"; };
 		50EDFD572AC4640F008C95A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50FF6ED72B3462B200097679 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
+		50FF6EDA2B34855E00097679 /* PickerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				50A7C37F2B2B2AF70030D037 /* MapView */,
 				50C91D4E2ADE43240071B0E0 /* PersonCardView */,
 				50AD2BC72B163A7C0083191C /* PersonInformationFormView */,
+				50FF6ED92B34854700097679 /* PickerTabView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -302,6 +305,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		50FF6ED92B34854700097679 /* PickerTabView */ = {
+			isa = PBXGroup;
+			children = (
+				50FF6EDA2B34855E00097679 /* PickerTabView.swift */,
+			);
+			path = PickerTabView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +399,7 @@
 				50C7ABBB2AEBF79B00A08055 /* AddPersonView.swift in Sources */,
 				50AD2BD02B18D7240083191C /* EditPersonView-ViewModel.swift in Sources */,
 				50A7C37E2B2A02300030D037 /* ListLayout.swift in Sources */,
+				50FF6EDB2B34855E00097679 /* PickerTabView.swift in Sources */,
 				50FF6ED82B3462B200097679 /* Binding+Extension.swift in Sources */,
 				50C91D502ADE433A0071B0E0 /* PersonCardView.swift in Sources */,
 				5062D06F2ADCDCDB00B24FBC /* GridLayout.swift in Sources */,

@@ -11,13 +11,11 @@ import UIKit
 extension AddPersonView {
     @MainActor class ViewModel: ObservableObject {
         @Published var showAddImageSheet = false
-        @Published var newPersonName = ""
-        @Published var newPersonLastName = ""
-        @Published var newPersonDescritpion = ""
         @Published var inputImage: UIImage?
+        @Published var mapRegion = Location.mapRegionExample
+        @Published var newPerson = Person.empty
         @Published private(set) var people: [Person]
 
-        let savedFileName = "SavedPeople"
         let compressionQuality = 0.8
 
         init() {
@@ -35,15 +33,15 @@ extension AddPersonView {
         }
 
         func addPerson() {
-            addPerson(name: self.newPersonName, lastName: self.newPersonLastName, description: self.newPersonDescritpion, image: self.inputImage!)
+            addPerson(name: self.newPerson.name, lastName: self.newPerson.lastName, description: self.newPerson.description, image: self.inputImage!, location: self.newPerson.location ?? Location.empty)
         }
 
-        private func addPerson(name: String, lastName: String = "", description: String = "", image: UIImage) {
+        private func addPerson(name: String, lastName: String = "", description: String = "", image: UIImage, location: Location) {
             guard let imageData = image.jpegData(compressionQuality: compressionQuality) else {
                 // showError
                 return
             }
-            let newPerson = Person(id: UUID(), name: name, lastName: lastName, description: description, imageData: imageData)
+            let newPerson = Person(id: UUID(), name: name, lastName: lastName, description: description, imageData: imageData, location: location)
             people.append(newPerson)
             save()
         }
