@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+enum PersonInformationMode {
+    case edit
+    case detail
+    case add
+}
+
 struct PersonInformationFormView: View {
     @Environment(\.dismiss) var dismiss
-    var isDetailView: Bool
+    var mode: PersonInformationMode
     @Binding var inputImage: UIImage?
     @Binding var newPersonName: String
     @Binding var newPersonLastName: String
@@ -71,7 +77,7 @@ struct PersonInformationFormView: View {
                         Text("Description")
                     }
 
-                    if !isDetailView {
+                    if mode == .add {
                         Section {
                             Button("Add person") {
                                 buttonAction?()
@@ -92,17 +98,6 @@ struct PersonInformationFormView: View {
                 ImagePicker(image: $inputImage)
             })
         }
-        .toolbar(content: {
-            if isDetailView {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") {
-                        buttonAction?()
-                        dismiss()
-                    }
-                    .disabled(!isFormValid())
-                }
-            }
-        })
     }
 
     func isFormValid() -> Bool {
@@ -113,5 +108,5 @@ struct PersonInformationFormView: View {
 }
 
 #Preview {
-    PersonInformationFormView(isDetailView: false, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), newPersonDescription: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
+    PersonInformationFormView(mode: .detail, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), newPersonDescription: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
 }

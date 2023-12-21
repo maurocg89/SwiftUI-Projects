@@ -11,10 +11,9 @@ import SwiftUI
 struct MapView: View {
     @Binding var mapRegion: MKCoordinateRegion
     @Binding var location: Location
-    @Binding var newLocationName: String
     var isDetailView: Bool = true
     var buttonAction: (() -> Void)?
-    let locationManager = LocationManager()
+    var locationManager = LocationManager()
 
     var body: some View {
         VStack {
@@ -46,18 +45,14 @@ struct MapView: View {
                         HStack {
                             Spacer()
                             Button {
-                                if newLocationName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                                    // Show modal
-                                    return
-                                }
-                                self.location = Location(id: UUID(), name: newLocationName, latitude: self.mapRegion.center.latitude, longitude: self.mapRegion.center.longitude)
+                                self.location = Location(id: UUID(), name: location.name, latitude: self.mapRegion.center.latitude, longitude: self.mapRegion.center.longitude)
                                 buttonAction?()
                             } label: {
                                 Image(systemName: "plus")
                                     .padding()
-                                    .background(.black.opacity(0.75))
+                                    .background(.blue.opacity(0.75))
                                     .foregroundColor(.white)
-                                    .font(.title)
+                                    .font(.footnote)
                                     .clipShape(Circle())
                                     .padding(.trailing)
                             }
@@ -68,15 +63,20 @@ struct MapView: View {
             } // ZStack
             Form {
                 Section("Place Description") {
-                    TextField("", text: $newLocationName, axis: .vertical)
+                    TextField("", text: $location.name, axis: .vertical)
                         .disabled(isDetailView)
                 }
             }
             .scrollDisabled(true)
         } // VStack
+        .onAppear {
+            if !isDetailView {
+                locationManager.setup()
+            }
+        }
     }
 }
 
 #Preview {
-    MapView(mapRegion: .constant(Location.mapRegionExample), location: .constant(Location.example), newLocationName: .constant(""), isDetailView: false, buttonAction: {})
+    MapView(mapRegion: .constant(Location.mapRegionExample), location: .constant(Location.example), isDetailView: false, buttonAction: {})
 }

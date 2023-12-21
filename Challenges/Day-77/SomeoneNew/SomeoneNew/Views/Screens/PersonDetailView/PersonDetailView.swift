@@ -28,7 +28,7 @@ struct PersonDetailView: View {
                         detailView
                     } else {
                         if viewModel.selectedPerson.location != nil {
-                            MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, newLocationName: $viewModel.newLocationName, isDetailView: true, buttonAction: nil)
+                            MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, isDetailView: true, buttonAction: nil)
                         } else {
                             Text("There is no location")
                         }
@@ -38,11 +38,12 @@ struct PersonDetailView: View {
                 }
                 .toolbar(content: {
                     NavigationLink(destination: {
-                        EditPersonView(selectedPersonId: viewModel.selectedPerson.id)
+                        EditPersonView(viewModel: .init(selectedPerson: viewModel.selectedPerson))
                     }, label: {
                         Text("Edit")
                     })
                 })
+                .navigationBarTitleDisplayMode(.inline)
             }
             .onAppear {
                 viewModel.getPersonUpdated(selectedPersonId)

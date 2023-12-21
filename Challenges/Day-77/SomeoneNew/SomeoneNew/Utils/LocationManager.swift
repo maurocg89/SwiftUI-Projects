@@ -17,7 +17,7 @@ class LocationManager: NSObject {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.setup()
+//        self.setup()
     }
 
     func setup() {
