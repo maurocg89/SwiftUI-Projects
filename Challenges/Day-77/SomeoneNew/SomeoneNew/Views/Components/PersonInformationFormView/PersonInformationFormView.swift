@@ -17,11 +17,8 @@ struct PersonInformationFormView: View {
     @Environment(\.dismiss) var dismiss
     var mode: PersonInformationMode
     @Binding var inputImage: UIImage?
-    @Binding var newPersonName: String
-    @Binding var newPersonLastName: String
-    @Binding var newPersonDescription: String
+    @Binding var person: Person
     @Binding var showAddImageSheet: Bool
-//    @Binding var person: Person
     var buttonAction: (() -> Void)?
 
     var body: some View {
@@ -64,28 +61,18 @@ struct PersonInformationFormView: View {
 
                 Form {
                     Section {
-                        TextField("Name", text: $newPersonName)
-                        TextField("Last Name", text: $newPersonLastName)
+                        TextField("Name", text: $person.name)
+                        TextField("Last Name", text: $person.lastName)
                     } header: {
                         Text("Person Information")
                     }
 
                     Section {
-                        TextField("Description", text: $newPersonDescription, axis: .vertical)
+                        TextField("Description", text: $person.description, axis: .vertical)
                             .lineLimit(5...)
 
                     } header: {
                         Text("Description")
-                    }
-
-                    if mode == .add {
-                        Section {
-                            Button("Add person") {
-                                buttonAction?()
-                                dismiss()
-                            }
-                            .disabled(!isFormValid())
-                        }
                     }
                 }
                 .scrollDisabled(true)
@@ -100,14 +87,8 @@ struct PersonInformationFormView: View {
             })
         }
     }
-
-    func isFormValid() -> Bool {
-        return !newPersonName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        && !newPersonLastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        && inputImage != nil
-    }
 }
 
 #Preview {
-    PersonInformationFormView(mode: .detail, inputImage: .constant(nil), newPersonName: .constant(""), newPersonLastName: .constant(""), newPersonDescription: .constant(""), showAddImageSheet: .constant(false), buttonAction: {})
+    PersonInformationFormView(mode: .detail, inputImage: .constant(nil), person: .constant(Person.example), showAddImageSheet: .constant(false), buttonAction: {})
 }

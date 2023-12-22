@@ -45,5 +45,12 @@ extension AddPersonView {
             people.append(newPerson)
             save()
         }
+
+        func isFormValid() -> Bool {
+            return !newPerson.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && !newPerson.lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && inputImage != nil
+            && (newPerson.location != nil && newPerson.location != Location.empty && !newPerson.location!.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+        }
     }
 }

@@ -18,16 +18,25 @@ struct AddPersonView: View {
             VStack {
                 PickerTabView(pickerTabSelection: $pickerTab)
                 if pickerTab == 0 {
-                    PersonInformationFormView(mode: .add, inputImage: $viewModel.inputImage, newPersonName: $viewModel.newPerson.name, newPersonLastName: $viewModel.newPerson.lastName, newPersonDescription: $viewModel.newPerson.description, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {
-                        viewModel.addPerson()
+                    PersonInformationFormView(mode: .add, inputImage: $viewModel.inputImage, person: $viewModel.newPerson, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {
+                            viewModel.addPerson()
                     })
                 } else {
                     MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.newPerson.location.withDefault(value: Location.empty), isDetailView: false, buttonAction: nil)
                 }
 
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add person") {
+                    viewModel.addPerson()
+                    dismiss()
+                }
+                .disabled(!viewModel.isFormValid())
+            }
+        }
     }
 }
 

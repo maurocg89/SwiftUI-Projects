@@ -19,7 +19,7 @@ struct EditPersonView: View {
                 PickerTabView(pickerTabSelection: $pickerTab)
 
                 if pickerTab == 0 {
-                    PersonInformationFormView(mode: .edit, inputImage: $viewModel.inputImage, newPersonName: $viewModel.selectedPerson.name, newPersonLastName: $viewModel.selectedPerson.lastName, newPersonDescription: $viewModel.selectedPerson.description, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {})
+                    PersonInformationFormView(mode: .edit, inputImage: $viewModel.inputImage, person: $viewModel.selectedPerson, showAddImageSheet: $viewModel.showAddImageSheet, buttonAction: {})
                 } else {
                     MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPerson.location.withDefault(value: Location.empty), isDetailView: false, buttonAction: nil)
                 }
