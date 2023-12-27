@@ -59,6 +59,9 @@ struct MapView: View {
                         } // HStack
                         .padding(.bottom)
                     } // VStack
+                    .onTapGesture {
+                        self.hideKeyboard()
+                    }
                 }
             } // ZStack
             Form {

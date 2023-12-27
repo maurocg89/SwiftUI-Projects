@@ -12,4 +12,8 @@ extension View {
         return Color.backgroundColor
             .ignoresSafeArea()
     }
+
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }

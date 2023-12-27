@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Add an option to delete a person
 struct PeopleListView: View {
     @StateObject private var viewModel = ViewModel()
 
@@ -14,26 +15,22 @@ struct PeopleListView: View {
         NavigationStack {
             ZStack {
                 backgroundColor()
-                VStack {
-                    if viewModel.showingGrid {
-                        GridLayout(people: $viewModel.people)
-                    } else {
-                        ListLayout(people: $viewModel.people)
-                    }
-                    Button("Reset Data", role: .destructive) {
-                        viewModel.resetData()
-                    }
+                if viewModel.people.isEmpty {
+                    emptyView
+                } else {
+                    peopleListView
                 }
-                .padding(viewModel.showingGrid ? 10 : 0)
-                .navigationTitle("List of people")
-                .toolbar(id: "options") {
-                    ToolbarItem(id: "add", placement: .primaryAction) {
-                        NavigationLink(destination: {
-                            AddPersonView()
-                        }, label: {
-                            Image(systemName: "plus")
-                        })
-                    }
+            } // ZStack
+            .navigationTitle("List of people")
+            .toolbar(id: "options") {
+                ToolbarItem(id: "add", placement: .primaryAction) {
+                    NavigationLink(destination: {
+                        AddPersonView()
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                }
+                if !viewModel.people.isEmpty {
                     ToolbarItem(id: "list", placement: .topBarLeading) {
                         Menu {
                             Button(viewModel.showingGrid ? "Show List" : "Show Grid") {
@@ -44,11 +41,31 @@ struct PeopleListView: View {
                         }
                     }
                 }
-            }
+            } // Toolbar
             .onAppear {
                 viewModel.getPeople()
             }
         }
+    }
+
+    private var emptyView: some View {
+        VStack {
+            Text("""
+                 There are no people.
+                 Tap the '+' icon to add a new person.
+                 """)
+        }
+    }
+
+    private var peopleListView: some View {
+        VStack {
+            if viewModel.showingGrid {
+                GridLayout(people: $viewModel.people)
+            } else {
+                ListLayout(people: $viewModel.people)
+            }
+        } // VStack
+        .padding(viewModel.showingGrid ? 10 : 0)
     }
 }
 

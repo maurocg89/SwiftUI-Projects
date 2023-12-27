@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 enum PersonInformationMode {
     case edit
@@ -19,6 +20,8 @@ struct PersonInformationFormView: View {
     @Binding var inputImage: UIImage?
     @Binding var person: Person
     @Binding var showAddImageSheet: Bool
+    @State var showPickerDialogOptions = false
+    @State var pickerType: UIImagePickerController.SourceType = .photoLibrary
     var buttonAction: (() -> Void)?
 
     var body: some View {
@@ -53,10 +56,10 @@ struct PersonInformationFormView: View {
                                     .minimumScaleFactor(0.1)
                                 , alignment: .bottom)
                     }
-                }
+                } // ZStack
                 .frame(width: 140, height: 140, alignment: .center)
                 .onTapGesture {
-                    showAddImageSheet = true
+                    showPickerDialogOptions = true
                 }
 
                 Form {
@@ -66,6 +69,7 @@ struct PersonInformationFormView: View {
                     } header: {
                         Text("Person Information")
                     }
+                    .submitLabel(.done)
 
                     Section {
                         TextField("Description", text: $person.description, axis: .vertical)
@@ -81,9 +85,27 @@ struct PersonInformationFormView: View {
                 .navigationBarTitleDisplayMode(.inline)
 
                 Spacer()
+            } // VStack
+            .onTapGesture {
+                self.hideKeyboard()
             }
-            .sheet(isPresented: $showAddImageSheet, content: {
-                ImagePicker(image: $inputImage)
+            .confirmationDialog("", isPresented: $showPickerDialogOptions, titleVisibility: .hidden, actions: {
+                Button("Camera") {
+                    pickerType = .camera
+                    showAddImageSheet.toggle()
+                }
+
+                Button("Photo Library") {
+                    pickerType = .photoLibrary
+                    showAddImageSheet.toggle()
+                }
+            })
+            .fullScreenCover(isPresented: $showAddImageSheet, content: {
+                if pickerType == .photoLibrary {
+                    ImagePicker(image: $inputImage)
+                } else {
+                    AccessCameraView(image: $inputImage)
+                }
             })
         }
     }
