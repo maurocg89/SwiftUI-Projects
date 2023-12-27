@@ -25,9 +25,9 @@ struct AddPersonView: View {
                     MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.newPerson.location.withDefault(value: Location.empty), isDetailView: false, buttonAction: nil)
                 }
 
-            }
+            } //VStack
             .navigationBarTitleDisplayMode(.inline)
-        }
+        } // ZStack
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add person") {

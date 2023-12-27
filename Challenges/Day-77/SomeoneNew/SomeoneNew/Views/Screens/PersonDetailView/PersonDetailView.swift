@@ -22,15 +22,11 @@ struct PersonDetailView: View {
                     if pickerTab == 0 {
                         detailView
                     } else {
-                        if viewModel.selectedPerson.location != nil {
-                            MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, isDetailView: true, buttonAction: nil)
-                        } else {
-                            Text("There is no location")
-                        }
+                        mapView
                     }
 
                     Spacer()
-                }
+                } // VStack
                 .toolbar(content: {
                     NavigationLink(destination: {
                         EditPersonView(viewModel: .init(selectedPerson: viewModel.selectedPerson))
@@ -39,7 +35,7 @@ struct PersonDetailView: View {
                     })
                 })
                 .navigationBarTitleDisplayMode(.inline)
-            }
+            } // ZStack
             .onAppear {
                 viewModel.getPersonUpdated(selectedPersonId)
             }
@@ -48,19 +44,7 @@ struct PersonDetailView: View {
 
     private var detailView: some View {
         VStack {
-            Group {
-                if viewModel.selectedPerson.image != nil {
-                    Image(uiImage: viewModel.selectedPerson.image!)
-                        .resizable()
-                        .clipShape(Circle())
-                } else {
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .foregroundStyle(Color.black
-                            .opacity(0.7))
-                }
-            }
-            .frame(width: 140, height: 140, alignment: .top)
+            imageSection
 
             Text("\(viewModel.selectedPerson.name) \(viewModel.selectedPerson.lastName)" )
                 .font(.title)
@@ -74,6 +58,31 @@ struct PersonDetailView: View {
                 }
             }
             .scrollDisabled(true)
+        }
+    }
+
+    private var imageSection: some View {
+        Group {
+            if viewModel.selectedPerson.image != nil {
+                Image(uiImage: viewModel.selectedPerson.image!)
+                    .resizable()
+                    .clipShape(Circle())
+            } else {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .foregroundStyle(Color.black
+                        .opacity(0.7))
+            }
+        }
+        .frame(width: 140, height: 140, alignment: .top)
+    }
+
+    @ViewBuilder
+    private var mapView: some View {
+        if viewModel.selectedPerson.location != nil {
+            MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, isDetailView: true, buttonAction: nil)
+        } else {
+            Text("There is no location")
         }
     }
 }

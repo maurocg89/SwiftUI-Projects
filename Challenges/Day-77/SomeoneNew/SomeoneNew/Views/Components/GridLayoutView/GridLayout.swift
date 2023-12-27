@@ -25,7 +25,7 @@ struct GridLayout: View {
                 }
             } // LazyVGrid
             .padding([.horizontal, .bottom])
-        }
+        } // ScrollView
     }
 }
 

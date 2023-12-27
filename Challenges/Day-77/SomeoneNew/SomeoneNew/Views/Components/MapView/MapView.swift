@@ -17,66 +17,80 @@ struct MapView: View {
 
     var body: some View {
         VStack {
-            ZStack {
-                Map(coordinateRegion: $mapRegion, showsUserLocation: !isDetailView, annotationItems: [location]) {
-                    MapMarker(coordinate: $0.coordinate)
-                } // Map
-                .disabled(isDetailView)
-                .ignoresSafeArea()
-
-                if !isDetailView {
-                    Circle()
-                        .fill(.blue)
-                        .opacity(0.3)
-                        .frame(width: 22, height: 22)
-
-                    VStack {
-                        Spacer()
-                        LocationButton(title: "Current Location") {
-                            mapRegion = locationManager.getUserLocation()
-                            debugPrint("MAPREGION: \(mapRegion.center)")
-                        }
-                        .symbolVariant(.fill)
-                        .padding()
-                    } // VStack
-
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Button {
-                                self.location = Location(id: UUID(), name: location.name, latitude: self.mapRegion.center.latitude, longitude: self.mapRegion.center.longitude)
-                                buttonAction?()
-                            } label: {
-                                Image(systemName: "plus")
-                                    .padding()
-                                    .background(.blue.opacity(0.75))
-                                    .foregroundColor(.white)
-                                    .font(.footnote)
-                                    .clipShape(Circle())
-                                    .padding(.trailing)
-                            }
-                        } // HStack
-                        .padding(.bottom)
-                    } // VStack
-                    .onTapGesture {
-                        self.hideKeyboard()
-                    }
-                }
-            } // ZStack
-            Form {
-                Section("Place Description") {
-                    TextField("", text: $location.name, axis: .vertical)
-                        .disabled(isDetailView)
-                }
-            }
-            .scrollDisabled(true)
-        } // VStack
+            mapSection
+            formSection
+        }
         .onAppear {
             if !isDetailView {
                 locationManager.setup()
             }
         }
+        .onTapGesture {
+            self.hideKeyboard()
+        }
+    }
+
+    private var mapSection: some View {
+        ZStack {
+            Map(coordinateRegion: $mapRegion, showsUserLocation: !isDetailView, annotationItems: [location]) {
+                MapMarker(coordinate: $0.coordinate)
+            } // Map
+            .disabled(isDetailView)
+            .ignoresSafeArea()
+
+            if !isDetailView {
+                Circle()
+                    .fill(.blue)
+                    .opacity(0.3)
+                    .frame(width: 22, height: 22)
+
+                VStack {
+                    Spacer()
+                    LocationButton(title: "Current Location") {
+                        mapRegion = locationManager.getUserLocation()
+                        debugPrint("MAPREGION: \(mapRegion.center)")
+                    }
+                    .symbolVariant(.fill)
+                    .padding()
+                } // VStack
+
+                markLocationButton
+            } // Edit Mode
+        } // ZStack
+    }
+
+    private var markLocationButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button {
+                    self.location = Location(id: UUID(), name: location.name, latitude: self.mapRegion.center.latitude, longitude: self.mapRegion.center.longitude)
+                    buttonAction?()
+                } label: {
+                    Image(systemName: "plus")
+                        .padding()
+                        .background(.blue.opacity(0.75))
+                        .foregroundColor(.white)
+                        .font(.footnote)
+                        .clipShape(Circle())
+                        .padding(.trailing)
+                }
+            } // HStack
+            .padding(.bottom)
+        } // VStack
+    }
+
+    private var formSection: some View {
+        Form {
+            Section("Place Description") {
+                TextField("", text: $location.name)
+                    .disabled(isDetailView)
+                    .lineLimit(1)
+                    .submitLabel(.done)
+            }
+        }
+        .scrollDisabled(true)
     }
 }
 

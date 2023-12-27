@@ -28,61 +28,9 @@ struct PersonInformationFormView: View {
         ZStack {
             backgroundColor()
             VStack {
-                ZStack {
-                    if inputImage != nil {
-                        Image(uiImage: inputImage!)
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(
-                                Text("Edit")
-                                    .background(Color.black.opacity(0.6))
-                                    .lineLimit(1)
-                                    .font(.headline)
-                                    .foregroundStyle(.white)
-                                    .clipShape(ContainerRelativeShape()).padding(4)
-                                    .minimumScaleFactor(0.1)
-                            , alignment: .bottom)
-                    } else {
-                        Image(systemName: "photo.circle")
-                            .resizable()
-                            .foregroundStyle(Color.gray)
-                            .overlay(
-                                Text("Add picture")
-                                    .background(Color.gray)
-                                    .lineLimit(1)
-                                    .font(.headline)
-                                    .foregroundStyle(.white)
-                                    .clipShape(ContainerRelativeShape()).padding()
-                                    .minimumScaleFactor(0.1)
-                                , alignment: .bottom)
-                    }
-                } // ZStack
-                .frame(width: 140, height: 140, alignment: .center)
-                .onTapGesture {
-                    showPickerDialogOptions = true
-                }
+                circleImageSection
 
-                Form {
-                    Section {
-                        TextField("Name", text: $person.name)
-                        TextField("Last Name", text: $person.lastName)
-                    } header: {
-                        Text("Person Information")
-                    }
-                    .submitLabel(.done)
-
-                    Section {
-                        TextField("Description", text: $person.description, axis: .vertical)
-                            .lineLimit(5...)
-
-                    } header: {
-                        Text("Description")
-                    }
-                }
-                .scrollDisabled(true)
-                .frame(maxHeight: .infinity)
-                .navigationTitle("")
-                .navigationBarTitleDisplayMode(.inline)
+                formSection
 
                 Spacer()
             } // VStack
@@ -108,6 +56,60 @@ struct PersonInformationFormView: View {
                 }
             })
         }
+    }
+
+    private var circleImageSection: some View {
+        VStack {
+            circleImageView
+                .frame(width: 140, height: 140, alignment: .center)
+
+            Text(inputImage == nil ? "Add picture" : "Change")
+                .font(.headline)
+                .foregroundStyle(.primary)
+                .padding(10)
+                .background(Color(uiColor: .lightGray))
+                .clipShape(.capsule)
+        } // VStack
+        .onTapGesture {
+            showPickerDialogOptions = true
+        }
+    }
+
+    @ViewBuilder
+    private var circleImageView: some View {
+        if inputImage != nil {
+            Image(uiImage: inputImage!)
+                .resizable()
+                .clipShape(Circle())
+        } else {
+            Image(systemName: "photo.circle")
+                .resizable()
+                .foregroundStyle(Color(uiColor: .lightGray))
+        }
+    }
+
+    private var formSection: some View {
+        Form {
+            Section {
+                TextField("Name", text: $person.name)
+                TextField("Last Name", text: $person.lastName)
+            } header: {
+                Text("Person Information")
+            }
+            .submitLabel(.done)
+
+            Section {
+                TextField("Description", text: $person.description, axis: .vertical)
+                    .lineLimit(5...)
+
+            } header: {
+                Text("Description")
+            }
+        } // Form
+        .scrollDisabled(true)
+        .frame(maxHeight: .infinity)
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

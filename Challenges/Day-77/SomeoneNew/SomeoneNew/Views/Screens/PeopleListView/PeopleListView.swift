@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: Add an option to delete a person
 struct PeopleListView: View {
     @StateObject private var viewModel = ViewModel()
 
@@ -62,7 +61,7 @@ struct PeopleListView: View {
             if viewModel.showingGrid {
                 GridLayout(people: $viewModel.people)
             } else {
-                ListLayout(people: $viewModel.people)
+                ListLayout(people: $viewModel.people, onDelete: viewModel.deletePerson)
             }
         } // VStack
         .padding(viewModel.showingGrid ? 10 : 0)

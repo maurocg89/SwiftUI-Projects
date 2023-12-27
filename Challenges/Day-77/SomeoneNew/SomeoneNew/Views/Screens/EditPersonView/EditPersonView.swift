@@ -23,7 +23,7 @@ struct EditPersonView: View {
                 } else {
                     MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPerson.location.withDefault(value: Location.empty), isDetailView: false, buttonAction: nil)
                 }
-            }
+            } // VStack
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
@@ -33,7 +33,7 @@ struct EditPersonView: View {
                     .disabled(!viewModel.isFormValid())
                 }
             })
-        }
+        } // ZStack
     }
 }
 

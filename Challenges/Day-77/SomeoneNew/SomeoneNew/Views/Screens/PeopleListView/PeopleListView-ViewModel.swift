@@ -13,14 +13,18 @@ extension PeopleListView {
 //    MARK: iOS 17 new implementation
 //    @MainActor
 //    @Observable class ViewModel {
-//        var selectedPerson: Person?
-//        private(set) var people: [Person]
     @MainActor class ViewModel: ObservableObject {
         @Published var people: [Person]
         @Published var showingGrid = false
 
         init() {
             people = PeopleServices.shared.getPeople()
+        }
+
+        func deletePerson(id: UUID) {
+            Task {
+                PeopleServices.shared.deletePerson(id: id)
+            }
         }
 
         func resetData() {

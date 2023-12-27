@@ -15,9 +15,11 @@ extension PersonDetailView {
         @Published var selectedPersonLocation = Location.empty
 
         func getPersonUpdated(_ id: UUID) {
-            selectedPerson = PeopleServices.shared.getPersonById(id) ?? Person.example
-            mapRegion = selectedPerson.location?.mapRegion ?? Location.mapRegionExample
-            selectedPersonLocation = selectedPerson.location ?? Location.example
+            DispatchQueue.main.async {
+                self.selectedPerson = PeopleServices.shared.getPersonById(id) ?? Person.example
+                self.mapRegion = self.selectedPerson.location?.mapRegion ?? Location.mapRegionExample
+                self.selectedPersonLocation = self.selectedPerson.location ?? Location.example
+            }
         }
     }
 }
