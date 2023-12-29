@@ -62,13 +62,10 @@ struct PersonInformationFormView: View {
         VStack {
             circleImageView
                 .frame(width: 140, height: 140, alignment: .center)
-
-            Text(inputImage == nil ? "Add picture" : "Change")
-                .font(.headline)
-                .foregroundStyle(.primary)
-                .padding(10)
-                .background(Color(uiColor: .lightGray))
-                .clipShape(.capsule)
+            
+            Button(inputImage == nil ? "Add picture" : "Change") {
+                showPickerDialogOptions = true
+            }
         } // VStack
         .onTapGesture {
             showPickerDialogOptions = true

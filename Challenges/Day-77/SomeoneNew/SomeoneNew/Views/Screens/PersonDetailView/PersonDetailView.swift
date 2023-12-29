@@ -10,6 +10,7 @@ import SwiftUI
 struct PersonDetailView: View {
     @StateObject private var viewModel = ViewModel()
     @State private var pickerTab = 0
+    @State private var openFullImage = false
     var selectedPersonId: UUID
 
     var body: some View {
@@ -35,9 +36,15 @@ struct PersonDetailView: View {
                     })
                 })
                 .navigationBarTitleDisplayMode(.inline)
+
+                if openFullImage {
+                    fullImageView
+                }
+
             } // ZStack
             .onAppear {
                 viewModel.getPersonUpdated(selectedPersonId)
+                openFullImage = false
             }
         }
     }
@@ -75,6 +82,11 @@ struct PersonDetailView: View {
             }
         }
         .frame(width: 140, height: 140, alignment: .top)
+        .onTapGesture {
+            withAnimation {
+                openFullImage = true
+            }
+        }
     }
 
     @ViewBuilder
@@ -83,6 +95,25 @@ struct PersonDetailView: View {
             MapView(mapRegion: $viewModel.mapRegion, location: $viewModel.selectedPersonLocation, isDetailView: true, buttonAction: nil)
         } else {
             Text("There is no location")
+        }
+    }
+
+    private var fullImageView: some View {
+        ZStack {
+            Color(.white)
+            if viewModel.selectedPerson.image != nil {
+                Image(uiImage: viewModel.selectedPerson.image!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+        .ignoresSafeArea()
+        .onTapGesture {
+            openFullImage.toggle()
         }
     }
 }
