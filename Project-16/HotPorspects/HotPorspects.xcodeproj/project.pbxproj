@@ -13,6 +13,9 @@
 		50C255A72B445F76003002F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C255A62B445F76003002F2 /* Preview Assets.xcassets */; };
 		50C255AF2B445FBF003002F2 /* EnvironmentObjectPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255AE2B445FBF003002F2 /* EnvironmentObjectPlayground.swift */; };
 		50C255B12B446743003002F2 /* TabViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255B02B446743003002F2 /* TabViewPlayground.swift */; };
+		50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */; };
+		50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */; };
+		50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		50C255A62B445F76003002F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50C255AE2B445FBF003002F2 /* EnvironmentObjectPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectPlayground.swift; sourceTree = "<group>"; };
 		50C255B02B446743003002F2 /* TabViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPlayground.swift; sourceTree = "<group>"; };
+		50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectWillChangePlayground.swift; sourceTree = "<group>"; };
+		50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypePlayground.swift; sourceTree = "<group>"; };
+		50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolationPlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			children = (
 				50C255AE2B445FBF003002F2 /* EnvironmentObjectPlayground.swift */,
 				50C255B02B446743003002F2 /* TabViewPlayground.swift */,
+				50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */,
+				50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */,
+				50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -155,8 +164,11 @@
 			files = (
 				50C255AF2B445FBF003002F2 /* EnvironmentObjectPlayground.swift in Sources */,
 				50C255B12B446743003002F2 /* TabViewPlayground.swift in Sources */,
+				50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */,
 				50C255A12B445F74003002F2 /* ContentView.swift in Sources */,
 				50C2559F2B445F74003002F2 /* HotPorspectsApp.swift in Sources */,
+				50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */,
+				50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
