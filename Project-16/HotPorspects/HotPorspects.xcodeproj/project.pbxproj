@@ -16,6 +16,11 @@
 		50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */; };
 		50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */; };
 		50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */; };
+		50C255CF2B44932D003002F2 /* ContextMenuPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255CE2B44932D003002F2 /* ContextMenuPlayground.swift */; };
+		50C255D12B4496B9003002F2 /* CustomSwipeActionsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255D02B4496B9003002F2 /* CustomSwipeActionsPlayground.swift */; };
+		50C255D32B44980F003002F2 /* SchedulingLocalNotificationsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255D22B44980F003002F2 /* SchedulingLocalNotificationsPlayground.swift */; };
+		50C255D52B44B240003002F2 /* SwiftPackageDependencyPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255D42B44B240003002F2 /* SwiftPackageDependencyPlayground.swift */; };
+		50C255D82B44B387003002F2 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 50C255D72B44B387003002F2 /* SamplePackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,10 @@
 		50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectWillChangePlayground.swift; sourceTree = "<group>"; };
 		50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypePlayground.swift; sourceTree = "<group>"; };
 		50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolationPlayground.swift; sourceTree = "<group>"; };
+		50C255CE2B44932D003002F2 /* ContextMenuPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuPlayground.swift; sourceTree = "<group>"; };
+		50C255D02B4496B9003002F2 /* CustomSwipeActionsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwipeActionsPlayground.swift; sourceTree = "<group>"; };
+		50C255D22B44980F003002F2 /* SchedulingLocalNotificationsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingLocalNotificationsPlayground.swift; sourceTree = "<group>"; };
+		50C255D42B44B240003002F2 /* SwiftPackageDependencyPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPackageDependencyPlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C255D82B44B387003002F2 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,10 @@
 				50C255C82B44862D003002F2 /* ObservableObjectWillChangePlayground.swift */,
 				50C255CA2B4487F5003002F2 /* ResultTypePlayground.swift */,
 				50C255CC2B448B3A003002F2 /* ImageInterpolationPlayground.swift */,
+				50C255CE2B44932D003002F2 /* ContextMenuPlayground.swift */,
+				50C255D02B4496B9003002F2 /* CustomSwipeActionsPlayground.swift */,
+				50C255D22B44980F003002F2 /* SchedulingLocalNotificationsPlayground.swift */,
+				50C255D42B44B240003002F2 /* SwiftPackageDependencyPlayground.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -108,6 +122,9 @@
 			dependencies = (
 			);
 			name = HotPorspects;
+			packageProductDependencies = (
+				50C255D72B44B387003002F2 /* SamplePackage */,
+			);
 			productName = HotPorspects;
 			productReference = 50C2559B2B445F74003002F2 /* HotPorspects.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 50C255922B445F74003002F2;
+			packageReferences = (
+				50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			productRefGroup = 50C2559C2B445F74003002F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,10 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C255AF2B445FBF003002F2 /* EnvironmentObjectPlayground.swift in Sources */,
+				50C255D32B44980F003002F2 /* SchedulingLocalNotificationsPlayground.swift in Sources */,
+				50C255D52B44B240003002F2 /* SwiftPackageDependencyPlayground.swift in Sources */,
 				50C255B12B446743003002F2 /* TabViewPlayground.swift in Sources */,
+				50C255D12B4496B9003002F2 /* CustomSwipeActionsPlayground.swift in Sources */,
 				50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */,
 				50C255A12B445F74003002F2 /* ContentView.swift in Sources */,
 				50C2559F2B445F74003002F2 /* HotPorspectsApp.swift in Sources */,
+				50C255CF2B44932D003002F2 /* ContextMenuPlayground.swift in Sources */,
 				50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */,
 				50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */,
 			);
@@ -389,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50C255D72B44B387003002F2 /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50C255932B445F74003002F2 /* Project object */;
 }
