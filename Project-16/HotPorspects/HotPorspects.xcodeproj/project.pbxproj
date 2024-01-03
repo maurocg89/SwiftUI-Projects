@@ -10,6 +10,7 @@
 		50B03FBC2B45973300A65EFC /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBB2B45973300A65EFC /* ProspectsView.swift */; };
 		50B03FBE2B45986D00A65EFC /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBD2B45986D00A65EFC /* MeView.swift */; };
 		50B03FC12B459A6F00A65EFC /* Propspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FC02B459A6F00A65EFC /* Propspect.swift */; };
+		50B03FC42B45ABE900A65EFC /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 50B03FC32B45ABE900A65EFC /* CodeScanner */; };
 		50C2559F2B445F74003002F2 /* HotPorspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C2559E2B445F74003002F2 /* HotPorspectsApp.swift */; };
 		50C255A12B445F74003002F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255A02B445F74003002F2 /* ContentView.swift */; };
 		50C255A32B445F76003002F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C255A22B445F76003002F2 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B03FC42B45ABE900A65EFC /* CodeScanner in Frameworks */,
 				50C255D82B44B387003002F2 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +167,7 @@
 			name = HotPorspects;
 			packageProductDependencies = (
 				50C255D72B44B387003002F2 /* SamplePackage */,
+				50B03FC32B45ABE900A65EFC /* CodeScanner */,
 			);
 			productName = HotPorspects;
 			productReference = 50C2559B2B445F74003002F2 /* HotPorspects.app */;
@@ -196,6 +199,7 @@
 			mainGroup = 50C255922B445F74003002F2;
 			packageReferences = (
 				50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+				50B03FC22B45ABE900A65EFC /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 50C2559C2B445F74003002F2 /* Products */;
 			projectDirPath = "";
@@ -370,6 +374,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -409,6 +414,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -459,6 +465,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		50B03FC22B45ABE900A65EFC /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.3;
+			};
+		};
 		50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/SamplePackage";
@@ -470,6 +484,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		50B03FC32B45ABE900A65EFC /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50B03FC22B45ABE900A65EFC /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		50C255D72B44B387003002F2 /* SamplePackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50C255D62B44B387003002F2 /* XCRemoteSwiftPackageReference "SamplePackage" */;
