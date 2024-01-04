@@ -19,38 +19,29 @@ struct ProspectsView: View {
     let filter: FilterType
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundStyle(.secondary)
+                    HStack(alignment: .center) {
+                        if filter == .none {
+                            Image(systemName: prospect.isContacted ? "person.crop.circle.badge.checkmark" : "person.crop.circle.badge.xmark")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .foregroundStyle(prospect.isContacted ? .green : .red)
+                                .padding(.trailing)
+                        }
+
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundStyle(.secondary)
+                        }
+
                     }
                     .swipeActions {
-                        if prospect.isContacted {
-                            Button {
-                                prospects.toggle(prospect)
-                            } label: {
-                                Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
-                            }
-                            .tint(.red)
-                        } else {
-                            Button {
-                                prospects.toggle(prospect)
-                            } label: {
-                                Label("Mark Uncontacted", systemImage: "person.crop.circle.fill.badge.checkmark")
-                            }
-                            .tint(.green)
-
-                            Button {
-                                addNotification(for: prospect)
-                            } label: {
-                                Label("Remind me", systemImage: "bell")
-                            }
-                            .tint(.orange)
-                        }
+                        swipeActions(prospect: prospect)
                     }
                 }
             }
@@ -90,7 +81,37 @@ struct ProspectsView: View {
         }
     }
 
-    func handleScan(results: Result<ScanResult, ScanError>) {
+    @ViewBuilder
+    private func swipeActions(prospect: Prospect) -> some View {
+        if prospect.isContacted {
+            Group {
+                Button {
+                    prospects.toggle(prospect)
+                } label: {
+                    Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
+                }
+                .tint(.red)
+            }
+        } else {
+            Group {
+                Button {
+                prospects.toggle(prospect)
+            } label: {
+                Label("Mark Uncontacted", systemImage: "person.crop.circle.fill.badge.checkmark")
+            }
+            .tint(.green)
+
+                Button {
+                    addNotification(for: prospect)
+                } label: {
+                    Label("Remind me", systemImage: "bell")
+                }
+                .tint(.orange)
+            }
+        }
+    }
+
+    private func handleScan(results: Result<ScanResult, ScanError>) {
         isShowingScanner = false
 
         switch results {
@@ -107,7 +128,7 @@ struct ProspectsView: View {
         }
     }
 
-    func addNotification(for prospect: Prospect) {
+    private func addNotification(for prospect: Prospect) {
         let center = UNUserNotificationCenter.current()
 
         let addRequest = {
