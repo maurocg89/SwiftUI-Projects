@@ -13,35 +13,63 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
-    
+
+    enum SortedType: String {
+        case recent = "More Recent", name
+    }
+
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var sortedBy: SortedType = .recent
+    @State private var isShowingSortOptionSheet = false
     let filter: FilterType
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(filteredProspects) { prospect in
-                    HStack(alignment: .center) {
-                        if filter == .none {
-                            Image(systemName: prospect.isContacted ? "person.crop.circle.badge.checkmark" : "person.crop.circle.badge.xmark")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .foregroundStyle(prospect.isContacted ? .green : .red)
-                                .padding(.trailing)
-                        }
+            VStack {
+                HStack {
+                    Text("Order by: ")
+                        .font(.title3)
+                    +
+                    Text(sortedBy.rawValue.capitalized)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        isShowingSortOptionSheet = true
+                    }, label: {
+                        Label("", systemImage: "arrow.up.arrow.down")
+                    })
+                    .foregroundStyle(.primary)
+                    .font(.title3)
+                }
+                .padding()
 
-                        VStack(alignment: .leading) {
-                            Text(prospect.name)
-                                .font(.headline)
-                            Text(prospect.emailAddress)
-                                .foregroundStyle(.secondary)
-                        }
+                List {
+                    ForEach(filteredProspects) { prospect in
+                        HStack(alignment: .center) {
+                            if filter == .none {
+                                Image(systemName: prospect.isContacted ? "person.crop.circle.badge.checkmark" : "person.crop.circle.badge.xmark")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(prospect.isContacted ? .green : .red)
+                                    .padding(.trailing)
+                            }
 
-                    }
-                    .swipeActions {
-                        swipeActions(prospect: prospect)
+                            VStack(alignment: .leading) {
+                                Text(prospect.name)
+                                    .font(.headline)
+                                Text(prospect.emailAddress)
+                                    .foregroundStyle(.secondary)
+                            }
+
+                        }
+                        .swipeActions {
+                            swipeActions(prospect: prospect)
+                        }
                     }
                 }
             }
@@ -55,6 +83,19 @@ struct ProspectsView: View {
             }
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Mauro Grillo\nmaurocgrillo@gmail.com", completion: handleScan)
+            }
+            .confirmationDialog("Order By", isPresented: $isShowingSortOptionSheet, titleVisibility: .visible) {
+                Button {
+                    sortedBy = .name
+                } label: {
+                    Text("Name")
+                }
+
+                Button {
+                    sortedBy = .recent
+                } label: {
+                    Text("More Recent")
+                }
             }
         }
     }
@@ -73,12 +114,21 @@ struct ProspectsView: View {
     var filteredProspects: [Prospect] {
         switch filter {
         case .none:
-            return prospects.people
+            return prospects.people.sorted(by: sortProspects)
         case .contacted:
             return prospects.people.filter { $0.isContacted }
+                .sorted(by: sortProspects)
         case .uncontacted:
             return prospects.people.filter { !$0.isContacted }
+                .sorted(by: sortProspects)
         }
+    }
+
+    private func sortProspects(_ prospect1: Prospect, _ prospect2: Prospect) -> Bool {
+        if sortedBy == .name {
+          return prospect1.name < prospect2.name
+        }
+        return true
     }
 
     @ViewBuilder
