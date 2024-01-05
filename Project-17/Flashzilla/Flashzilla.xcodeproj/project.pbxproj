@@ -17,6 +17,10 @@
 		50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */; };
 		50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */; };
 		50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */; };
+		50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F52B487F3C00A9B7A5 /* CardView.swift */; };
+		50CFD2FA2B487F6800A9B7A5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F92B487F6800A9B7A5 /* Card.swift */; };
+		50CFD2FC2B48802C00A9B7A5 /* ContentViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */; };
+		50CFD3002B48829900A9B7A5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPlayground.swift; sourceTree = "<group>"; };
 		50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundStatePlayground.swift; sourceTree = "<group>"; };
 		50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingAccessibilityPlayground.swift; sourceTree = "<group>"; };
+		50CFD2F52B487F3C00A9B7A5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		50CFD2F92B487F6800A9B7A5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPlayground.swift; sourceTree = "<group>"; };
+		50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,9 @@
 		50B03FDC2B4733B200A65EFC /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				50CFD2FE2B48828B00A9B7A5 /* Extensions */,
+				50CFD2F82B487F5D00A9B7A5 /* Models */,
+				50CFD2F22B487F1000A9B7A5 /* Views */,
 				50B03FEC2B47349400A65EFC /* Playground */,
 				50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */,
 				50B03FDF2B4733B200A65EFC /* ContentView.swift */,
@@ -91,8 +102,57 @@
 				50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */,
 				50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */,
 				50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */,
+				50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		50CFD2F22B487F1000A9B7A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50CFD2F32B487F1500A9B7A5 /* Components */,
+				50CFD2F42B487F1A00A9B7A5 /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50CFD2F32B487F1500A9B7A5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				50CFD2FD2B48823100A9B7A5 /* CardView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		50CFD2F42B487F1A00A9B7A5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		50CFD2F82B487F5D00A9B7A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50CFD2F92B487F6800A9B7A5 /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50CFD2FD2B48823100A9B7A5 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				50CFD2F52B487F3C00A9B7A5 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		50CFD2FE2B48828B00A9B7A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +226,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */,
+				50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */,
 				50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */,
 				50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */,
 				50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */,
+				50CFD2FC2B48802C00A9B7A5 /* ContentViewPlayground.swift in Sources */,
 				50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */,
 				50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */,
+				50CFD2FA2B487F6800A9B7A5 /* Card.swift in Sources */,
 				50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */,
+				50CFD3002B48829900A9B7A5 /* View+Extension.swift in Sources */,
 				50B03FF02B48369E00A65EFC /* HapticsPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +379,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -354,7 +418,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
