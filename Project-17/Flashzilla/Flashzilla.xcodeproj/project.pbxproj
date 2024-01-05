@@ -14,6 +14,9 @@
 		50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */; };
 		50B03FF02B48369E00A65EFC /* HapticsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */; };
 		50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */; };
+		50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */; };
+		50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */; };
+		50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesPlayground.swift; sourceTree = "<group>"; };
 		50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsPlayground.swift; sourceTree = "<group>"; };
 		50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestingPlayground.swift; sourceTree = "<group>"; };
+		50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPlayground.swift; sourceTree = "<group>"; };
+		50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundStatePlayground.swift; sourceTree = "<group>"; };
+		50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingAccessibilityPlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */,
 				50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */,
 				50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */,
+				50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */,
+				50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */,
+				50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -156,8 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */,
 				50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */,
+				50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */,
 				50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */,
+				50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */,
 				50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */,
 				50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */,
 				50B03FF02B48369E00A65EFC /* HapticsPlayground.swift in Sources */,

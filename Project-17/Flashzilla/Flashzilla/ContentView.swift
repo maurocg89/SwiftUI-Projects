@@ -13,7 +13,10 @@ struct ContentView: View {
 //            GesturesPlayground()
 //            Divider()
 //            HapticsPlayground()
-            HitTestingPlayground()
+//            HitTestingPlayground()
+//            TimerPlayground()
+//            AppBackgroundStatePlayground()
+            SupportingAccessibilityPlayground()
         }
     }
 }
