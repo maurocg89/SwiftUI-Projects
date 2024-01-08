@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50006F3B2B4C4D7000DE718D /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F3A2B4C4D7000DE718D /* EditCards.swift */; };
 		50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */; };
 		50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDF2B4733B200A65EFC /* ContentView.swift */; };
 		50B03FE22B4733B400A65EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE12B4733B400A65EFC /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50006F3A2B4C4D7000DE718D /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		50B03FDA2B4733B200A65EFC /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		50B03FDF2B4733B200A65EFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50006F3E2B4C7BD300DE718D /* EditCards */ = {
+			isa = PBXGroup;
+			children = (
+				50006F3A2B4C4D7000DE718D /* EditCards.swift */,
+			);
+			path = EditCards;
+			sourceTree = "<group>";
+		};
 		50B03FD12B4733B200A65EFC = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		50CFD2F42B487F1A00A9B7A5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				50006F3E2B4C7BD300DE718D /* EditCards */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 				50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */,
 				50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */,
 				50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */,
+				50006F3B2B4C4D7000DE718D /* EditCards.swift in Sources */,
 				50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */,
 				50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */,
 				50CFD2FC2B48802C00A9B7A5 /* ContentViewPlayground.swift in Sources */,

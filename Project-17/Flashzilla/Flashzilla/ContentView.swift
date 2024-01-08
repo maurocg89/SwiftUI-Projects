@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
     @Environment(\.scenePhase) var scenePhase
 
-    @State private var cards = Array<Card>(repeating: Card.example, count: 10)
+    @State private var cards: Array<Card> = []
     @State private var appIsActive = true
     @State private var timeRemaining = 100
+    @State private var showingEditScreen = false
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -40,6 +42,8 @@ struct ContentView: View {
                             }
                         }
                         .stacked(at: index, in: cards.count)
+                        .allowsHitTesting(index == cards.count - 1)
+                        .accessibilityHidden(index < cards.count - 1)
                     }
                 } // ZStack
                 .allowsHitTesting(timeRemaining > 0)
@@ -55,20 +59,58 @@ struct ContentView: View {
 
             } // VStack
 
-            if differentiateWithoutColor {
+            VStack {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        showingEditScreen = true
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .padding()
+                            .background(.black.opacity(0.7))
+                            .clipShape(.circle)
+                    }
+                } // HStack
+
+                Spacer()
+            } // VStack
+            .foregroundStyle(.white)
+            .font(.largeTitle)
+            .padding()
+
+            if differentiateWithoutColor || voiceOverEnabled {
                 VStack {
                     Spacer()
 
                     HStack {
-                        Image(systemName: "xmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.7))
-                            .clipShape(.circle)
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                                .padding()
+                                .background(.black.opacity(0.7))
+                                .clipShape(.circle)
+                        }
+                        .accessibilityLabel("Wrong")
+                        .accessibilityHint("Mark your answer as being incorrect")
+
                         Spacer()
-                        Image(systemName: "checkmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.7))
-                            .clipShape(.circle)
+
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "checkmark.circle")
+                                .padding()
+                                .background(.black.opacity(0.7))
+                                .clipShape(.circle)
+                        }
+                        .accessibilityLabel("Correct")
+                        .accessibilityHint("Mark your answer as being correct")
                     }
                     .foregroundStyle(.white)
                     .font(.largeTitle)
@@ -86,21 +128,34 @@ struct ContentView: View {
         .onChange(of: scenePhase) { newPhase in
             appIsActive = newPhase == .active && !cards.isEmpty
         }
+        .sheet(isPresented: $showingEditScreen, onDismiss: resetCards, content: EditCards.init)
+        .onAppear(perform: resetCards)
     }
 
-    func removeCard(at index: Int) {
-        cards.remove(at: index)
+    private func loadData() {
+        if let data = UserDefaults.standard.data(forKey: Card.savedFileName) {
+            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+                self.cards = decoded
+            }
+        }
 
+        appIsActive = !cards.isEmpty
+    }
+
+
+    func removeCard(at index: Int) {
+        guard index >= 0 else { return }
+
+        cards.remove(at: index)
         if cards.isEmpty {
             appIsActive = false
         }
-
     }
 
     func resetCards() {
-        cards = Array(repeating: Card.example, count: 10)
         timeRemaining = 100
         appIsActive = true
+        loadData()
     }
 }
 
