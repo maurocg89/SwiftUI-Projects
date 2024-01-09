@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct EditCards: View {
+    enum FocusedField {
+        case prompt, answer
+    }
+
     @Environment(\.dismiss) var dismiss
 
     @State private var cardList = Array<Card>()
     @State private var newCardPrompt = ""
     @State private var newCardAnswer = ""
+    @FocusState var focused: FocusedField?
 
     var body: some View {
         NavigationStack {
             List {
                 Section("Add new card") {
                     TextField("Prompt", text: $newCardPrompt)
+                        .focused($focused, equals: .prompt)
                     TextField("Answer", text: $newCardAnswer)
+                        .focused($focused, equals: .answer)
                     Button("Add Card") {
                         addCard()
                     }
@@ -62,6 +69,10 @@ struct EditCards: View {
         let card = Card(prompt: newCardPrompt, answer: newCardAnswer)
         cardList.insert(card, at: 0)
         saveData()
+
+        newCardPrompt = ""
+        newCardAnswer = ""
+        self.focused = .prompt
     }
 
     private func deleteAt(at offsets: IndexSet) {

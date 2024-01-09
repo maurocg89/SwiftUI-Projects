@@ -36,9 +36,9 @@ struct ContentView: View {
 
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index]) {
+                        CardView(card: cards[index]) { correctAnswer in
                             withAnimation {
-                                removeCard(at: index)
+                                removeCard(at: index, shuffle: !correctAnswer)
                             }
                         }
                         .stacked(at: index, in: cards.count)
@@ -147,6 +147,23 @@ struct ContentView: View {
         guard index >= 0 else { return }
 
         cards.remove(at: index)
+        if cards.isEmpty {
+            appIsActive = false
+        }
+    }
+
+    func removeCard(at index: Int, shuffle: Bool) {
+        guard index >= 0 else { return }
+        let card = cards.remove(at: index)
+        if shuffle {
+            if cards.isEmpty {
+                cards.append(card)
+            } else {
+                cards.insert(card, at: Int.random(in: 0..<cards.count))
+            }
+            return
+        }
+
         if cards.isEmpty {
             appIsActive = false
         }
