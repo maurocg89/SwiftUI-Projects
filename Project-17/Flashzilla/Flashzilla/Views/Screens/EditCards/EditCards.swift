@@ -66,10 +66,11 @@ struct EditCards: View {
 
         guard !trimmedPrompt.isEmpty && !trimmedAnswer.isEmpty else { return }
 
-        let card = Card(prompt: newCardPrompt, answer: newCardAnswer)
+        let card = Card(id: UUID(), prompt: newCardPrompt, answer: newCardAnswer)
         cardList.insert(card, at: 0)
         saveData()
 
+        // Challenge 1. Clear TextFields
         newCardPrompt = ""
         newCardAnswer = ""
         self.focused = .prompt
@@ -83,17 +84,21 @@ struct EditCards: View {
     }
 
     private func loadData() {
-        if let data = UserDefaults.standard.data(forKey: Card.savedFileName) {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                self.cardList = decoded
-            }
-        }
+//        if let data = UserDefaults.standard.data(forKey: Card.savedFileName) {
+//            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+//                self.cardList = decoded
+//            }
+//        }
+        // Challenge 4. Load from Documents folder
+        self.cardList = FileManager().getData(Card.savedFileName) ?? []
     }
 
     private func saveData() {
-        if let data = try? JSONEncoder().encode(cardList) {
-            UserDefaults.standard.set(data, forKey: Card.savedFileName)
-        }
+//        if let data = try? JSONEncoder().encode(cardList) {
+//            UserDefaults.standard.set(data, forKey: Card.savedFileName)
+//        }
+        // Challenge 4. Save to Documents folder
+        FileManager().saveData(Card.savedFileName, cardList)
     }
 }
 

@@ -35,10 +35,10 @@ struct ContentView: View {
                     .clipShape(.capsule)
 
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index]) { correctAnswer in
+                    ForEach(Array(cards.enumerated()), id: \.element.id) { index, element in
+                        CardView(card: element) { shuffle in
                             withAnimation {
-                                removeCard(at: index, shuffle: !correctAnswer)
+                                removeCard(at: index, shuffle: shuffle)
                             }
                         }
                         .stacked(at: index, in: cards.count)
@@ -86,7 +86,7 @@ struct ContentView: View {
                     HStack {
                         Button {
                             withAnimation {
-                                removeCard(at: cards.count - 1)
+                                removeCard(at: cards.count - 1, shuffle: true)
                             }
                         } label: {
                             Image(systemName: "xmark.circle")
@@ -101,7 +101,7 @@ struct ContentView: View {
 
                         Button {
                             withAnimation {
-                                removeCard(at: cards.count - 1)
+                                removeCard(at: cards.count - 1, shuffle: false)
                             }
                         } label: {
                             Image(systemName: "checkmark.circle")
@@ -133,33 +133,37 @@ struct ContentView: View {
     }
 
     private func loadData() {
-        if let data = UserDefaults.standard.data(forKey: Card.savedFileName) {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                self.cards = decoded
-            }
-        }
-
+//        if let data = UserDefaults.standard.data(forKey: Card.savedFileName) {
+//            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+//                self.cards = decoded
+//            }
+//        }
+        // Challenge 4. Load from Documents folder
+        self.cards = FileManager().getData(Card.savedFileName) ?? []
         appIsActive = !cards.isEmpty
     }
 
 
-    func removeCard(at index: Int) {
-        guard index >= 0 else { return }
+//    func removeCard(at index: Int) {
+//        guard index >= 0 else { return }
+//
+//        cards.remove(at: index)
+//        if cards.isEmpty {
+//            appIsActive = false
+//        }
+//    }
 
-        cards.remove(at: index)
-        if cards.isEmpty {
-            appIsActive = false
-        }
-    }
-
+    // Challenge 3. When the users gets an answer wrong, add that card goes back into the array so the user can try it again
     func removeCard(at index: Int, shuffle: Bool) {
         guard index >= 0 else { return }
+
         let card = cards.remove(at: index)
         if shuffle {
             if cards.isEmpty {
                 cards.append(card)
             } else {
-                cards.insert(card, at: Int.random(in: 0..<cards.count))
+                cards.insert(card, at: 0)
+//                cards.insert(card, at: Int.random(in: 0..<cards.count))
             }
             return
         }

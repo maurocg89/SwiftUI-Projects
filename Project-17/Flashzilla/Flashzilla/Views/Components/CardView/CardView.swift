@@ -29,7 +29,7 @@ struct CardView: View {
                     differentiateWithoutColor
                     ? nil
                     : RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(offset.width > 0 ? .green : .red)
+                        .fill(getBackgroundColor(offset: offset))
                 )
                 .shadow(radius: 10)
 
@@ -67,12 +67,12 @@ struct CardView: View {
                     if abs(offset.width) > 100 {
                         if offset.width < 0 {
                             feedback.notificationOccurred(.error)
-                            removal?(false)
+                            removal?(true)
                             offset = .zero
                             return
                         }
                         // Remove the card when we move it far enough
-                        removal?(true)
+                        removal?(false)
                     } else {
                         offset = .zero
                     }
@@ -82,6 +82,16 @@ struct CardView: View {
             isShowingAnswer.toggle()
         }
         .animation(.spring(), value: offset)
+    }
+    
+    // Challenge 2: Fix a bug when the user drags a card to the right but not far enough to remove it and release it, the card turn red as it slides back to the center.
+    private func getBackgroundColor(offset: CGSize) -> Color {
+        if offset.width > 0 {
+            return .green
+        } else if offset.width < 0 {
+            return .red
+        }
+        return .white
     }
 }
 
