@@ -17,7 +17,8 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
 
     @State private var cards: Array<Card> = []
-    @State private var appIsActive = true
+    @State private var appIsActive = false
+    @State private var isGameEnded = false
     @State private var timeRemaining = 100
     @State private var showingSheet = false
     @State private var sheetType: SheetType = .none
@@ -28,8 +29,12 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             background
-
-            gameView
+            
+            if appIsActive || isGameEnded {
+                gameView
+            } else {
+                initialGameView
+            }
 
             sheetButtons
 
@@ -48,14 +53,18 @@ struct ContentView: View {
         .onChange(of: scenePhase) { newPhase in
             appIsActive = newPhase == .active && !cards.isEmpty
         }
-        .sheet(isPresented: $showingSheet, onDismiss: resetCards) {
+        .sheet(isPresented: $showingSheet) {
             if sheetType == .edit {
                 EditCards()
             } else if sheetType == .settings {
                 SettingsView(retryIncorrectCards: $retryIncorrectCards)
+            } else {
+                NavigationStack {
+                    EmptyView()
+                }
             }
         }
-        .onAppear(perform: resetCards)
+//        .onAppear(perform: resetCards)
     }
 
     // MARK: Computed Properties Views
@@ -64,8 +73,18 @@ struct ContentView: View {
             .resizable()
             .ignoresSafeArea()
     }
-    
- // TODO: Show an initial view before starting the game
+
+    private var initialGameView: some View {
+        VStack {
+            Button("Start the game", action: resetCards)
+                .padding()
+                .background(.white)
+                .foregroundStyle(.black)
+                .clipShape(.capsule)
+                .padding()
+        }
+    }
+
     private var gameView: some View {
         VStack {
             Text("Time: \(timeRemaining)")
@@ -109,6 +128,7 @@ struct ContentView: View {
                 Button {
                     sheetType = .settings
                     showingSheet = true
+                    appIsActive = false
                 } label: {
                     Image(systemName: "gear")
                         .padding()
@@ -121,6 +141,7 @@ struct ContentView: View {
                 Button {
                     sheetType = .edit
                     showingSheet = true
+                    appIsActive = false
                 } label: {
                     Image(systemName: "plus.circle")
                         .padding()
@@ -214,12 +235,14 @@ struct ContentView: View {
 
         if cards.isEmpty {
             appIsActive = false
+            isGameEnded = true
         }
     }
 
     func resetCards() {
         timeRemaining = 100
         appIsActive = true
+        isGameEnded = false
         loadData()
     }
 }
