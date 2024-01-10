@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CardView: View {
-    let card: Card
-    var removal: ((Bool) -> Void)? = nil
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
+
+    let card: Card
+    var retryIncorrectCards = false
+    var removal: ((Bool) -> Void)? = nil
 
     @State private var feedback = UINotificationFeedbackGenerator()
     @State private var isShowingAnswer = false
@@ -68,7 +70,9 @@ struct CardView: View {
                         if offset.width < 0 {
                             feedback.notificationOccurred(.error)
                             removal?(true)
-                            offset = .zero
+                            if retryIncorrectCards {
+                                offset = .zero
+                            }
                             return
                         }
                         // Remove the card when we move it far enough

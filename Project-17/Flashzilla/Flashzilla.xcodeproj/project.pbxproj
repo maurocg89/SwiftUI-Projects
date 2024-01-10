@@ -9,40 +9,42 @@
 /* Begin PBXBuildFile section */
 		50006F3B2B4C4D7000DE718D /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F3A2B4C4D7000DE718D /* EditCards.swift */; };
 		50006F402B4DA22300DE718D /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F3F2B4DA22300DE718D /* FileManager+Extension.swift */; };
+		50006F582B4DC9C700DE718D /* HapticsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F512B4DC9C700DE718D /* HapticsPlayground.swift */; };
+		50006F592B4DC9C700DE718D /* TimerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F522B4DC9C700DE718D /* TimerPlayground.swift */; };
+		50006F5A2B4DC9C700DE718D /* AppBackgroundStatePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F532B4DC9C700DE718D /* AppBackgroundStatePlayground.swift */; };
+		50006F5B2B4DC9C700DE718D /* ContentViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F542B4DC9C700DE718D /* ContentViewPlayground.swift */; };
+		50006F5C2B4DC9C700DE718D /* GesturesPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F552B4DC9C700DE718D /* GesturesPlayground.swift */; };
+		50006F5D2B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F562B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift */; };
+		50006F5E2B4DC9C700DE718D /* HitTestingPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */; };
+		50006F612B4DD00100DE718D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F602B4DD00100DE718D /* SettingsView.swift */; };
 		50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */; };
 		50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDF2B4733B200A65EFC /* ContentView.swift */; };
 		50B03FE22B4733B400A65EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE12B4733B400A65EFC /* Assets.xcassets */; };
 		50B03FE62B4733B400A65EFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE52B4733B400A65EFC /* Preview Assets.xcassets */; };
-		50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */; };
-		50B03FF02B48369E00A65EFC /* HapticsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */; };
-		50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */; };
-		50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */; };
-		50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */; };
-		50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */; };
 		50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F52B487F3C00A9B7A5 /* CardView.swift */; };
 		50CFD2FA2B487F6800A9B7A5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F92B487F6800A9B7A5 /* Card.swift */; };
-		50CFD2FC2B48802C00A9B7A5 /* ContentViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */; };
 		50CFD3002B48829900A9B7A5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50006F3A2B4C4D7000DE718D /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		50006F3F2B4DA22300DE718D /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		50006F512B4DC9C700DE718D /* HapticsPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticsPlayground.swift; sourceTree = "<group>"; };
+		50006F522B4DC9C700DE718D /* TimerPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerPlayground.swift; sourceTree = "<group>"; };
+		50006F532B4DC9C700DE718D /* AppBackgroundStatePlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBackgroundStatePlayground.swift; sourceTree = "<group>"; };
+		50006F542B4DC9C700DE718D /* ContentViewPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewPlayground.swift; sourceTree = "<group>"; };
+		50006F552B4DC9C700DE718D /* GesturesPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturesPlayground.swift; sourceTree = "<group>"; };
+		50006F562B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportingAccessibilityPlayground.swift; sourceTree = "<group>"; };
+		50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestingPlayground.swift; sourceTree = "<group>"; };
+		50006F602B4DD00100DE718D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		50B03FDA2B4733B200A65EFC /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		50B03FDF2B4733B200A65EFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50B03FE12B4733B400A65EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B03FE32B4733B400A65EFC /* Flashzilla.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flashzilla.entitlements; sourceTree = "<group>"; };
 		50B03FE52B4733B400A65EFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesPlayground.swift; sourceTree = "<group>"; };
-		50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsPlayground.swift; sourceTree = "<group>"; };
-		50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestingPlayground.swift; sourceTree = "<group>"; };
-		50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPlayground.swift; sourceTree = "<group>"; };
-		50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundStatePlayground.swift; sourceTree = "<group>"; };
-		50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingAccessibilityPlayground.swift; sourceTree = "<group>"; };
 		50CFD2F52B487F3C00A9B7A5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		50CFD2F92B487F6800A9B7A5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPlayground.swift; sourceTree = "<group>"; };
 		50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,14 @@
 				50006F3A2B4C4D7000DE718D /* EditCards.swift */,
 			);
 			path = EditCards;
+			sourceTree = "<group>";
+		};
+		50006F5F2B4DCFF300DE718D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				50006F602B4DD00100DE718D /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		50B03FD12B4733B200A65EFC = {
@@ -108,13 +118,13 @@
 		50B03FEC2B47349400A65EFC /* Playground */ = {
 			isa = PBXGroup;
 			children = (
-				50B03FED2B4734C200A65EFC /* GesturesPlayground.swift */,
-				50B03FEF2B48369E00A65EFC /* HapticsPlayground.swift */,
-				50CFD2E82B48489200A9B7A5 /* HitTestingPlayground.swift */,
-				50CFD2EA2B48583300A9B7A5 /* TimerPlayground.swift */,
-				50CFD2EE2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift */,
-				50CFD2F02B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift */,
-				50CFD2FB2B48802C00A9B7A5 /* ContentViewPlayground.swift */,
+				50006F532B4DC9C700DE718D /* AppBackgroundStatePlayground.swift */,
+				50006F542B4DC9C700DE718D /* ContentViewPlayground.swift */,
+				50006F552B4DC9C700DE718D /* GesturesPlayground.swift */,
+				50006F512B4DC9C700DE718D /* HapticsPlayground.swift */,
+				50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */,
+				50006F562B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift */,
+				50006F522B4DC9C700DE718D /* TimerPlayground.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				50006F3E2B4C7BD300DE718D /* EditCards */,
+				50006F5F2B4DCFF300DE718D /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -239,20 +250,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CFD2EB2B48583300A9B7A5 /* TimerPlayground.swift in Sources */,
+				50006F612B4DD00100DE718D /* SettingsView.swift in Sources */,
+				50006F5B2B4DC9C700DE718D /* ContentViewPlayground.swift in Sources */,
+				50006F5D2B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift in Sources */,
 				50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */,
-				50B03FEE2B4734C200A65EFC /* GesturesPlayground.swift in Sources */,
+				50006F5E2B4DC9C700DE718D /* HitTestingPlayground.swift in Sources */,
+				50006F5C2B4DC9C700DE718D /* GesturesPlayground.swift in Sources */,
 				50006F3B2B4C4D7000DE718D /* EditCards.swift in Sources */,
-				50CFD2F12B485DA300A9B7A5 /* SupportingAccessibilityPlayground.swift in Sources */,
 				50006F402B4DA22300DE718D /* FileManager+Extension.swift in Sources */,
-				50CFD2E92B48489200A9B7A5 /* HitTestingPlayground.swift in Sources */,
-				50CFD2FC2B48802C00A9B7A5 /* ContentViewPlayground.swift in Sources */,
-				50CFD2EF2B485C6100A9B7A5 /* AppBackgroundStatePlayground.swift in Sources */,
+				50006F592B4DC9C700DE718D /* TimerPlayground.swift in Sources */,
 				50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */,
 				50CFD2FA2B487F6800A9B7A5 /* Card.swift in Sources */,
+				50006F5A2B4DC9C700DE718D /* AppBackgroundStatePlayground.swift in Sources */,
+				50006F582B4DC9C700DE718D /* HapticsPlayground.swift in Sources */,
 				50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */,
 				50CFD3002B48829900A9B7A5 /* View+Extension.swift in Sources */,
-				50B03FF02B48369E00A65EFC /* HapticsPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
