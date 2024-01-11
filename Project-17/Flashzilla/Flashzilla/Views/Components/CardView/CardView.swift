@@ -13,7 +13,7 @@ struct CardView: View {
 
     let card: Card
     var retryIncorrectCards = false
-    var removal: ((Bool) -> Void)? = nil
+    var removal: ((_ correctAnswer: Bool) -> Void)? = nil
 
     @State private var feedback = UINotificationFeedbackGenerator()
     @State private var isShowingAnswer = false
@@ -69,14 +69,14 @@ struct CardView: View {
                     if abs(offset.width) > 100 {
                         if offset.width < 0 {
                             feedback.notificationOccurred(.error)
-                            removal?(true)
+                            removal?(false)
                             if retryIncorrectCards {
                                 offset = .zero
                             }
                             return
                         }
                         // Remove the card when we move it far enough
-                        removal?(false)
+                        removal?(true)
                     } else {
                         offset = .zero
                     }

@@ -23,6 +23,9 @@ struct ContentView: View {
     @State private var showingSheet = false
     @State private var sheetType: SheetType = .none
     @State private var retryIncorrectCards = false
+    @State private var correctAnswers = 0
+    @State private var incorrectAnswers = 0
+    @State private var initialCardCount = 0
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -53,17 +56,18 @@ struct ContentView: View {
         .onChange(of: scenePhase) { newPhase in
             appIsActive = newPhase == .active && !cards.isEmpty
         }
-        .sheet(isPresented: $showingSheet) {
+        // Workaround to fix iOS 14 issue that shows an empty view when trying to open the sheet for the first time
+        .sheet(isPresented: Binding(get: {
+            showingSheet
+        }, set: { newValue in
+            showingSheet = newValue
+        }), content: {
             if sheetType == .edit {
                 EditCards()
             } else if sheetType == .settings {
                 SettingsView(retryIncorrectCards: $retryIncorrectCards)
-            } else {
-                NavigationStack {
-                    EmptyView()
-                }
             }
-        }
+        })
 //        .onAppear(perform: resetCards)
     }
 
@@ -97,25 +101,27 @@ struct ContentView: View {
 
             ZStack {
                 ForEach(Array(cards.enumerated()), id: \.element.id) { index, element in
-                    CardView(card: element, retryIncorrectCards: retryIncorrectCards) { shuffle in
+                    CardView(card: element, retryIncorrectCards: retryIncorrectCards) { correctAnswer in
+                        if correctAnswer {
+                            correctAnswers += 1
+                        } else {
+                            incorrectAnswers += 1
+                        }
                         withAnimation {
-                            removeCard(at: index, shuffle: shuffle)
+                            removeCard(at: index, shuffle: !correctAnswer)
                         }
                     }
                     .stacked(at: index, in: cards.count)
+                    // Allow dragging only the top card
                     .allowsHitTesting(index == cards.count - 1)
                     .accessibilityHidden(index < cards.count - 1)
                 }
             } // ZStack
             .allowsHitTesting(timeRemaining > 0)
 
-            if cards.isEmpty {
-                Button("Start Again", action: resetCards)
-                    .padding()
-                    .background(.white)
-                    .foregroundStyle(.black)
-                    .clipShape(.capsule)
-                    .padding()
+            if isGameEnded {
+                SummaryView(totalCards: initialCardCount, correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, buttonAction: resetCards)
+                    .padding(.vertical, 5)
             }
 
         } // VStack
@@ -205,7 +211,8 @@ struct ContentView: View {
 //        }
         // Challenge 4. Load from Documents folder
         self.cards = FileManager().getData(Card.savedFileName) ?? []
-        appIsActive = !cards.isEmpty
+        initialCardCount = cards.count
+//        appIsActive = !cards.isEmpty
     }
 
 
