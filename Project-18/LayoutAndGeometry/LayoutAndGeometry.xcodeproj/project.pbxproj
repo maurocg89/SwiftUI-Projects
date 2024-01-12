@@ -15,6 +15,9 @@
 		505B254A2B5030C000486640 /* AlignmentGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B25492B5030C000486640 /* AlignmentGuideView.swift */; };
 		507974D22B505B1800B3B203 /* CustomAlignmentGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507974D12B505B1800B3B203 /* CustomAlignmentGuideView.swift */; };
 		507974D42B50730F00B3B203 /* AligmentGuidesTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507974D32B50730F00B3B203 /* AligmentGuidesTool.swift */; };
+		509FDD092B519DD500CF9ADA /* AbsolutePositioningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FDD082B519DD500CF9ADA /* AbsolutePositioningView.swift */; };
+		509FDD0B2B51B17B00CF9ADA /* GeometryReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FDD0A2B51B17B00CF9ADA /* GeometryReaderView.swift */; };
+		509FDD0D2B51BBFC00CF9ADA /* ScrollViewEffectsWithGR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FDD0C2B51BBFC00CF9ADA /* ScrollViewEffectsWithGR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		505B25492B5030C000486640 /* AlignmentGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentGuideView.swift; sourceTree = "<group>"; };
 		507974D12B505B1800B3B203 /* CustomAlignmentGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignmentGuideView.swift; sourceTree = "<group>"; };
 		507974D32B50730F00B3B203 /* AligmentGuidesTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AligmentGuidesTool.swift; sourceTree = "<group>"; };
+		509FDD082B519DD500CF9ADA /* AbsolutePositioningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsolutePositioningView.swift; sourceTree = "<group>"; };
+		509FDD0A2B51B17B00CF9ADA /* GeometryReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView.swift; sourceTree = "<group>"; };
+		509FDD0C2B51BBFC00CF9ADA /* ScrollViewEffectsWithGR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewEffectsWithGR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 				505B25492B5030C000486640 /* AlignmentGuideView.swift */,
 				507974D12B505B1800B3B203 /* CustomAlignmentGuideView.swift */,
 				507974D32B50730F00B3B203 /* AligmentGuidesTool.swift */,
+				509FDD082B519DD500CF9ADA /* AbsolutePositioningView.swift */,
+				509FDD0A2B51B17B00CF9ADA /* GeometryReaderView.swift */,
+				509FDD0C2B51BBFC00CF9ADA /* ScrollViewEffectsWithGR.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -163,6 +172,9 @@
 				505B253A2B501C4000486640 /* ContentView.swift in Sources */,
 				505B25382B501C4000486640 /* LayoutAndGeometryApp.swift in Sources */,
 				507974D42B50730F00B3B203 /* AligmentGuidesTool.swift in Sources */,
+				509FDD092B519DD500CF9ADA /* AbsolutePositioningView.swift in Sources */,
+				509FDD0D2B51BBFC00CF9ADA /* ScrollViewEffectsWithGR.swift in Sources */,
+				509FDD0B2B51B17B00CF9ADA /* GeometryReaderView.swift in Sources */,
 				505B25482B50304D00486640 /* LayoutView.swift in Sources */,
 				505B254A2B5030C000486640 /* AlignmentGuideView.swift in Sources */,
 			);
