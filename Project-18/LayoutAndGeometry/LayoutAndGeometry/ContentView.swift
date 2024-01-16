@@ -29,6 +29,9 @@ struct ContentView: View {
                 NavigationLink(destination: ScrollViewEffectsWithGR()) {
                     Text("ScrollView effects using GeometryReader")
                 }
+                NavigationLink(destination: ChallengeContentView()) {
+                    Text("Challenge")
+                }
             }
             .listStyle(.inset)
             .padding()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505596D72B55A52B008B83EA /* ChallengeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505596D62B55A52B008B83EA /* ChallengeContentView.swift */; };
 		505B25382B501C4000486640 /* LayoutAndGeometryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B25372B501C4000486640 /* LayoutAndGeometryApp.swift */; };
 		505B253A2B501C4000486640 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B25392B501C4000486640 /* ContentView.swift */; };
 		505B253C2B501C4100486640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505B253B2B501C4100486640 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		505596D62B55A52B008B83EA /* ChallengeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentView.swift; sourceTree = "<group>"; };
 		505B25342B501C4000486640 /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutAndGeometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		505B25372B501C4000486640 /* LayoutAndGeometryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAndGeometryApp.swift; sourceTree = "<group>"; };
 		505B25392B501C4000486640 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505596D52B55A51A008B83EA /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				505596D62B55A52B008B83EA /* ChallengeContentView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
 		505B252B2B501C4000486640 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		505B25362B501C4000486640 /* LayoutAndGeometry */ = {
 			isa = PBXGroup;
 			children = (
+				505596D52B55A51A008B83EA /* Challenge */,
 				505B25462B501D0100486640 /* Playground */,
 				505B25372B501C4000486640 /* LayoutAndGeometryApp.swift */,
 				505B25392B501C4000486640 /* ContentView.swift */,
@@ -170,6 +181,7 @@
 			files = (
 				507974D22B505B1800B3B203 /* CustomAlignmentGuideView.swift in Sources */,
 				505B253A2B501C4000486640 /* ContentView.swift in Sources */,
+				505596D72B55A52B008B83EA /* ChallengeContentView.swift in Sources */,
 				505B25382B501C4000486640 /* LayoutAndGeometryApp.swift in Sources */,
 				507974D42B50730F00B3B203 /* AligmentGuidesTool.swift in Sources */,
 				509FDD092B519DD500CF9ADA /* AbsolutePositioningView.swift in Sources */,
