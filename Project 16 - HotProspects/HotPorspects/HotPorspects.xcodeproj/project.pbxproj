@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505660012B58382000EA2D07 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505660002B58382000EA2D07 /* ImageSaver.swift */; };
 		50B03FBC2B45973300A65EFC /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBB2B45973300A65EFC /* ProspectsView.swift */; };
 		50B03FBE2B45986D00A65EFC /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBD2B45986D00A65EFC /* MeView.swift */; };
 		50B03FC12B459A6F00A65EFC /* Propspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FC02B459A6F00A65EFC /* Propspect.swift */; };
 		50B03FC42B45ABE900A65EFC /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 50B03FC32B45ABE900A65EFC /* CodeScanner */; };
-		50B03FC72B45DB1500A65EFC /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FC62B45DB1500A65EFC /* ImageSaver.swift */; };
 		50B03FD02B47138500A65EFC /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FCF2B47138500A65EFC /* FileManager+Extension.swift */; };
 		50C2559F2B445F74003002F2 /* HotPorspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C2559E2B445F74003002F2 /* HotPorspectsApp.swift */; };
 		50C255A12B445F74003002F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C255A02B445F74003002F2 /* ContentView.swift */; };
@@ -30,10 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		505660002B58382000EA2D07 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		50B03FBB2B45973300A65EFC /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		50B03FBD2B45986D00A65EFC /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		50B03FC02B459A6F00A65EFC /* Propspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Propspect.swift; sourceTree = "<group>"; };
-		50B03FC62B45DB1500A65EFC /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSaver.swift; path = "../../../../Project-13/Instafilter/Instafilter/Utils/ImageSaver.swift"; sourceTree = "<group>"; };
 		50B03FCF2B47138500A65EFC /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		50C2559B2B445F74003002F2 /* HotPorspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotPorspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C2559E2B445F74003002F2 /* HotPorspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPorspectsApp.swift; sourceTree = "<group>"; };
@@ -65,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50565FFF2B58381900EA2D07 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				505660002B58382000EA2D07 /* ImageSaver.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		50B03FB82B4596EB00A65EFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +106,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		50B03FC52B45DAFE00A65EFC /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				50B03FC62B45DB1500A65EFC /* ImageSaver.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		50B03FCE2B47136900A65EFC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +133,9 @@
 		50C2559D2B445F74003002F2 /* HotPorspects */ = {
 			isa = PBXGroup;
 			children = (
+				50565FFF2B58381900EA2D07 /* Utils */,
 				50B03FCE2B47136900A65EFC /* Extensions */,
 				50B03FBF2B459A3F00A65EFC /* Models */,
-				50B03FC52B45DAFE00A65EFC /* Utils */,
 				50B03FB82B4596EB00A65EFC /* Views */,
 				50C255AD2B445FAD003002F2 /* Playground */,
 				50C2559E2B445F74003002F2 /* HotPorspectsApp.swift */,
@@ -256,7 +256,6 @@
 				50C255B12B446743003002F2 /* TabViewPlayground.swift in Sources */,
 				50C255D12B4496B9003002F2 /* CustomSwipeActionsPlayground.swift in Sources */,
 				50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */,
-				50B03FC72B45DB1500A65EFC /* ImageSaver.swift in Sources */,
 				50C255A12B445F74003002F2 /* ContentView.swift in Sources */,
 				50B03FD02B47138500A65EFC /* FileManager+Extension.swift in Sources */,
 				50B03FC12B459A6F00A65EFC /* Propspect.swift in Sources */,
@@ -265,6 +264,7 @@
 				50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */,
 				50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */,
 				50B03FBE2B45986D00A65EFC /* MeView.swift in Sources */,
+				505660012B58382000EA2D07 /* ImageSaver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
