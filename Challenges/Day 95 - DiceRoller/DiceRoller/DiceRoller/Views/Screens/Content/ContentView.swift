@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var score = 0
     @State private var isRollingDice = false
     @State private var shakingCounter = 2.0
+    @State private var feedback = UINotificationFeedbackGenerator()
 
     var timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let shakingTime = 2.0
@@ -40,12 +41,13 @@ struct ContentView: View {
 
                 Button("Roll") {
 //                    rollDices()
+                    simpleHaptic(type: .success)
                     isRollingDice = true
                 }
                 .padding()
                 .background(.white)
                 .foregroundStyle(.black)
-                .clipShape(.buttonBorder)
+                .clipShape(.capsule)
                 .padding()
                 .allowsHitTesting(!isRollingDice)
             } // VStack
@@ -75,9 +77,11 @@ struct ContentView: View {
         }
     }
 
+    // MARK: Private Functions
     private func initialSettings() {
         score = 0
         diceValues = Array.init(repeating: 1, count: dicesAmount)
+        feedback.prepare()
     }
 
     // Using DispatchQueue instead of Timer
@@ -98,6 +102,12 @@ struct ContentView: View {
     private func calculateScore() {
         score = diceValues.reduce(0, +)
     }
+
+    private func simpleHaptic(type: UINotificationFeedbackGenerator.FeedbackType) {
+        feedback.notificationOccurred(type)
+    }
+
+    // MARK: Computed Properties Views
 
     private var settingsButton: some View {
         VStack {

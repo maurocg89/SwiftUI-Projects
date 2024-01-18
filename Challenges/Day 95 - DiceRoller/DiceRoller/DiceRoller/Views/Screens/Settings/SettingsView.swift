@@ -21,7 +21,7 @@ struct SettingsView: View {
                             Text("\($0)")
                         }
                     }
-                    .onChange(of: dicesAmount) { _,_ in
+                    .onChange(of: dicesAmount) { _ in
                         onSelection?()
                     }
                 }
