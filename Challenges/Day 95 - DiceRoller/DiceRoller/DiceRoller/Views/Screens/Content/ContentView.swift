@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
-    @State private var dicesAmount = 5
+    @State private var dicesAmount = 2
     @State private var diceValue = 1
     @State private var diceValues = [Int]()
     @State private var showingSheet = false
-    @State private var isGameStarted = false
     @State private var score = 0
+    @State private var isRollingDice = false
+    @State private var shakingCounter = 2.0
 
+    var timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    let shakingTime = 2.0
     let itemsPerRow = 2
     private var numberOfRows: Int {
         return (dicesAmount + itemsPerRow - 1) / itemsPerRow
@@ -35,35 +39,64 @@ struct ContentView: View {
                 dicesGridView
 
                 Button("Roll") {
-                    rollDices()
+//                    rollDices()
+                    isRollingDice = true
                 }
                 .padding()
                 .background(.white)
                 .foregroundStyle(.black)
-                .clipShape(.capsule)
+                .clipShape(.buttonBorder)
                 .padding()
+                .allowsHitTesting(!isRollingDice)
             } // VStack
         } // ZStack
         .onAppear {
             initialSettings()
         }
+        .onReceive(timer) { time in
+            guard isRollingDice else { return }
+            
+            if shakingCounter > 0 {
+                diceValues = diceValues.map { _ in
+                        Int.random(in: 1...6)
+                }
+                shakingCounter -= 0.2
+                return
+            }
+
+            isRollingDice = false
+            shakingCounter = shakingTime
+            calculateScore()
+        }
+        .sheet(isPresented: $showingSheet) {
+            SettingsView(dicesAmount: $dicesAmount) {
+                initialSettings()
+            }
+        }
     }
 
     private func initialSettings() {
+        score = 0
         diceValues = Array.init(repeating: 1, count: dicesAmount)
     }
 
-    private func rollDices() {
-        for index in diceValues.indices {
-            for i in stride(from: 1.0, to: 0, by: -0.2) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + i) {
-                    diceValues[index] = .random(in: 1...6)
-                }
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                score = diceValues.reduce(0, +)
-            }
-        }
+    // Using DispatchQueue instead of Timer
+//    private func rollDices() {
+//        for index in diceValues.indices {
+//            for i in stride(from: 1.0, to: 0, by: -0.2) {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + i) {
+//                    diceValues[index] = .random(in: 1...6)
+//                }
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+//                score = diceValues.reduce(0, +)
+//                isRollingDice = false
+//            }
+//        }
+//    }
+
+    private func calculateScore() {
+        score = diceValues.reduce(0, +)
     }
 
     private var settingsButton: some View {
@@ -86,21 +119,6 @@ struct ContentView: View {
         .padding()
     }
 
-//    private var dicesGridView: some View {
-//        Grid(alignment: .center, horizontalSpacing: 20, verticalSpacing: 20) {
-//            ForEach(0..<numberOfRows, id: \.self) { row in
-//                GridRow {
-//                    ForEach(0..<itemsPerRow, id: \.self) { column in
-//                        let index = row * self.itemsPerRow + column
-//                        if index < dicesAmount {
-//                            DiceView(numberOfDots: $diceValue)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-
     private var dicesGridView: some View {
         Group {
             if diceValues.isEmpty {
@@ -111,7 +129,7 @@ struct ContentView: View {
                         HStack(spacing: 10) {
                             ForEach(0..<self.itemsPerRow, id: \.self) { column in
                                 let index = row * self.itemsPerRow + column
-                                if index < dicesAmount {
+                                if index < diceValues.count {
                                     DiceView(numberOfDots: $diceValues[index])
                                 }
                             } // ForEach
@@ -122,6 +140,22 @@ struct ContentView: View {
         }
         .padding()
     }
+
+    // Using Grid
+    //    private var dicesGridView: some View {
+    //        Grid(alignment: .center, horizontalSpacing: 20, verticalSpacing: 20) {
+    //            ForEach(0..<numberOfRows, id: \.self) { row in
+    //                GridRow {
+    //                    ForEach(0..<itemsPerRow, id: \.self) { column in
+    //                        let index = row * self.itemsPerRow + column
+    //                        if index < dicesAmount {
+    //                            DiceView(numberOfDots: $diceValue)
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
 }
 
 #Preview {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505660062B58438D00EA2D07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505660052B58438D00EA2D07 /* SettingsView.swift */; };
 		50A6A4122B56ECF900EC0F1E /* DiceRollerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6A4112B56ECF900EC0F1E /* DiceRollerApp.swift */; };
 		50A6A4142B56ECF900EC0F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6A4132B56ECF900EC0F1E /* ContentView.swift */; };
 		50A6A4162B56ECFB00EC0F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A6A4152B56ECFB00EC0F1E /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		505660052B58438D00EA2D07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		50A6A40E2B56ECF900EC0F1E /* DiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A6A4112B56ECF900EC0F1E /* DiceRollerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollerApp.swift; sourceTree = "<group>"; };
 		50A6A4132B56ECF900EC0F1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505660022B5841AE00EA2D07 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				50A6A4232B56F7F800EC0F1E /* DiceView.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		505660032B5841B900EA2D07 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				50A6A4132B56ECF900EC0F1E /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		505660042B5841C600EA2D07 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				505660052B58438D00EA2D07 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		50A6A4052B56ECF900EC0F1E = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +109,7 @@
 		50A6A4212B56F7DF00EC0F1E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				50A6A4232B56F7F800EC0F1E /* DiceView.swift */,
+				505660022B5841AE00EA2D07 /* Dice */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -91,7 +117,8 @@
 		50A6A4222B56F7E800EC0F1E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				50A6A4132B56ECF900EC0F1E /* ContentView.swift */,
+				505660042B5841C600EA2D07 /* Settings */,
+				505660032B5841B900EA2D07 /* Content */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -167,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A6A4142B56ECF900EC0F1E /* ContentView.swift in Sources */,
+				505660062B58438D00EA2D07 /* SettingsView.swift in Sources */,
 				50A6A4242B56F7F800EC0F1E /* DiceView.swift in Sources */,
 				50A6A4122B56ECF900EC0F1E /* DiceRollerApp.swift in Sources */,
 			);
