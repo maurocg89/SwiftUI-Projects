@@ -9,28 +9,44 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @State private var dicesAmount = 2
-    @State private var diceValue = 1
+    @State private var dicesAmount = 1
     @State private var diceValues = [Int]()
     @State private var showingSheet = false
-    @State private var score = 0
     @State private var isRollingDice = false
     @State private var shakingCounter = 2.0
     @State private var feedback = UINotificationFeedbackGenerator()
 
+    @State private var score = 0
+    @State private var savedScores = [Score]()
+    @State private var showSavedScoresModal = false
+    @State private var numberOfScoresToShow = 1
+
     var timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let shakingTime = 2.0
     let itemsPerRow = 2
+    
     private var numberOfRows: Int {
         return (dicesAmount + itemsPerRow - 1) / itemsPerRow
+    }
+
+    private var scoresToShow: [Score] {
+        guard !savedScores.isEmpty else { return [] }
+        return Array(savedScores.prefix(upTo: numberOfScoresToShow))
     }
 
     var body: some View {
         ZStack {
             LinearGradient(colors: [.blue, .mint], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
+            
+            if showSavedScoresModal {
+                SavedScoresModalView(savedScores: scoresToShow)
+                    .zIndex(1)
+            }
 
             settingsButton
+
+            latestScoresButton
 
             VStack {
 
@@ -54,6 +70,8 @@ struct ContentView: View {
         } // ZStack
         .onAppear {
             initialSettings()
+            // TODO: Load real values from a JSON
+            savedScores = Score.examples
         }
         .onReceive(timer) { time in
             guard isRollingDice else { return }
@@ -71,7 +89,7 @@ struct ContentView: View {
             calculateScore()
         }
         .sheet(isPresented: $showingSheet) {
-            SettingsView(dicesAmount: $dicesAmount) {
+            SettingsView(dicesAmount: $dicesAmount, totalSavedScores: $numberOfScoresToShow) {
                 initialSettings()
             }
         }
@@ -107,12 +125,18 @@ struct ContentView: View {
         feedback.notificationOccurred(type)
     }
 
+    // TODO: Implement this methods
+    private func loadScores() {}
+
+    private func saveScore() {}
+
     // MARK: Computed Properties Views
 
     private var settingsButton: some View {
         VStack {
             HStack {
                 Button {
+                    showSavedScoresModal = false
                     showingSheet = true
                 } label: {
                     Image(systemName: "gear")
@@ -121,6 +145,26 @@ struct ContentView: View {
                         .clipShape(.circle)
                 }
                 Spacer()
+            } // HStack
+            Spacer()
+        } // VStack
+        .foregroundStyle(.white)
+        .font(.largeTitle)
+        .padding()
+    }
+
+    private var latestScoresButton: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button {
+                    showSavedScoresModal.toggle()
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .padding()
+                        .background(.black.opacity(0.7))
+                        .clipShape(.circle)
+                }
             } // HStack
             Spacer()
         } // VStack

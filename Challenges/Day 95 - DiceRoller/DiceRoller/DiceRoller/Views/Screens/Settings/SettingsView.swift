@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var saveScores = false
     @Binding var dicesAmount: Int
+    @Binding var totalSavedScores: Int
     let onSelection: (() -> Void)?
 
     var body: some View {
@@ -25,6 +27,25 @@ struct SettingsView: View {
                         onSelection?()
                     }
                 }
+
+                Section {
+                    Toggle("Save scores", isOn: $saveScores)
+                        .onChange(of: saveScores) { _ in
+                            if !saveScores {
+                                totalSavedScores = 1
+                            }
+                        }
+                }
+
+                if saveScores {
+                    Section {
+                        Picker("Number of scores you want to save", selection: $totalSavedScores) {
+                            ForEach(1...20, id: \.self) {
+                                Text("\($0)")
+                            }
+                        }
+                    }
+                }
             }
             .navigationTitle("Settings")
             .toolbar {
@@ -37,5 +58,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(dicesAmount: .constant(1), onSelection: nil)
+    SettingsView(dicesAmount: .constant(1), totalSavedScores: .constant(.random(in: 1...20)), onSelection: nil)
 }
