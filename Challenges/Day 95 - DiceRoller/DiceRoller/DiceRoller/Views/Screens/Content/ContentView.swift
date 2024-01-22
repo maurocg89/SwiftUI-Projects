@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var feedback = UINotificationFeedbackGenerator()
 
     @State private var score = 0
+    @State private var saveScores = true
     @State private var savedScores = [Score]()
     @State private var showSavedScoresModal = false
     @State private var numberOfScoresToShow = 1
@@ -31,6 +32,9 @@ struct ContentView: View {
 
     private var scoresToShow: [Score] {
         guard !savedScores.isEmpty else { return [] }
+        if numberOfScoresToShow > savedScores.count {
+            return savedScores
+        }
         return Array(savedScores.prefix(upTo: numberOfScoresToShow))
     }
 
@@ -68,10 +72,12 @@ struct ContentView: View {
                 .allowsHitTesting(!isRollingDice)
             } // VStack
         } // ZStack
+        .onTapGesture {
+            showSavedScoresModal = false
+        }
         .onAppear {
             initialSettings()
-            // TODO: Load real values from a JSON
-            savedScores = Score.examples
+            loadScores()
         }
         .onReceive(timer) { time in
             guard isRollingDice else { return }
@@ -89,7 +95,7 @@ struct ContentView: View {
             calculateScore()
         }
         .sheet(isPresented: $showingSheet) {
-            SettingsView(dicesAmount: $dicesAmount, totalSavedScores: $numberOfScoresToShow) {
+            SettingsView(saveScores: $saveScores, dicesAmount: $dicesAmount, totalSavedScores: $numberOfScoresToShow) {
                 initialSettings()
             }
         }
@@ -98,6 +104,12 @@ struct ContentView: View {
     // MARK: Private Functions
     private func initialSettings() {
         score = 0
+        let totalScores = UserDefaults().integer(forKey: Score.totalScoresKey)
+        numberOfScoresToShow = totalScores == 0 ? 1 : totalScores
+
+        let dicesFromUserDefaults = UserDefaults().integer(forKey: Score.dicesAmountKey)
+        dicesAmount = dicesFromUserDefaults == 0 ? 1 : dicesFromUserDefaults
+
         diceValues = Array.init(repeating: 1, count: dicesAmount)
         feedback.prepare()
     }
@@ -119,16 +131,24 @@ struct ContentView: View {
 
     private func calculateScore() {
         score = diceValues.reduce(0, +)
+        saveScore(Score(id: UUID(), score: score, amountOfDices: dicesAmount))
     }
 
     private func simpleHaptic(type: UINotificationFeedbackGenerator.FeedbackType) {
         feedback.notificationOccurred(type)
     }
 
-    // TODO: Implement this methods
-    private func loadScores() {}
+    private func loadScores() {
+        savedScores = FileManager().getData(Score.savedFileName) ?? []
+    }
 
-    private func saveScore() {}
+    private func saveScore(_ score: Score) {
+        if savedScores.count == Score.maximumCapacity {
+            savedScores.removeLast()
+        }
+        savedScores.insert(score, at: 0)
+        FileManager().saveData(Score.savedFileName, savedScores)
+    }
 
     // MARK: Computed Properties Views
 

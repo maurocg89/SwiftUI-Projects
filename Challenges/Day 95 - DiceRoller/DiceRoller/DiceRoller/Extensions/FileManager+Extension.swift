@@ -21,6 +21,7 @@ extension FileManager {
             try data.write(to: url, options: [.atomic, .completeFileProtection])
         } catch {
             print("Failed to save \(fileName)")
+            print("Error: \(error.localizedDescription)")
         }
     }
 
@@ -32,6 +33,7 @@ extension FileManager {
             return decoded
         } catch {
             print("Failed to load \(fileName)")
+            print("Error: \(error.localizedDescription)")
             return nil
         }
     }

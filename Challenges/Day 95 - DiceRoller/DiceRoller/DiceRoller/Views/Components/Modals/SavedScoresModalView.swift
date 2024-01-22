@@ -22,20 +22,29 @@ struct SavedScoresModalView: View {
                         .padding()
                     ScrollView {
                         ForEach(Array(savedScores.enumerated()), id: \.element.id) { index, score in
-
-                            Label("\(score.score)", systemImage: "dice.fill")
-                                .font(.title2)
-                                .foregroundStyle(.white)
-                                .padding(.horizontal)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            HStack {
+                                ForEach(0..<score.amountOfDices, id: \.self) { dice in
+                                    Image(systemName: "dice.fill")
+                                        .resizable()
+                                        .foregroundStyle(.white)
+                                        .frame(width: 14, height: 14)
+                                }
+                                Text("\(score.score)")
+                                    .font(.title2)
+                                    .foregroundStyle(.white)
+                                    .padding(.leading, 4)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                         }
                         Spacer()
                     } // ScrollView
                     .scrollIndicators(.hidden)
-                } // VStack
+                }
+                // VStack
+                .padding(.leading)
 
             } // ZStack
-            .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.6)
+            .frame(width: geo.size.width * 0.85, height: geo.size.height * 0.65)
             .frame(width: geo.size.width, height: geo.size.height)
 
         } // GeometryReader

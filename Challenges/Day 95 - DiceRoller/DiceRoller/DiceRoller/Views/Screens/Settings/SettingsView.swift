@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var saveScores = false
+    @State private var showingAlert = false
+    @Binding var saveScores: Bool
     @Binding var dicesAmount: Int
     @Binding var totalSavedScores: Int
     let onSelection: (() -> Void)?
@@ -24,6 +25,7 @@ struct SettingsView: View {
                         }
                     }
                     .onChange(of: dicesAmount) { _ in
+                        UserDefaults.standard.setValue(dicesAmount, forKey: Score.dicesAmountKey)
                         onSelection?()
                     }
                 }
@@ -40,10 +42,19 @@ struct SettingsView: View {
                 if saveScores {
                     Section {
                         Picker("Number of scores you want to save", selection: $totalSavedScores) {
-                            ForEach(1...20, id: \.self) {
+                            ForEach(1...Score.maximumCapacity, id: \.self) {
                                 Text("\($0)")
                             }
                         }
+                        .onChange(of: totalSavedScores) { _ in
+                            UserDefaults.standard.setValue(totalSavedScores, forKey: Score.totalScoresKey)
+                        }
+                    }
+                }
+
+                Section {
+                    Button("Reset Data", role: .destructive) {
+                        showingAlert = true
                     }
                 }
             }
@@ -53,10 +64,16 @@ struct SettingsView: View {
                     dismiss()
                 }
             }
+            .alert("Are you sure you want to reset the data?", isPresented: $showingAlert) {
+                Button("Cancel", role: .cancel) {}
+                Button("Delete", role: .destructive) {
+                    FileManager().resetData(Score.savedFileName)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    SettingsView(dicesAmount: .constant(1), totalSavedScores: .constant(.random(in: 1...20)), onSelection: nil)
+    SettingsView(saveScores: .constant(true), dicesAmount: .constant(1), totalSavedScores: .constant(.random(in: 1...20)), onSelection: nil)
 }
