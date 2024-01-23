@@ -40,7 +40,7 @@ struct GroupViewAsContainer: View {
 //            layoutVertically.toggle()
 //        }
 
-        // On larger screens, like the iPhone Pro Max, there are 2 size classes: on portrait the 'compact' size is used and on landscape the 'regular' size is used.
+        // On larger screens, like the iPhone Pro Max, there are 2 size classes: on portrait the 'compact' size is used and in landscape the 'regular' size is used.
         if sizeClass == .compact {
             VStack(content: UserView.init)
         } else {
