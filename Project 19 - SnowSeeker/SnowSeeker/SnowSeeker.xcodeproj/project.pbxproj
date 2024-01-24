@@ -25,6 +25,7 @@
 		50EF3DDF2B6070A5003AF537 /* ResortDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF3DDE2B6070A5003AF537 /* ResortDetailsView.swift */; };
 		50FD01A42B61551A005A6025 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD01A32B61551A005A6025 /* Facility.swift */; };
 		50FD01A62B61612A005A6025 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD01A52B616129005A6025 /* Favorites.swift */; };
+		50FD01A82B61687A005A6025 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD01A72B61687A005A6025 /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		50EF3DDE2B6070A5003AF537 /* ResortDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsView.swift; sourceTree = "<group>"; };
 		50FD01A32B61551A005A6025 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		50FD01A52B616129005A6025 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		50FD01A72B61687A005A6025 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				50EE48562B6048F5002FC2C8 /* Bundle-Decodable.swift */,
 				50EF3DD42B60668D003AF537 /* View+Extension.swift */,
+				50FD01A72B61687A005A6025 /* FileManager+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				50EE48572B6048F5002FC2C8 /* Bundle-Decodable.swift in Sources */,
 				50EF3DCF2B60643F003AF537 /* WelcomeView.swift in Sources */,
 				50572D9F2B5EF759001B945F /* ContentView.swift in Sources */,
+				50FD01A82B61687A005A6025 /* FileManager+Extension.swift in Sources */,
 				50EF3DDC2B606FDC003AF537 /* SkiDetailsView.swift in Sources */,
 				50EE484C2B603567002FC2C8 /* GroupViewAsContainer.swift in Sources */,
 				50572D9D2B5EF759001B945F /* SnowSeekerApp.swift in Sources */,

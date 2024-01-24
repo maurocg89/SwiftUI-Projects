@@ -12,7 +12,10 @@ class Favorites: ObservableObject {
     private let saveKey = "Favorites"
 
     init() {
-        // load our saved data
+        if let savedData = FileManager().loadData(saveKey) as Set<String>? {
+            resorts = savedData
+            return
+        }
         resorts = []
     }
 
@@ -33,6 +36,6 @@ class Favorites: ObservableObject {
     }
 
     func save() {
-        // write out our data
+        FileManager().saveData(saveKey, resorts)
     }
 }
