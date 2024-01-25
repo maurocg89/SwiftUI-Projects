@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    enum SortOrder {
+        case byDefault, byName, byCountryName
+    }
+
     let resorts: [Resort] = Bundle.main.decode(Resort.resortsFileName)
     
     @StateObject var favorites = Favorites()
     @State private var searchText = ""
+    @State private var sortOrder: SortOrder = .byDefault
 
     var body: some View {
         NavigationView {
@@ -49,7 +54,18 @@ struct ContentView: View {
             } // List
             .navigationTitle("Resorts")
             .searchable(text: $searchText, prompt: "Search for a resort")
-
+            .toolbar {
+                Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                    Picker("Sort", selection: $sortOrder) {
+                        Text("Default")
+                            .tag(SortOrder.byDefault)
+                        Text("Sort by Name")
+                            .tag(SortOrder.byName)
+                        Text("Sort by Country")
+                            .tag(SortOrder.byCountryName)
+                    }
+                }
+            }
             // Detail View for the landscape orientation.
             WelcomeView()
 
@@ -61,9 +77,10 @@ struct ContentView: View {
 
     var filteredResorts: [Resort] {
         if searchText.isEmpty {
-            return resorts
+            return resorts.sorted(by: sortResorts)
         }
-        return resorts.filter{ $0.name.localizedCaseInsensitiveContains(searchText) }
+        return resorts.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            .sorted(by: sortResorts)
     }
 
     // Updated for Xcode 15 and iOS 16
@@ -97,6 +114,18 @@ struct ContentView: View {
             WelcomeView()
         } // NavigationSplitView
         .navigationViewStyle(.stack)
+    }
+
+    // MARK: Private Functions
+    private func sortResorts(_ resort1: Resort, _ resort2: Resort) -> Bool {
+        switch sortOrder {
+        case .byDefault:
+            return false
+        case .byName:
+            return resort1.name < resort2.name
+        case .byCountryName:
+            return resort1.country < resort2.country
+        }
     }
 }
 
