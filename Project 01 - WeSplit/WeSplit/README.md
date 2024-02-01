@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Project 1: WeSplit</h1>
-  <h4>Learn the basics of SwiftUI with your first project</h4>
+  <h3>Learn the basics of SwiftUI with your first project</h3>
 </div>
 
 ## Topics
