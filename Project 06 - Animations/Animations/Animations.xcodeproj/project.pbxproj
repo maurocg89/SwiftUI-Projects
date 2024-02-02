@@ -63,16 +63,11 @@
 		3406FE8929F57BBB0015FF2B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				50BB37CB2B6D786000C4A46C /* Playground */,
 				3406FE8A29F57BBB0015FF2B /* AnimationsApp.swift */,
 				3406FE8C29F57BBB0015FF2B /* ContentView.swift */,
 				3406FE8E29F57BBD0015FF2B /* Assets.xcassets */,
 				3406FE9029F57BBD0015FF2B /* Preview Content */,
-				50BDF97A2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift */,
-				50BDF97C2A27D22C0053AF81 /* BindingAnimationsPlayground.swift */,
-				50BDF97E2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift */,
-				50BDF9802A27D2C70053AF81 /* GestureAnimationsPlayground.swift */,
-				50BDF9822A27D30E0053AF81 /* ShowHideViewPlayground.swift */,
-				50BDF9842A27D4320053AF81 /* CustomTransitionViewPlayground.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -83,6 +78,19 @@
 				3406FE9129F57BBD0015FF2B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50BB37CB2B6D786000C4A46C /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				50BDF97A2A27D1C80053AF81 /* ImplicitAnimationsPlayground.swift */,
+				50BDF97C2A27D22C0053AF81 /* BindingAnimationsPlayground.swift */,
+				50BDF97E2A27D2770053AF81 /* ExplicitAnimationsPlayground.swift */,
+				50BDF9802A27D2C70053AF81 /* GestureAnimationsPlayground.swift */,
+				50BDF9822A27D30E0053AF81 /* ShowHideViewPlayground.swift */,
+				50BDF9842A27D4320053AF81 /* CustomTransitionViewPlayground.swift */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
