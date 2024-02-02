@@ -22,6 +22,7 @@
 		50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDF2B4733B200A65EFC /* ContentView.swift */; };
 		50B03FE22B4733B400A65EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE12B4733B400A65EFC /* Assets.xcassets */; };
 		50B03FE62B4733B400A65EFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE52B4733B400A65EFC /* Preview Assets.xcassets */; };
+		50BB37CD2B6D793F00C4A46C /* GesturePlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB37CC2B6D793F00C4A46C /* GesturePlaygroundView.swift */; };
 		50CFD2F62B487F3C00A9B7A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F52B487F3C00A9B7A5 /* CardView.swift */; };
 		50CFD2FA2B487F6800A9B7A5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2F92B487F6800A9B7A5 /* Card.swift */; };
 		50CFD3002B48829900A9B7A5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */; };
@@ -45,6 +46,7 @@
 		50B03FE12B4733B400A65EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B03FE32B4733B400A65EFC /* Flashzilla.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flashzilla.entitlements; sourceTree = "<group>"; };
 		50B03FE52B4733B400A65EFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50BB37CC2B6D793F00C4A46C /* GesturePlaygroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePlaygroundView.swift; sourceTree = "<group>"; };
 		50CFD2F52B487F3C00A9B7A5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		50CFD2F92B487F6800A9B7A5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		50CFD2FF2B48829900A9B7A5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				50006F532B4DC9C700DE718D /* AppBackgroundStatePlayground.swift */,
 				50006F542B4DC9C700DE718D /* ContentViewPlayground.swift */,
 				50006F552B4DC9C700DE718D /* GesturesPlayground.swift */,
+				50BB37CC2B6D793F00C4A46C /* GesturePlaygroundView.swift */,
 				50006F512B4DC9C700DE718D /* HapticsPlayground.swift */,
 				50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */,
 				50006F562B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50006F612B4DD00100DE718D /* SettingsView.swift in Sources */,
+				50BB37CD2B6D793F00C4A46C /* GesturePlaygroundView.swift in Sources */,
 				50006F642B4F1A9900DE718D /* SummaryView.swift in Sources */,
 				50006F5B2B4DC9C700DE718D /* ContentViewPlayground.swift in Sources */,
 				50006F5D2B4DC9C700DE718D /* SupportingAccessibilityPlayground.swift in Sources */,
