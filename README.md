@@ -8,9 +8,9 @@ Paul Hudson's [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui
 
 ## 🗂️ Projects
 
-- [Project 1 - WeSplit](/Project%2001%20-%20WeSplit/WeSplit/)
-- [Project 2 - Guess the Flag](/Project%2002%20-%20GuessTheFlag/GuessTheFlag/)
-- [Project 3 - Views and Modifiers](/Project%2003%20-%20ViewsAndModifiers/ViewsAndModifiers/)
+- [Project 1 - WeSplit](/Project%2001%20-%20WeSplit/)
+- [Project 2 - Guess the Flag](/Project%2002%20-%20GuessTheFlag/)
+- [Project 3 - Views and Modifiers](/Project%2003%20-%20ViewsAndModifiers/)
 - [Project 4 - BetterRest](/Project%2004%20-%20BetterRest/)
 - [Project 5 - WordScramble](/Project%2005%20-%20WordScramble/)
 - [Project 6 - Animations](/Project%2006%20-%20Animations/)
@@ -30,17 +30,6 @@ Paul Hudson's [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui
 
 <br />
 
-## 🏆 Challenges
-
-- [Challenge Day 19 - Unit Converter](/Challenges/Day%2019%20-%20UnitConversions/UnitConversions/)
-- [Challenge Day 35 - Edutainment](/Challenges/Day%2035%20-%20Edutainment/Edutainment/)
-- [Challenge Day 47 - HabitTracker](/Challenges/Day%2047%20-%20HabitTracker/HabitTracker/)
-- [Challenge Day 60 - FriendFace](/Challenges/Day%2060%20-%20FriendFace/FirendFace/)
-- [Challenge Day 77 - SomeoneNew](/Challenges/Day%2077%20-%20SomeoneNew/SomeoneNew/)
-- [Challenge Day 95 - DiceRoller](/Challenges/Day%2095%20-%20DiceRoller/DiceRoller/)
-
-<br />
-
 ## 📌 Milestones
 
 **Milestone 1: The Swift programming language**
@@ -54,22 +43,27 @@ Paul Hudson's [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui
 **Milestone 3: Projects 4-6**
    - [Key Points](https://www.hackingwithswift.com/guide/ios-swiftui/3/1/key-points)
    - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/3/2/key-points)
+   - [Challenge](/Challenges/Day%2035%20-%20Edutainment/)
 
 **Milestone 4: Projects 7-9**
    - [Key Points](https://www.hackingwithswift.com/guide/ios-swiftui/4/1/key-points)
-   - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/4/2/key-points)   
+   - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/4/2/key-points)
+   - [Challenge](/Challenges/Day%2047%20-%20HabitTracker/)   
    
 **Milestone 5: Projects 10-12**
    - [Key Points](https://www.hackingwithswift.com/guide/ios-swiftui/5/1/key-points)
    - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/5/2/key-points)
+   - [Challenge](/Challenges/Day%2060%20-%20FriendFace/)
 
  **Milestone 6: Projects 13-15**
    - [Key Points](https://www.hackingwithswift.com/guide/ios-swiftui/6/1/key-points)
    - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/6/2/key-points)
+   - [Challenge](/Challenges/Day%2077%20-%20SomeoneNew/)
    
  **Milestone 7: Projects 16-18**
    - [Key Points](https://www.hackingwithswift.com/guide/ios-swiftui/7/1/key-points)
    - [What I Learned](https://www.hackingwithswift.com/guide/ios-swiftui/7/2/key-points)
+   - [Challenge](/Challenges/Day%2095%20-%20DiceRoller/)
 
 <br />
 
@@ -104,3 +98,6 @@ Paul Hudson's [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui
 [**Day 14**](https://www.hackingwithswift.com/100/swiftui/14) – optionals, nil coalescing, and checkpoint 9
 
 [**Day 15**](https://www.hackingwithswift.com/100/swiftui/15) – Swift review
+
+[**Swift Guidebook**](https://www.hackingwithswift.com/guide)
+
