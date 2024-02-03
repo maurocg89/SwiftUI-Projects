@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var showingAddExpense = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ExpenseSection(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems(at:))
                 
@@ -20,15 +20,21 @@ struct ContentView: View {
             }
             .navigationTitle("iExpense")
             .toolbar {
-                Button {
-                    showingAddExpense = true
+                // MARK: Project 9 Challenge 1
+                NavigationLink {
+                    AddView(expenses: expenses)
                 } label: {
                     Image(systemName: "plus")
                 }
+//                Button {
+//                    showingAddExpense = true
+//                } label: {
+//                    Image(systemName: "plus")
+//                }
             }
-            .sheet(isPresented: $showingAddExpense) {
-                AddView(expenses: expenses)
-            }
+//            .sheet(isPresented: $showingAddExpense) {
+//                AddView(expenses: expenses)
+//            }
         }
     }
     

@@ -11,17 +11,17 @@ struct AddView: View {
     @ObservedObject var expenses: Expenses
     @Environment(\.dismiss) var dismiss
     
-    @State private var name = ""
+    @State private var name = "Expense Name"
     @State private var type = "Personal"
     @State private var amount = 0.0
     
     let types = ["Business", "Personal"]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
-                TextField("Name", text: $name)
-                
+                // MARK: Project 9 Challenge 2
+//                TextField("Name", text: $name)
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
@@ -32,13 +32,24 @@ struct AddView: View {
                 TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
             }
-            .navigationTitle("Add new expense")
+            // MARK: Project 9 Challenge 2
+            .navigationTitle($name)
+            .navigationBarTitleDisplayMode(.inline)
+            // MARK: Project 9 Challenge 1
+            .navigationBarBackButtonHidden()
             .toolbar {
-                Button("Save") {
-                    let item = ExpenseItem(name: name, type: type, amount: amount)
-                    debugPrint("AMOUNT: \(amount)")
-                    expenses.items.append(item)
-                    dismiss()
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        let item = ExpenseItem(name: name, type: type, amount: amount)
+                        debugPrint("AMOUNT: \(amount)")
+                        expenses.items.append(item)
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
             }
         }
