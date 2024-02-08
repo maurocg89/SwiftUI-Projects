@@ -10,7 +10,11 @@
  - CIFilterBuiltins
  - onChange()
  - confirmationDialog()
- - ImagePicker 
+ - ImagePicker
+ - ContentUnavailableView
+ - ShareLink
+ - How to ask the user to leave an App Store review
+ - PhotosPicker 
 
 ##  Challenges
 One of the best ways to learn is to write your own code as often as possible, so here are three ways you should try extending this app to make sure you fully understand what’s going on.

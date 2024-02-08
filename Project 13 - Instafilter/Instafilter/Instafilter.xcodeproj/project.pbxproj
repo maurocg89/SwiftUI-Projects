@@ -13,6 +13,10 @@
 		50115F4F2A74069C0086220E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50115F4E2A74069C0086220E /* Preview Assets.xcassets */; };
 		50115F572A74077F0086220E /* PropertyWrappersStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50115F562A74077F0086220E /* PropertyWrappersStructs.swift */; };
 		50115F592A7418DB0086220E /* ConfirmationDialogPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50115F582A7418DB0086220E /* ConfirmationDialogPlaygroundView.swift */; };
+		501AD6612B75136A005613BA /* ContentUnavailablePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD6602B75136A005613BA /* ContentUnavailablePlayground.swift */; };
+		501AD6632B75170C005613BA /* ShareLinkPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD6622B75170C005613BA /* ShareLinkPlayground.swift */; };
+		501AD6652B751D17005613BA /* RequestAppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD6642B751D17005613BA /* RequestAppStoreReview.swift */; };
+		501AD6672B751F11005613BA /* PhotosPickerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD6662B751F11005613BA /* PhotosPickerPlayground.swift */; };
 		50B0B2942A854BB800878112 /* ContentPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B0B2932A854BB800878112 /* ContentPlaygroundView.swift */; };
 		50BB4D512A850F0400C7633F /* CoreImagePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB4D502A850F0400C7633F /* CoreImagePlayground.swift */; };
 		50BB4D552A851DDF00C7633F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB4D542A851DDF00C7633F /* ImagePicker.swift */; };
@@ -29,6 +33,10 @@
 		50115F4E2A74069C0086220E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50115F562A74077F0086220E /* PropertyWrappersStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappersStructs.swift; sourceTree = "<group>"; };
 		50115F582A7418DB0086220E /* ConfirmationDialogPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogPlaygroundView.swift; sourceTree = "<group>"; };
+		501AD6602B75136A005613BA /* ContentUnavailablePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailablePlayground.swift; sourceTree = "<group>"; };
+		501AD6622B75170C005613BA /* ShareLinkPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLinkPlayground.swift; sourceTree = "<group>"; };
+		501AD6642B751D17005613BA /* RequestAppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAppStoreReview.swift; sourceTree = "<group>"; };
+		501AD6662B751F11005613BA /* PhotosPickerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerPlayground.swift; sourceTree = "<group>"; };
 		50B0B2932A854BB800878112 /* ContentPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPlaygroundView.swift; sourceTree = "<group>"; };
 		50BB4D502A850F0400C7633F /* CoreImagePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImagePlayground.swift; sourceTree = "<group>"; };
 		50BB4D542A851DDF00C7633F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 				50115F582A7418DB0086220E /* ConfirmationDialogPlaygroundView.swift */,
 				50BB4D562A851F4100C7633F /* ImagePickerPlaygroundView.swift */,
 				50B0B2932A854BB800878112 /* ContentPlaygroundView.swift */,
+				501AD6602B75136A005613BA /* ContentUnavailablePlayground.swift */,
+				501AD6622B75170C005613BA /* ShareLinkPlayground.swift */,
+				501AD6642B751D17005613BA /* RequestAppStoreReview.swift */,
+				501AD6662B751F11005613BA /* PhotosPickerPlayground.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -180,11 +192,15 @@
 				50BB4D512A850F0400C7633F /* CoreImagePlayground.swift in Sources */,
 				50115F472A74069B0086220E /* InstafilterApp.swift in Sources */,
 				50B0B2942A854BB800878112 /* ContentPlaygroundView.swift in Sources */,
+				501AD6632B75170C005613BA /* ShareLinkPlayground.swift in Sources */,
+				501AD6672B751F11005613BA /* PhotosPickerPlayground.swift in Sources */,
 				50BB4D572A851F4100C7633F /* ImagePickerPlaygroundView.swift in Sources */,
 				50BB4D552A851DDF00C7633F /* ImagePicker.swift in Sources */,
+				501AD6652B751D17005613BA /* RequestAppStoreReview.swift in Sources */,
 				50115F592A7418DB0086220E /* ConfirmationDialogPlaygroundView.swift in Sources */,
 				50115F572A74077F0086220E /* PropertyWrappersStructs.swift in Sources */,
 				50BB4D592A85312500C7633F /* ImageSaver.swift in Sources */,
+				501AD6612B75136A005613BA /* ContentUnavailablePlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
