@@ -9,14 +9,18 @@ import SwiftUI
 
 struct NavigationLinkPlayground: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(0..<100) { row in
-                NavigationLink {
-                    Text("Detail \(row)")
-                } label: {
-                    Text("Row \(row)")
-                }
+//                NavigationLink {
+//                    Text("Detail \(row)")
+//                } label: {
+//                    Text("Row \(row)")
+//                }
+                NavigationLink("Row \(row)", value: row)
             }
+            .navigationDestination(for: Int.self, destination: { value in
+                Text("Detail \(value)")
+            })
             .navigationTitle("SwiftUI")
         }
     }

@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var showingGrid: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if showingGrid {
                     GridLayout(missions: missions, astronauts: astronauts)
@@ -45,14 +45,22 @@ struct GridLayout: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(missions) { mission in
-                    NavigationLink {
-                        MissionView(mission: mission, astronauts: astronauts)
-                    } label: {
+//                    NavigationLink {
+//                        MissionView(mission: mission, astronauts: astronauts)
+//                    } label: {
+//                        MissionCardView(mission: mission)
+//                    }
+                    // MARK: Project 9 Challenge 3. Navigation
+                    NavigationLink(value: mission) {
                         MissionCardView(mission: mission)
                     }
                 }
             } // LazyVGrid
             .padding([.horizontal, .bottom])
+        }
+        .navigationDestination(for: Mission.self) { missionDestination in
+            MissionView(mission: missionDestination,
+                        astronauts: astronauts)
         }
     }
 }
@@ -60,16 +68,34 @@ struct GridLayout: View {
 struct ListLayout: View {
     let missions: [Mission]
     let astronauts: [String : Astronaut]
-    
+//    
+//    var body: some View {
+//        List(missions) { mission in
+//            MissionCardView(mission: mission)
+//                .background(NavigationLink("", destination: MissionView(mission: mission, astronauts: astronauts)).opacity(0))
+//                .listRowBackground(Color.darkBackground)
+//                .listRowSeparator(.hidden)
+//                .accessibility(addTraits: .isLink)
+//                .accessibility(removeTraits: .isButton)
+//        }
+//        .listStyle(.insetGrouped)
+//        .scrollContentBackground(.hidden)
+//    }
+    // MARK: Project 9 Challenge 3. Navigation
     var body: some View {
         List(missions) { mission in
             MissionCardView(mission: mission)
-                .background(NavigationLink("", destination: MissionView(mission: mission, astronauts: astronauts)).opacity(0))
+                .background(
+                    NavigationLink("", value: mission)
+                        .opacity(0))
                 .listRowBackground(Color.darkBackground)
                 .listRowSeparator(.hidden)
                 .accessibility(addTraits: .isLink)
                 .accessibility(removeTraits: .isButton)
         }
+        .navigationDestination(for: Mission.self, destination: { missionDestination in
+            MissionView(mission: missionDestination, astronauts: astronauts)
+        })
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
     }

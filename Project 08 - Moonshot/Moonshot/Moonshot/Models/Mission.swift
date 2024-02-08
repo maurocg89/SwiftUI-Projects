@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Mission: Codable, Identifiable {
-    struct CrewRole: Codable {
+// MARK: Project 9 Challenge 3. Navigation
+struct Mission: Codable, Identifiable, Hashable {
+    struct CrewRole: Codable, Hashable {
         let name: String
         let role: String
     }
