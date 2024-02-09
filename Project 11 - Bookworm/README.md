@@ -8,6 +8,7 @@
  - CoreData
  - Binding
  - TextEditor
+ - Introduction to SwiftData (@Model, Environment modelContext, ModelContainer, @Query, SortDescriptor)
 
 ## Resources
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmojiRatingView: View {
-    let rating: Int16
+    let rating: Int
 
     var body: some View {
         switch rating {

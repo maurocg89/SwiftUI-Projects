@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501AD6692B754D60005613BA /* SwiftDataPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD6682B754D60005613BA /* SwiftDataPlayground.swift */; };
+		501AD66C2B754D81005613BA /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD66B2B754D81005613BA /* Student.swift */; };
+		501AD66E2B754EB1005613BA /* PlagroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AD66D2B754EB1005613BA /* PlagroundApp.swift */; };
+		5063E82D2B7663E1007B5218 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E82C2B7663E1007B5218 /* Book.swift */; };
+		5063E8342B7677E7007B5218 /* ContentViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8332B7677E7007B5218 /* ContentViewSD.swift */; };
+		5063E8362B767874007B5218 /* AddBookSDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8352B767874007B5218 /* AddBookSDView.swift */; };
+		5063E83D2B7689FD007B5218 /* DetailSDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E83C2B7689FD007B5218 /* DetailSDView.swift */; };
 		5089D8FE2A55CFFC0083845F /* BookwormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089D8FD2A55CFFC0083845F /* BookwormApp.swift */; };
-		5089D9002A55CFFC0083845F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089D8FF2A55CFFC0083845F /* ContentView.swift */; };
+		5089D9002A55CFFC0083845F /* ContentViewCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089D8FF2A55CFFC0083845F /* ContentViewCD.swift */; };
 		5089D9022A55CFFD0083845F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5089D9012A55CFFD0083845F /* Assets.xcassets */; };
 		5089D9062A55CFFD0083845F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5089D9052A55CFFD0083845F /* Preview Assets.xcassets */; };
 		5089D90E2A55D11E0083845F /* BindingPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089D90D2A55D11E0083845F /* BindingPlayground.swift */; };
@@ -25,9 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501AD6682B754D60005613BA /* SwiftDataPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataPlayground.swift; sourceTree = "<group>"; };
+		501AD66B2B754D81005613BA /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		501AD66D2B754EB1005613BA /* PlagroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlagroundApp.swift; sourceTree = "<group>"; };
+		5063E82C2B7663E1007B5218 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		5063E8332B7677E7007B5218 /* ContentViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewSD.swift; sourceTree = "<group>"; };
+		5063E8352B767874007B5218 /* AddBookSDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookSDView.swift; sourceTree = "<group>"; };
+		5063E83C2B7689FD007B5218 /* DetailSDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSDView.swift; sourceTree = "<group>"; };
 		5089D8FA2A55CFFC0083845F /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5089D8FD2A55CFFC0083845F /* BookwormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
-		5089D8FF2A55CFFC0083845F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5089D8FF2A55CFFC0083845F /* ContentViewCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewCD.swift; sourceTree = "<group>"; };
 		5089D9012A55CFFD0083845F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5089D9032A55CFFD0083845F /* Bookworm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bookworm.entitlements; sourceTree = "<group>"; };
 		5089D9052A55CFFD0083845F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -55,6 +69,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501AD66A2B754D71005613BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				501AD66B2B754D81005613BA /* Student.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5063E82B2B7663D8007B5218 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5063E82C2B7663E1007B5218 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5063E82E2B76774F007B5218 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				5063E82B2B7663D8007B5218 /* Model */,
+				5063E8302B767771007B5218 /* Views */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		5063E82F2B767756007B5218 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				50B681F22A56F49300209A3C /* Views */,
+				50B681F42A56F4A100209A3C /* DataModel */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5063E8302B767771007B5218 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8312B76779D007B5218 /* Screens */,
+				5063E8332B7677E7007B5218 /* ContentViewSD.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5063E8312B76779D007B5218 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8372B767890007B5218 /* AddBook */,
+				5063E8382B76789E007B5218 /* Detail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5063E8372B767890007B5218 /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8352B767874007B5218 /* AddBookSDView.swift */,
+			);
+			path = AddBook;
+			sourceTree = "<group>";
+		};
+		5063E8382B76789E007B5218 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5063E83C2B7689FD007B5218 /* DetailSDView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5063E8392B768332007B5218 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				5063E83A2B76833B007B5218 /* Views */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		5063E83A2B76833B007B5218 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50B681F92A571AFA00209A3C /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5089D8F12A55CFFC0083845F = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +172,11 @@
 		5089D8FC2A55CFFC0083845F /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
-				50B681F42A56F4A100209A3C /* DataModel */,
-				50B681F32A56F49800209A3C /* Model */,
-				50B681F22A56F49300209A3C /* Views */,
+				5063E8392B768332007B5218 /* Commons */,
+				5063E82F2B767756007B5218 /* CoreData */,
+				5063E82E2B76774F007B5218 /* SwiftData */,
 				5089D90C2A55D05B0083845F /* Playground */,
 				5089D8FD2A55CFFC0083845F /* BookwormApp.swift */,
-				5089D8FF2A55CFFC0083845F /* ContentView.swift */,
 				5089D9012A55CFFD0083845F /* Assets.xcassets */,
 				5089D9032A55CFFD0083845F /* Bookworm.entitlements */,
 				5089D9042A55CFFD0083845F /* Preview Content */,
@@ -98,8 +195,10 @@
 		5089D90C2A55D05B0083845F /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				501AD66A2B754D71005613BA /* Model */,
 				50B681E72A56E7D200209A3C /* DataModel */,
 				50B681E52A56E79500209A3C /* Views */,
+				501AD66D2B754EB1005613BA /* PlagroundApp.swift */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -110,6 +209,7 @@
 				5089D90D2A55D11E0083845F /* BindingPlayground.swift */,
 				50B681E32A56E65700209A3C /* TextEditorPlayground.swift */,
 				50B681ED2A56EBDA00209A3C /* CoreDataPlayground.swift */,
+				501AD6682B754D60005613BA /* SwiftDataPlayground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,16 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				50B681FC2A571B8200209A3C /* Screens */,
-				50B681F92A571AFA00209A3C /* Components */,
+				5089D8FF2A55CFFC0083845F /* ContentViewCD.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		50B681F32A56F49800209A3C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		50B681F42A56F4A100209A3C /* DataModel */ = {
@@ -236,8 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501AD6692B754D60005613BA /* SwiftDataPlayground.swift in Sources */,
 				50B681FB2A571B1100209A3C /* RatingView.swift in Sources */,
-				5089D9002A55CFFC0083845F /* ContentView.swift in Sources */,
+				5063E83D2B7689FD007B5218 /* DetailSDView.swift in Sources */,
+				5089D9002A55CFFC0083845F /* ContentViewCD.swift in Sources */,
+				5063E8362B767874007B5218 /* AddBookSDView.swift in Sources */,
 				50B681F62A56FBED00209A3C /* AddBookView.swift in Sources */,
 				50B681EC2A56EA0200209A3C /* DataControllerPlayground.swift in Sources */,
 				50B681FE2A5725AA00209A3C /* EmojiRatingView.swift in Sources */,
@@ -245,10 +341,14 @@
 				50B681E42A56E65700209A3C /* TextEditorPlayground.swift in Sources */,
 				50B682002A572CBE00209A3C /* DetailView.swift in Sources */,
 				50B681F82A57145D00209A3C /* DataController.swift in Sources */,
+				501AD66E2B754EB1005613BA /* PlagroundApp.swift in Sources */,
 				50B681F12A56F47600209A3C /* BookwormPlayground.xcdatamodeld in Sources */,
 				5089D8FE2A55CFFC0083845F /* BookwormApp.swift in Sources */,
+				5063E8342B7677E7007B5218 /* ContentViewSD.swift in Sources */,
 				5089D90E2A55D11E0083845F /* BindingPlayground.swift in Sources */,
+				501AD66C2B754D81005613BA /* Student.swift in Sources */,
 				50B681EA2A56E7EB00209A3C /* Bookworm.xcdatamodeld in Sources */,
+				5063E82D2B7663E1007B5218 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +487,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -427,7 +527,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;

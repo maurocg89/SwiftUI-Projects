@@ -26,16 +26,18 @@ struct RatingView: View {
             }
 
             ForEach(1...maxRating, id:\.self) { number in
-                image(for: number)
-                    .foregroundColor(number > rating ? offColor : onColor)
-                    .onTapGesture {
-                        rating = number
-                    }
+                Button {
+                    rating = number
+                } label: {
+                    image(for: number)
+                        .foregroundColor(number > rating ? offColor : onColor)
+                }
 //                    .accessibilityLabel("\(number == 1 ? "1 star" : "\(number) stars")")
 //                    .accessibilityRemoveTraits(.isImage)
 //                    .accessibilityAddTraits(number > rating ? .isButton : [.isButton, .isSelected])
             }
-        }
+        } // HStack
+        .buttonStyle(.plain) // Because RatingView is inside of a Form, SwiftUI take the row as one button. To fix this we add the plain button style and SwiftUI now treat each button individually inside the row
         .accessibilityElement()
         .accessibilityLabel("Rating")
 //        .accessibilityValue(rating == 1 ? "1 Star" : "\(rating) stars")

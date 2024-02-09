@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// ContentView CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
@@ -24,7 +24,7 @@ struct ContentView: View {
                         DetailView(book: book)
                     } label: {
                         HStack {
-                            EmojiRatingView(rating: book.rating)
+                            EmojiRatingView(rating: Int(book.rating))
 
                             VStack(alignment: .leading) {
                                 Text(book.title ?? "Unknown Title")
