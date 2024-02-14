@@ -6,7 +6,7 @@
 ## Topics
 
  - Editing SwiftData model objects
- - Filtering @Query using Predicate
+ - Filtering @Query using #Predicate
  - Dynamically sorting and filtering @Query with SwiftUI
  - Relationships with SwiftData, SwiftUI, and @Query
  - Syncing SwiftData with CloudKit

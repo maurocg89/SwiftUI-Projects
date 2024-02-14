@@ -15,6 +15,9 @@
 		3451F8582A06AF2300531571 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F8572A06AF2300531571 /* ExpenseItem.swift */; };
 		3451F85A2A06AF6600531571 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F8592A06AF6600531571 /* Expenses.swift */; };
 		3451F85E2A06B32100531571 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451F85D2A06B32100531571 /* AddView.swift */; };
+		5063E87A2B7B3CC7007B5218 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8792B7B3CC7007B5218 /* Expense.swift */; };
+		5063E87C2B7B3CFF007B5218 /* ContentViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E87B2B7B3CFF007B5218 /* ContentViewSD.swift */; };
+		5063E87E2B7B3D0C007B5218 /* AddViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E87D2B7B3D0C007B5218 /* AddViewSD.swift */; };
 		50BDF9872A27D5AD0053AF81 /* StateStructsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */; };
 		50BDF9892A27D8EE0053AF81 /* StateObjectPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */; };
 		50BDF98B2A27D9530053AF81 /* SheetPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */; };
@@ -33,6 +36,9 @@
 		3451F8572A06AF2300531571 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		3451F8592A06AF6600531571 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		3451F85D2A06B32100531571 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		5063E8792B7B3CC7007B5218 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		5063E87B2B7B3CFF007B5218 /* ContentViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewSD.swift; sourceTree = "<group>"; };
+		5063E87D2B7B3D0C007B5218 /* AddViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewSD.swift; sourceTree = "<group>"; };
 		50BDF9862A27D5AD0053AF81 /* StateStructsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStructsPlayground.swift; sourceTree = "<group>"; };
 		50BDF9882A27D8EE0053AF81 /* StateObjectPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectPlayground.swift; sourceTree = "<group>"; };
 		50BDF98A2A27D9530053AF81 /* SheetPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPlayground.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 		3451F8462A06898F00531571 /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
+				5063E8762B7B3C94007B5218 /* SwiftData */,
 				50EF35672AC1C71300E730AC /* Playground */,
 				3451F85C2A06B11600531571 /* Views */,
 				3451F85B2A06B10700531571 /* Models */,
@@ -106,6 +113,32 @@
 				3451F85D2A06B32100531571 /* AddView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5063E8762B7B3C94007B5218 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8782B7B3CAC007B5218 /* Models */,
+				5063E8772B7B3CA5007B5218 /* Views */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		5063E8772B7B3CA5007B5218 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5063E87B2B7B3CFF007B5218 /* ContentViewSD.swift */,
+				5063E87D2B7B3D0C007B5218 /* AddViewSD.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5063E8782B7B3CAC007B5218 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8792B7B3CC7007B5218 /* Expense.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		50EF35672AC1C71300E730AC /* Playground */ = {
@@ -191,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5063E87E2B7B3D0C007B5218 /* AddViewSD.swift in Sources */,
 				3451F85A2A06AF6600531571 /* Expenses.swift in Sources */,
 				3451F84A2A06898F00531571 /* ContentView.swift in Sources */,
 				50BDF98D2A27D9F70053AF81 /* OnDeletePlayground.swift in Sources */,
@@ -200,8 +234,10 @@
 				50BDF9892A27D8EE0053AF81 /* StateObjectPlayground.swift in Sources */,
 				3451F8562A06AA3900531571 /* PlaygroundView.swift in Sources */,
 				3451F8482A06898F00531571 /* iExpenseApp.swift in Sources */,
+				5063E87C2B7B3CFF007B5218 /* ContentViewSD.swift in Sources */,
 				50BDF9912A27DBCA0053AF81 /* CodablePlayground.swift in Sources */,
 				50BDF9872A27D5AD0053AF81 /* StateStructsPlayground.swift in Sources */,
+				5063E87A2B7B3CC7007B5218 /* Expense.swift in Sources */,
 				3451F8582A06AF2300531571 /* ExpenseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +375,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,6 +383,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.grillo.mauro.iExpense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -368,6 +409,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,6 +417,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.grillo.mauro.iExpense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

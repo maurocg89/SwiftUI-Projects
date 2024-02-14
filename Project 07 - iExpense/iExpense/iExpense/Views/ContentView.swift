@@ -5,10 +5,11 @@
 //  Created by Mauro Grillo on 06/05/2023.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var expenses = Expenses()
+    @State var expenses = Expenses()
     @State private var showingAddExpense = false
     
     var body: some View {

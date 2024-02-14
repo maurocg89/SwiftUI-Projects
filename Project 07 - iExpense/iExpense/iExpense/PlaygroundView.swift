@@ -70,7 +70,7 @@ struct User: Codable {
 struct CodableContentView: View {
     @State private var user = User(firstName: "Taylor", lastName: "Swift")
     
-    var body: some View {
+    var body: some View {
         Button("Save User") {
             let encoder = JSONEncoder()
             

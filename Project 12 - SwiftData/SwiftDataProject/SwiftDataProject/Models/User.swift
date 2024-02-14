@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+// @Model is a macro, builds on the same observation system as @Observable.
+// Conforms to Identifiable protocol automatically
 @Model
 class User {
     var name: String

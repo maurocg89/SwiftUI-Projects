@@ -1,46 +1,46 @@
 //
-//  AddView.swift
+//  AddViewSD.swift
 //  iExpense
 //
-//  Created by Mauro Grillo on 06/05/2023.
+//  Created by Mauro Grillo on 13/02/2024.
 //
 
+import SwiftData
 import SwiftUI
 
-struct AddView: View {
-    @Bindable var expenses: Expenses
+struct AddViewSD: View {
+    @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
-    
-    @State private var name = "Expense Name"
+    @Query var expenses: [Expense]
+
+    @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    
+
     let types = ["Business", "Personal"]
-    
+
     var body: some View {
         NavigationStack {
             Form {
-                // MARK: Project 9 Challenge 2
-//                TextField("Name", text: $name)
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+
+                TextField("Name", text: $name)
+
+                TextField("Amount", value: $amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     .keyboardType(.decimalPad)
             }
-            // MARK: Project 9 Challenge 2
-            .navigationTitle($name)
+            .navigationTitle("Add Expense")
             .navigationBarTitleDisplayMode(.inline)
-            // MARK: Project 9 Challenge 1
             .navigationBarBackButtonHidden()
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let item = ExpenseItem(name: name, type: type, amount: amount)
-                        debugPrint("AMOUNT: \(amount)")
-                        expenses.items.append(item)
+                        let item = Expense(name: name, type: type, amount: amount)
+                        modelContext.insert(item)
                         dismiss()
                     }
                 }
@@ -55,6 +55,6 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddViewSD()
 }
 
