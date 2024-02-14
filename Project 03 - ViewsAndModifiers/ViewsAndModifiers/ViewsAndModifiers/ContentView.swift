@@ -31,10 +31,10 @@ struct Title: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.largeTitle)
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             .padding()
             .background(.blue)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(.rect(cornerRadius: 10))
     }
 }
 
@@ -46,7 +46,7 @@ struct Watermark: ViewModifier {
             content
             Text(text)
                 .font(.caption)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .padding(5)
                 .backgroundStyle(.black)
         }
@@ -71,9 +71,9 @@ struct CapsuleText: View {
         Text(text)
             .font(.largeTitle)
             .padding()
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             .background(.blue)
-            .clipShape(Capsule())
+            .clipShape(.capsule)
     }
 }
 
@@ -104,9 +104,9 @@ struct ContentView: View {
                 .padding(.horizontal, 10)
                 
                 CapsuleText(text: "First")
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                 CapsuleText(text: "Second")
-                    .foregroundColor(.yellow)
+                    .foregroundStyle(.yellow)
                 Text("Hello World")
                     .modifier(Title())
                 Text("Hello World")

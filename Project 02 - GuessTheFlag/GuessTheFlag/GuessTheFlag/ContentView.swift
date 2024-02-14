@@ -71,8 +71,8 @@ struct ContentView: View {
                 
                 Text("Guess the Flag")
                     .font(.largeTitle.bold())
-                    .foregroundColor(.white)
-                
+                    .foregroundStyle(.white)
+
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
@@ -101,13 +101,13 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)
                 .background(.regularMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                
+                .clipShape(.rect(cornerRadius: 20))
+
                 Spacer()
                 Spacer()
                 
                 Text("Score: \(totalScore)")
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .font(.title.bold())
                 
                 Spacer()
@@ -151,8 +151,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

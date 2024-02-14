@@ -21,11 +21,11 @@ struct ContentView: View {
         var components = DateComponents()
         components.hour = 7
         components.minute = 0
-        return Calendar.current.date(from: components) ?? Date.now
+        return Calendar.current.date(from: components) ?? .now
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("When do you want to wake up?")
@@ -45,7 +45,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Daily coffee intake")
                         .font(.headline)
-                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                    Stepper("[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
                 }
             }
             .navigationTitle("BetterRest")
@@ -83,8 +83,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

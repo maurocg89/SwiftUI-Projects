@@ -33,7 +33,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
                     TextField("Amount", value: $checkAmount, format: currencyFormat)
@@ -47,35 +47,28 @@ struct ContentView: View {
                     }
                 }
                 
-                Section {
+                Section("How much tip do you want to leave?") {
                     Picker("Tip percentage", selection: $tipPercentage) {
                         ForEach(0..<101, id: \.self) {
                             Text($0, format: .percent)
                         }
                     }
                     .pickerStyle(.navigationLink)
-                } header: {
-                    Text("How much tip do you want to leave?")
                 }
                 
-                Section {
+                Section("Total Amount") {
                     Text(totalAmount, format: currencyFormat)
                         .foregroundColor(tipPercentage == 0 ? .red : .primary)
-                } header: {
-                    Text("Total Amount")
                 }
                 
-                Section {
+                Section("Amount Per Person") {
                     Text(totalPerPerson, format: currencyFormat)
-                } header: {
-                    Text("Amount Per Person")
                 }
                 
             }
             .navigationTitle("WeSplit")
             .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
+                if amountIsFocused {
                     Button("Done") {
                         amountIsFocused = false
                     }
@@ -85,8 +78,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

@@ -37,8 +37,8 @@ struct ImplicitAnimations: View {
         }
         .padding(70)
         .background(.red)
-        .foregroundColor(.white)
-        .clipShape(Circle())
+        .foregroundStyle(.white)
+        .clipShape(.circle)
         .overlay(content: {
             Circle()
                 .stroke(.red)
@@ -87,8 +87,8 @@ struct BindingAnimations: View {
             }
             .padding(70)
             .background(.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
+            .foregroundStyle(.white)
+            .clipShape(.circle)
             .scaleEffect(animationAmount)
         }
     }
@@ -106,8 +106,8 @@ struct ExplicitAnimations: View {
         }
         .padding(70)
         .background(.red)
-        .foregroundColor(.white)
-        .clipShape(Circle())
+        .foregroundStyle(.white)
+        .clipShape(.circle)
         .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
     }
 }
@@ -121,7 +121,7 @@ struct GestureAnimations: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(0..<letters.count) { num in
+            ForEach(0..<letters.count, id: \.self) { num in
                 Text(String(letters[num]))
                     .padding(5)
                     .font(.title)
@@ -141,9 +141,9 @@ struct GestureAnimations: View {
     }
     
 //    var body: some View {
-//        LinearGradient(gradient: Gradient(colors: [.yellow, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//        LinearGradient(colors: [.yellow, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
 //            .frame(width: 300, height: 200)
-//            .clipShape(RoundedRectangle(cornerRadius: 10))
+//            .clipShape(.rect(cornerRadius: 10))
 //            .offset(dragAmount)
 //            .gesture(
 //                DragGesture()
@@ -222,8 +222,6 @@ struct CustomTransitionView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

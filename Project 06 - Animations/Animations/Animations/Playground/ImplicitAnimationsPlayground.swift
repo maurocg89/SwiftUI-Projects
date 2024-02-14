@@ -19,8 +19,8 @@ struct ImplicitAnimationsPlayground: View {
         }
         .padding(70)
         .background(.red)
-        .foregroundColor(.white)
-        .clipShape(Circle())
+        .foregroundStyle(.white)
+        .clipShape(.circle)
         .overlay(content: {
             Circle()
                 .stroke(.red)
@@ -36,7 +36,7 @@ struct ImplicitAnimationsPlayground: View {
         //            .blur(radius: (animationAmount - 1) * 3)
         //            .animation(.default, value: animationAmount)
         //            .animation(.easeOut, value: animationAmount)
-        //            .animation(.interpolatingSpring(stiffness: 50, damping: 1), value: animationAmount)
+        //            .animation(.spring(duration: 1, bounce: 0.6), value: animationAmount)
         //            .animation(
         //                .easeInOut(duration: 1)
         //                    .delay(0.2),

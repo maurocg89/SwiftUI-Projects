@@ -22,8 +22,8 @@ struct BindingAnimationsPlayground: View {
             }
             .padding(70)
             .background(.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
+            .foregroundStyle(.white)
+            .clipShape(.circle)
             .scaleEffect(animationAmount)
         }
     }

@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var score = 0
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading) {
                 List {
                     Section() {
@@ -53,9 +53,7 @@ struct ContentView: View {
             .onAppear {
                 startGame()
             }
-            .alert(errorTitle, isPresented: $showingError) {
-                Button("OK") {}
-            } message: {
+            .alert(errorTitle, isPresented: $showingError) { } message: {
                 Text(errorMessage)
             }
             .toolbar {
@@ -149,8 +147,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
