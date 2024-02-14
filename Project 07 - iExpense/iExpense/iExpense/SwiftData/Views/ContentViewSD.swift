@@ -122,12 +122,9 @@ struct ExpenseSectionSD: View {
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(item.name) ^[\(item.amount.formatted()) Dollar](inflect: true)")
                     .swipeActions(edge: .trailing) {
-                        Button(role: .destructive) {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
                             deleteItem(item)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
                         }
-
                     }
             }
         }

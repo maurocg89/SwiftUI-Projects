@@ -11,7 +11,9 @@ import SwiftUI
 struct HotPorspectsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            ContentViewSD()
         }
+        .modelContainer(for: ProspectSD.self)
     }
 }

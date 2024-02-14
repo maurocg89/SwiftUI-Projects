@@ -13,6 +13,10 @@
  - Custom Swipe actions
  - Local Notifications (UserNotifications)
  - Swift Package Dependency
+ Updated:
+ - SwiftData
+ - @AppStorage
+ - ShareLink
 
 ##  Challenges
 1. Add an icon to the “Everyone” screen showing whether a prospect was contacted or not.

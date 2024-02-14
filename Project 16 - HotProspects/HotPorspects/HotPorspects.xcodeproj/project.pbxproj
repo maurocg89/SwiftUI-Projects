@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		505660012B58382000EA2D07 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505660002B58382000EA2D07 /* ImageSaver.swift */; };
+		5063E8832B7D1DCA007B5218 /* ProspectSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8822B7D1DCA007B5218 /* ProspectSD.swift */; };
+		5063E8872B7D1E5C007B5218 /* ContentViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8862B7D1E5C007B5218 /* ContentViewSD.swift */; };
+		5063E8892B7D1EB5007B5218 /* ProspectsViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E8882B7D1EB5007B5218 /* ProspectsViewSD.swift */; };
+		5063E88B2B7D2AC0007B5218 /* MeViewSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E88A2B7D2AC0007B5218 /* MeViewSD.swift */; };
 		50B03FBC2B45973300A65EFC /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBB2B45973300A65EFC /* ProspectsView.swift */; };
 		50B03FBE2B45986D00A65EFC /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FBD2B45986D00A65EFC /* MeView.swift */; };
 		50B03FC12B459A6F00A65EFC /* Propspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FC02B459A6F00A65EFC /* Propspect.swift */; };
@@ -31,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		505660002B58382000EA2D07 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		5063E8822B7D1DCA007B5218 /* ProspectSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectSD.swift; sourceTree = "<group>"; };
+		5063E8862B7D1E5C007B5218 /* ContentViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewSD.swift; sourceTree = "<group>"; };
+		5063E8882B7D1EB5007B5218 /* ProspectsViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsViewSD.swift; sourceTree = "<group>"; };
+		5063E88A2B7D2AC0007B5218 /* MeViewSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewSD.swift; sourceTree = "<group>"; };
 		50B03FBB2B45973300A65EFC /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		50B03FBD2B45986D00A65EFC /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		50B03FC02B459A6F00A65EFC /* Propspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Propspect.swift; sourceTree = "<group>"; };
@@ -71,6 +79,33 @@
 				505660002B58382000EA2D07 /* ImageSaver.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5063E8812B7D1DB4007B5218 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8842B7D1E32007B5218 /* Models */,
+				5063E8852B7D1E3D007B5218 /* Views */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		5063E8842B7D1E32007B5218 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8822B7D1DCA007B5218 /* ProspectSD.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5063E8852B7D1E3D007B5218 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5063E8862B7D1E5C007B5218 /* ContentViewSD.swift */,
+				5063E8882B7D1EB5007B5218 /* ProspectsViewSD.swift */,
+				5063E88A2B7D2AC0007B5218 /* MeViewSD.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		50B03FB82B4596EB00A65EFC /* Views */ = {
@@ -133,6 +168,7 @@
 		50C2559D2B445F74003002F2 /* HotPorspects */ = {
 			isa = PBXGroup;
 			children = (
+				5063E8812B7D1DB4007B5218 /* SwiftData */,
 				50565FFF2B58381900EA2D07 /* Utils */,
 				50B03FCE2B47136900A65EFC /* Extensions */,
 				50B03FBF2B459A3F00A65EFC /* Models */,
@@ -257,10 +293,14 @@
 				50C255D12B4496B9003002F2 /* CustomSwipeActionsPlayground.swift in Sources */,
 				50C255CD2B448B3A003002F2 /* ImageInterpolationPlayground.swift in Sources */,
 				50C255A12B445F74003002F2 /* ContentView.swift in Sources */,
+				5063E8892B7D1EB5007B5218 /* ProspectsViewSD.swift in Sources */,
+				5063E8832B7D1DCA007B5218 /* ProspectSD.swift in Sources */,
 				50B03FD02B47138500A65EFC /* FileManager+Extension.swift in Sources */,
 				50B03FC12B459A6F00A65EFC /* Propspect.swift in Sources */,
 				50C2559F2B445F74003002F2 /* HotPorspectsApp.swift in Sources */,
+				5063E88B2B7D2AC0007B5218 /* MeViewSD.swift in Sources */,
 				50C255CF2B44932D003002F2 /* ContextMenuPlayground.swift in Sources */,
+				5063E8872B7D1E5C007B5218 /* ContentViewSD.swift in Sources */,
 				50C255C92B44862D003002F2 /* ObservableObjectWillChangePlayground.swift in Sources */,
 				50C255CB2B4487F5003002F2 /* ResultTypePlayground.swift in Sources */,
 				50B03FBE2B45986D00A65EFC /* MeView.swift in Sources */,
