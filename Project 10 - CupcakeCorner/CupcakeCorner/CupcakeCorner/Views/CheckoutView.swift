@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var orderWrapper: OrderWrapper
+//    @ObservedObject var orderWrapper: OrderWrapper
+    var order: Order
 
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -27,7 +28,7 @@ struct CheckoutView: View {
                 .frame(height: 233)
                 .accessibilityHidden(true)
 
-                Text("Your total is \(orderWrapper.order.cost, format: .currency(code: "USD"))")
+                Text("Your total cost is \(order.cost, format: .currency(code: "USD"))")
                     .font(.title)
 
                 Button("Place Order") {
@@ -39,6 +40,7 @@ struct CheckoutView: View {
             }
             .navigationTitle("Check out")
             .navigationBarTitleDisplayMode(.inline)
+            .scrollBounceBehavior(.basedOnSize)
             .alert(alertTitle, isPresented: $showingAlert) {
                 Button("OK") {}
             } message: {
@@ -48,7 +50,7 @@ struct CheckoutView: View {
     }
 
     func placeOrder() async {
-        guard let encoded = try? JSONEncoder().encode(orderWrapper.order) else {
+        guard let encoded = try? JSONEncoder().encode(order) else {
             print("Failed to encode order")
             return
         }
@@ -62,18 +64,17 @@ struct CheckoutView: View {
         }
         do {
             let(data, _) = try await URLSession.shared.upload(for: request, from: encoded)
-            let decodedOrder = try JSONDecoder().decode(OrderModel.self, from: data)
+            let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
             alertTitle = "Thank you!"
-            alertMessage = "Your order for \(decodedOrder.quantity)x \(OrderModel.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            alertMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
         } catch {
+            print("Check out failed: \(error.localizedDescription)")
             alertTitle = "Error"
             alertMessage = "There was an error with the request"
         }
     }
 }
 
-struct CheckoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutView(orderWrapper: OrderWrapper())
-    }
+#Preview {
+    CheckoutView(order: Order())
 }

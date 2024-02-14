@@ -51,8 +51,6 @@ struct UrlSessionPlaygroundView: View {
     }
 }
 
-struct UrlSessionPlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        UrlSessionPlaygroundView()
-    }
+#Preview {
+    UrlSessionPlaygroundView()
 }

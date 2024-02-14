@@ -33,8 +33,6 @@ struct AsyncImageView: View {
     }
 }
 
-struct AsyncImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        AsyncImageView()
-    }
+#Preview {
+    AsyncImageView()
 }

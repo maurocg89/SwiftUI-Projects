@@ -32,8 +32,6 @@ struct ValidateFormsView: View {
     }
 }
 
-struct ValidateFormsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ValidateFormsView()
-    }
+#Preview {
+    ValidateFormsView()
 }

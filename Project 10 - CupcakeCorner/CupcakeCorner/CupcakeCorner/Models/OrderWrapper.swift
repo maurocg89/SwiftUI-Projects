@@ -5,8 +5,8 @@
 //  Created by Mauro Grillo on 05/07/2023.
 //
 
-import SwiftUI
-
-class OrderWrapper: ObservableObject {
-    @Published var order = OrderModel()
-}
+//import SwiftUI
+// Deprecated in iOS 17
+//class OrderWrapper: ObservableObject {
+//    @Published var order = OrderModel()
+//}

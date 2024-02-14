@@ -8,35 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var orderWrapper = OrderWrapper()
-    
+//    @StateObject var orderWrapper = OrderWrapper()
+    @State private var order = Order()
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
-                    Picker("Select your cake type", selection: $orderWrapper.order.type) {
-                        ForEach(OrderModel.types.indices) {
-                            Text(OrderModel.types[$0])
+                    Picker("Select your cake type", selection: $order.type) {
+                        ForEach(Order.types.indices, id: \.self) {
+                            Text(Order.types[$0])
                         }
                     }
 
-                    Stepper("Number of cakes: \(orderWrapper.order.quantity)", value: $orderWrapper.order.quantity, in: 3...20)
+                    Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 3...20)
                 }
 
                 Section {
-                    Toggle("Any special request?", isOn: $orderWrapper.order.specialRequestEnabled.animation())
+                    Toggle("Any special request?", isOn: $order.specialRequestEnabled.animation())
 
-                    if orderWrapper.order.specialRequestEnabled {
-                        Toggle("Add extra frosting", isOn: $orderWrapper.order.extraFrosting)
-                        Toggle("Add extra sprinkles", isOn: $orderWrapper.order.addSprinkles)
+                    if order.specialRequestEnabled {
+                        Toggle("Add extra frosting", isOn: $order.extraFrosting)
+                        Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
                     }
                 }
 
                 Section {
-                    NavigationLink {
-                        AddressView(orderWrapper: orderWrapper)
-                    } label: {
-                        Text("Delivery details")
+                    NavigationLink("Delivery details") {
+//                        AddressView(orderWrapper: orderWrapper)
+                        AddressView(order: order)
                     }
                 }
             }
@@ -46,8 +46,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
