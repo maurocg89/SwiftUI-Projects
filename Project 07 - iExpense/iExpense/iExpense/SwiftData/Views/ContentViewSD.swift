@@ -9,16 +9,26 @@ import SwiftData
 import SwiftUI
 
 struct ContentViewSD: View {
+    enum CategoryFilter {
+        case all
+        case personal
+        case business
+    }
+
     @Environment(\.modelContext) var modelContext
     @Query var expensesItems: [Expense]
     @State private var showingAddExpense = false
+    // MARK: Project 12 - SwiftData. Challenge 2
+    @State private var sortOrder = [
+        SortDescriptor(\Expense.name),
+        SortDescriptor(\Expense.amount)
+    ]
+    // MARK: Project 12 - SwiftData. Challenge 3
+    @State private var categoryFilter: CategoryFilter = .all
 
     var body: some View {
         NavigationStack {
-            List {
-                ExpenseSectionSD(title: "Personal", expenseType: "Personal", deleteItems: removePersonalItems(at:))
-                ExpenseSectionSD(title: "Business", expenseType: "Business", deleteItems: removeBusinessItems(at:))
-            }
+            expensesSection
             .navigationTitle("iExpense")
             .toolbar {
                 NavigationLink {
@@ -26,27 +36,59 @@ struct ContentViewSD: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+                
+                if !expensesItems.isEmpty {
+                    Menu("Filter", systemImage: "line.3.horizontal.decrease.circle") {
+                        Picker("Filter By", selection: $categoryFilter) {
+                            Text("All")
+                                .tag(CategoryFilter.all)
+                            Text("Personal")
+                                .tag(CategoryFilter.personal)
+                            Text("Business")
+                                .tag(CategoryFilter.business)
+                        }
+                    }
+
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Sort by Name")
+                                .tag([
+                                    SortDescriptor(\Expense.name),
+                                    SortDescriptor(\Expense.amount)
+                                ])
+
+                            Text("Sort by Amount")
+                                .tag([
+                                    SortDescriptor(\Expense.amount),
+                                    SortDescriptor(\Expense.name)
+                                ])
+                        }
+                    }
+                }
+
             }
         }
     }
 
-    func removeItems(at offsets: IndexSet, in inputArray: [Expense]) {
-        for offset in offsets {
-            let item = inputArray[offset]
-            if let index = expensesItems.firstIndex(of: item) {
-                modelContext.delete(expensesItems[index])
+    private var expensesSection: some View {
+        Group {
+            if !expensesItems.isEmpty {
+                List {
+                    if categoryFilter == .all || categoryFilter == .personal {
+                        ExpenseSectionSD(title: "Personal", expenseType: "Personal", sortOrder: sortOrder, deleteItem: removeItems(expense:))
+                    }
+                    if categoryFilter == .all || categoryFilter == .business {
+                        ExpenseSectionSD(title: "Business", expenseType: "Business", sortOrder: sortOrder, deleteItem: removeItems(expense:))
+                    }
+                }
+            } else {
+                ContentUnavailableView("There are no expenses saved", systemImage: "creditcard", description: Text("Tap the '+' button to add new expenses"))
             }
         }
     }
 
-    func removePersonalItems(at offsets: IndexSet) {
-        let personalItems = expensesItems.filter({ $0.type == "Personal" })
-        removeItems(at: offsets, in: personalItems)
-    }
-
-    func removeBusinessItems(at offsets: IndexSet) {
-        let businessItems = expensesItems.filter({ $0.type == "Business" })
-        removeItems(at: offsets, in: businessItems)
+    func removeItems(expense: Expense) {
+        modelContext.delete(expense)
     }
 }
 
@@ -71,7 +113,7 @@ struct ExpenseItemViewSD: View {
 struct ExpenseSectionSD: View {
     @Query let expenses: [Expense]
     let title: String
-    let deleteItems: (IndexSet) -> Void
+    let deleteItem: (Expense) -> Void
 
     var body: some View {
         Section(title) {
@@ -79,17 +121,24 @@ struct ExpenseSectionSD: View {
                 ExpenseItemViewSD(item: item)
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(item.name) ^[\(item.amount.formatted()) Dollar](inflect: true)")
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            deleteItem(item)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+
+                    }
             }
-            .onDelete(perform: deleteItems)
         }
     }
 
-    init(title: String, expenseType: String, deleteItems: @escaping (IndexSet) -> Void) {
+    init(title: String, expenseType: String, sortOrder: [SortDescriptor<Expense>], deleteItem: @escaping (Expense) -> Void) {
         self.title = title
-        self.deleteItems = deleteItems
+        self.deleteItem = deleteItem
         _expenses = Query(filter: #Predicate<Expense> { expense in
             expense.type.contains(expenseType)
-        })
+        }, sort: sortOrder)
     }
 }
 
