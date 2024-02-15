@@ -21,7 +21,7 @@ struct AddBookView: View {
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
                     TextField("Title of the book", text: $title)
@@ -62,8 +62,6 @@ struct AddBookView: View {
     }
 }
 
-struct AddBookView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddBookView()
-    }
+#Preview {
+    AddBookView()
 }

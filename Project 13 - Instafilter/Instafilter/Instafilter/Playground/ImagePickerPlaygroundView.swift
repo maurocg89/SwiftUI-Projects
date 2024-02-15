@@ -49,8 +49,6 @@ struct ImagePickerPlaygroundView: View {
     }
 }
 
-struct ImagePickerPlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagePickerPlaygroundView()
-    }
+#Preview {
+    ImagePickerPlaygroundView()
 }

@@ -35,8 +35,6 @@ struct CoreDataPlayground: View {
     }
 }
 
-struct CoreDataPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        CoreDataPlayground()
-    }
+#Preview {
+    CoreDataPlayground()
 }

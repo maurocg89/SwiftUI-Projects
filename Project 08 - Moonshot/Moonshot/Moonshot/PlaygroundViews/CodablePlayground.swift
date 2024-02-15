@@ -38,8 +38,6 @@ struct CodablePlayground: View {
     }
 }
 
-struct CodablePlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        CodablePlayground()
-    }
+#Preview {
+    CodablePlayground()
 }

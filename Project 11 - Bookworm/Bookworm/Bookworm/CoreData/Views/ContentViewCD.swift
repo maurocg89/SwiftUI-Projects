@@ -7,7 +7,7 @@
 
 import SwiftUI
 // ContentView CoreData
-struct ContentView: View {
+struct ContentViewCD: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.title),
@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var showingAddScreen = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(books) { book in
                     NavigationLink {
@@ -29,10 +29,10 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title ?? "Unknown Title")
                                     .font(.headline)
-                                    .foregroundColor(book.rating == 1 ? Color.red : Color.black)
+                                    .foregroundStyle(book.rating == 1 ? Color.red : Color.black)
 
                                 Text(book.author ?? "Unknown Author")
-                                    .foregroundColor(.secondary)
+                                    .foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -41,11 +41,11 @@ struct ContentView: View {
             }
             .navigationTitle("Bookworm")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     EditButton()
                 }
 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingAddScreen.toggle()
                     } label: {
@@ -68,8 +68,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentViewCD()
 }

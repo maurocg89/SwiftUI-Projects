@@ -44,8 +44,6 @@ struct PropertyWrappersStructs: View {
     }
 }
 
-struct PropertyWrappersStructs_Previews: PreviewProvider {
-    static var previews: some View {
-        PropertyWrappersStructs()
-    }
+#Preview {
+    PropertyWrappersStructs()
 }

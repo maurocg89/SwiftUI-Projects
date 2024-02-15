@@ -44,7 +44,7 @@ struct DetailSDView: View {
 
             Text("Reviewed on \(book.date, style: .date)")
                 .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
                 .padding()
         }
         .navigationTitle(book.title)

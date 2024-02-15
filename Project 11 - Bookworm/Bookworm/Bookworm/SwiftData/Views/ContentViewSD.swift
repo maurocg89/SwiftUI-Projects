@@ -34,10 +34,10 @@ struct ContentViewSD: View {
                                     VStack(alignment: .leading) {
                                         Text(book.title)
                                             .font(.headline)
-                                            .foregroundColor(book.rating == 1 ? Color.red : Color.black)
+                                            .foregroundStyle(book.rating == 1 ? Color.red : Color.black)
 
                                         Text(book.author)
-                                            .foregroundColor(.secondary)
+                                            .foregroundStyle(.secondary)
                                     }
                                 }
                             }

@@ -12,6 +12,8 @@
  - Creating layout (Grid) LazyVGrid / LazyHGrid
  - More hands-on Codable
  - Generics
+ Update:
+ - containerRelativeFrame
 
 ##  Challenges
 

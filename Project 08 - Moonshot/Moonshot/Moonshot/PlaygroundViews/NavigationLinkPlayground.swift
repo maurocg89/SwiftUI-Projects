@@ -26,8 +26,6 @@ struct NavigationLinkPlayground: View {
     }
 }
 
-struct NavigationLinkPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationLinkPlayground()
-    }
+#Preview {
+    NavigationLinkPlayground()
 }

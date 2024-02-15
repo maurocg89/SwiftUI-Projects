@@ -37,8 +37,6 @@ struct ScrollingGridPlayground: View {
     }
 }
 
-struct ScrollingGridPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollingGridPlayground()
-    }
+#Preview {
+    ScrollingGridPlayground()
 }

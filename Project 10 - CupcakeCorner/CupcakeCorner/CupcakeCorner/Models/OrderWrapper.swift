@@ -6,7 +6,7 @@
 //
 
 //import SwiftUI
-// Deprecated in iOS 17
+// Use @Observable in iOS 17
 //class OrderWrapper: ObservableObject {
 //    @Published var order = OrderModel()
 //}

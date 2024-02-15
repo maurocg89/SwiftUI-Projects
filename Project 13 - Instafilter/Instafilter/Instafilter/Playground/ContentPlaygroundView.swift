@@ -15,8 +15,6 @@ struct ContentPlaygroundView: View {
     }
 }
 
-struct ContentPlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentPlaygroundView()
-    }
+#Preview {
+    ContentPlaygroundView()
 }

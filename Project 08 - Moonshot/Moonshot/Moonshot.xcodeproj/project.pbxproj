@@ -22,6 +22,7 @@
 		34EB543B2A17C51700F2A41E /* ScrollViewPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543A2A17C51700F2A41E /* ScrollViewPlayground.swift */; };
 		34EB543D2A17C53A00F2A41E /* NavigationLinkPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543C2A17C53A00F2A41E /* NavigationLinkPlayground.swift */; };
 		34EB543F2A17C55700F2A41E /* CodablePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB543E2A17C55700F2A41E /* CodablePlayground.swift */; };
+		5063E88E2B7E3AD9007B5218 /* ContainerRelativeFramePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063E88D2B7E3AD9007B5218 /* ContainerRelativeFramePlayground.swift */; };
 		50B2D2F12A21BB280080A938 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2D2F02A21BB280080A938 /* MissionView.swift */; };
 		50B2D2F32A21C8330080A938 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2D2F22A21C8330080A938 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		34EB543A2A17C51700F2A41E /* ScrollViewPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPlayground.swift; sourceTree = "<group>"; };
 		34EB543C2A17C53A00F2A41E /* NavigationLinkPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkPlayground.swift; sourceTree = "<group>"; };
 		34EB543E2A17C55700F2A41E /* CodablePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePlayground.swift; sourceTree = "<group>"; };
+		5063E88D2B7E3AD9007B5218 /* ContainerRelativeFramePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRelativeFramePlayground.swift; sourceTree = "<group>"; };
 		50B2D2F02A21BB280080A938 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = SOURCE_ROOT; };
 		50B2D2F22A21C8330080A938 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 				34EB543C2A17C53A00F2A41E /* NavigationLinkPlayground.swift */,
 				34EB543E2A17C55700F2A41E /* CodablePlayground.swift */,
 				340922362A17F2EA00A82954 /* ScrollingGridPlayground.swift */,
+				5063E88D2B7E3AD9007B5218 /* ContainerRelativeFramePlayground.swift */,
 			);
 			path = PlaygroundViews;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				34D701BF2A1BB17B00A9E98A /* Bundle-Decodable.swift in Sources */,
 				34EB54392A17C4E400F2A41E /* GeometryReaderPlayground.swift in Sources */,
 				50B2D2F32A21C8330080A938 /* AstronautView.swift in Sources */,
+				5063E88E2B7E3AD9007B5218 /* ContainerRelativeFramePlayground.swift in Sources */,
 				34EB543F2A17C55700F2A41E /* CodablePlayground.swift in Sources */,
 				34D701C52A1BB5A900A9E98A /* Mission.swift in Sources */,
 				3418C2C12A095FF20098C232 /* MoonshotApp.swift in Sources */,
@@ -367,6 +371,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +401,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

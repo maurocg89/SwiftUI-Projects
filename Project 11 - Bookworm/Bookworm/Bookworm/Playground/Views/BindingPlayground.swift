@@ -33,14 +33,12 @@ struct PushButton: View {
         .background(
             LinearGradient(colors: isOn ? onColors : offColors, startPoint: .top, endPoint: .bottom)
         )
-        .foregroundColor(.white)
-        .clipShape(Capsule())
+        .foregroundStyle(.white)
+        .clipShape(.capsule)
         .shadow(radius: isOn ? 0 : 5)
     }
 }
 
-struct BindingPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        BindingPlayground()
-    }
+#Preview {
+    BindingPlayground()
 }

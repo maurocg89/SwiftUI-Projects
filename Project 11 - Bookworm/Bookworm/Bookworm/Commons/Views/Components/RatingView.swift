@@ -30,7 +30,7 @@ struct RatingView: View {
                     rating = number
                 } label: {
                     image(for: number)
-                        .foregroundColor(number > rating ? offColor : onColor)
+                        .foregroundStyle(number > rating ? offColor : onColor)
                 }
 //                    .accessibilityLabel("\(number == 1 ? "1 star" : "\(number) stars")")
 //                    .accessibilityRemoveTraits(.isImage)
@@ -64,8 +64,6 @@ struct RatingView: View {
     }
 }
 
-struct RatingView_Previews: PreviewProvider {
-    static var previews: some View {
-        RatingView(rating: .constant(4))
-    }
+#Preview {
+    RatingView(rating: .constant(4))
 }

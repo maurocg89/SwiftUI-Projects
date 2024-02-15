@@ -19,8 +19,6 @@ struct GeometryReaderPlayground: View {
     }
 }
 
-struct GeometryReaderPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReaderPlayground()
-    }
+#Preview {
+    GeometryReaderPlayground()
 }

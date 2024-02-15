@@ -26,15 +26,15 @@ struct DetailView: View {
                     .font(.caption)
                     .fontWeight(.black)
                     .padding(8)
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .background(.black.opacity(0.75))
-                    .clipShape(Capsule())
+                    .clipShape(.capsule)
                     .offset(x: -5, y: -5)
             }
 
             Text(book.title ?? "Unknown Title")
                 .font(.title)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
 
             Text(book.review ?? "No review")
                 .padding()
@@ -44,7 +44,7 @@ struct DetailView: View {
 
             Text("Reviewed on \(book.date ?? Date.now, style: .date)")
                 .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
                 .padding()
         }
         .navigationTitle(book.title ?? "Unknown Book")

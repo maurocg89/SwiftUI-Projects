@@ -72,7 +72,7 @@ struct ProspectsViewSD: View {
             }
         }
         .sheet(isPresented: $isShowingScanner) {
-            CodeScannerView(codeTypes: [.qr], simulatedData: "Mauro Grillo\nmaurocgrillo@gmail.com", completion: handleScan)
+            CodeScannerView(codeTypes: [.qr], simulatedData: "Mauro Grillo\nmaurogrillo@gmail.com", completion: handleScan)
         }
     }
 

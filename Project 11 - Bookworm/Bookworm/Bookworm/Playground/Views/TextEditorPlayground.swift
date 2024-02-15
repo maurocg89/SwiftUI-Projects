@@ -11,7 +11,7 @@ struct TextEditorPlayground: View {
     @AppStorage("notes") private var notes = ""
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             TextEditor(text: $notes)
                 .navigationTitle("Notes")
                 .padding()
@@ -19,8 +19,6 @@ struct TextEditorPlayground: View {
     }
 }
 
-struct TextEditorPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        TextEditorPlayground()
-    }
+#Preview {
+    TextEditorPlayground()
 }

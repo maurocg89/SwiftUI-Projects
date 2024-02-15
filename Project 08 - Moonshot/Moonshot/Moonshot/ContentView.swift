@@ -115,17 +115,17 @@ struct MissionCardView: View {
             VStack {
                 Text(mission.displayName)
                     .font(.headline)
-                    .foregroundColor(.white)
-                
+                    .foregroundStyle(.white)
+
                 Text(mission.formattedLaunchDate)
                     .font(.caption)
-                    .foregroundColor(.white.opacity(0.5))
+                    .foregroundStyle(.white.opacity(0.5))
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity)
             .background(.ligthBackground)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(.rect(cornerRadius: 10))
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(.ligthBackground)
@@ -133,8 +133,6 @@ struct MissionCardView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

@@ -29,8 +29,6 @@ struct ConfirmationDialogPlaygroundView: View {
     }
 }
 
-struct ConfirmationDialogPlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfirmationDialogPlaygroundView()
-    }
+#Preview {
+    ConfirmationDialogPlaygroundView()
 }

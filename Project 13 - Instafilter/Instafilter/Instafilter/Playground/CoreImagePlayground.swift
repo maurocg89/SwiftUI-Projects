@@ -73,8 +73,6 @@ struct CoreImagePlayground: View {
     }
 }
 
-struct CoreImagePlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        CoreImagePlayground()
-    }
+#Preview {
+    CoreImagePlayground()
 }

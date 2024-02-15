@@ -37,8 +37,6 @@ struct CustomText: View {
         self.text = text
     }
 }
-struct ScrollViewPlayground_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollViewPlayground()
-    }
+#Preview {
+    ScrollViewPlayground()
 }
