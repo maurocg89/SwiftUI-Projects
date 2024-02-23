@@ -12,9 +12,8 @@ import SwiftUI
 struct iExpenseApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
             // MARK: Project 12 SwiftData. Challenge 1
-            ContentViewSD()
+            ContentView()
         }
         .modelContainer(for: Expense.self)
     }
