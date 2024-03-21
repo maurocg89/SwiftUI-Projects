@@ -12,7 +12,7 @@ struct AppBackgroundStatePlayground: View {
 
     var body: some View {
         Text("Hello, World!")
-            .onChange(of: scenePhase) { newPhase in
+            .onChange(of: scenePhase) { _, newPhase in
                 if newPhase == .active {
                     print("Active")
                 } else if newPhase == .inactive {
