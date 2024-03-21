@@ -82,7 +82,7 @@ struct ProspectsView: View {
                 }
             }
             .sheet(isPresented: $isShowingScanner) {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Mauro Grillo\nmaurogrillo@gmail.com", completion: handleScan)
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\ntwostraws@gmail.com", completion: handleScan)
             }
             .confirmationDialog("Order By", isPresented: $isShowingSortOptionSheet, titleVisibility: .visible) {
                 Button {

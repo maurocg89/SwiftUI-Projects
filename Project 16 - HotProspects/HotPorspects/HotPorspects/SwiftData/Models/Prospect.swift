@@ -1,5 +1,5 @@
 //
-//  ProspectSD.swift
+//  Prospect.swift
 //  HotPorspects
 //
 //  Created by Mauro Grillo on 14/02/2024.
@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-class ProspectSD {
+class Prospect {
     var name: String
     var emailAddress: String
     var isContacted: Bool

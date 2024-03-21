@@ -1,5 +1,5 @@
 //
-//  ProspectsViewSD.swift
+//  ProspectsView.swift
 //  HotPorspects
 //
 //  Created by Mauro Grillo on 14/02/2024.
@@ -9,7 +9,7 @@ import CodeScanner
 import SwiftData
 import SwiftUI
 
-struct ProspectsViewSD: View {
+struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
@@ -19,10 +19,10 @@ struct ProspectsViewSD: View {
     }
 
     @Environment(\.modelContext) var modelContext
-    @Query(sort: \ProspectSD.name) var prospects: [ProspectSD]
+    @Query(sort: \Prospect.name) var prospects: [Prospect]
 
     @State private var isShowingScanner = false
-    @State private var selectedProspects = Set<ProspectSD>()
+    @State private var selectedProspects = Set<Prospect>()
 
     let filter: FilterType
 
@@ -72,7 +72,7 @@ struct ProspectsViewSD: View {
             }
         }
         .sheet(isPresented: $isShowingScanner) {
-            CodeScannerView(codeTypes: [.qr], simulatedData: "Mauro Grillo\nmaurogrillo@gmail.com", completion: handleScan)
+            CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\ntwostraws@gmail.com", completion: handleScan)
         }
     }
 
@@ -82,7 +82,7 @@ struct ProspectsViewSD: View {
 
         _prospects = Query(filter: #Predicate {
             $0.isContacted == showContactedOnly
-        }, sort: [SortDescriptor(\ProspectSD.name)])
+        }, sort: [SortDescriptor(\Prospect.name)])
     }
 
     private func handleScan(result: Result<ScanResult, ScanError>) {
@@ -93,7 +93,7 @@ struct ProspectsViewSD: View {
             let details = success.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            let person = ProspectSD(name: details[0], emailAddress: details[1], isContacted: false)
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
 
             modelContext.insert(person)
 
@@ -108,7 +108,7 @@ struct ProspectsViewSD: View {
         }
     }
 
-    private func addNotification(for prospect: ProspectSD) {
+    private func addNotification(for prospect: Prospect) {
         let center = UNUserNotificationCenter.current()
 
         let addRequest = {
@@ -140,7 +140,7 @@ struct ProspectsViewSD: View {
         }
     }
 
-    private func swipeActions(prospect: ProspectSD) -> some View {
+    private func swipeActions(prospect: Prospect) -> some View {
         Group {
             Button("Delete", systemImage: "trash", role: .destructive) {
                 modelContext.delete(prospect)
@@ -174,5 +174,5 @@ struct ProspectsViewSD: View {
 }
 
 #Preview {
-    ProspectsViewSD(filter: .contacted)
+    ProspectsView(filter: .contacted)
 }

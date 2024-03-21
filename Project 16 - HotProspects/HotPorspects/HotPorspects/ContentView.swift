@@ -2,14 +2,12 @@
 //  ContentView.swift
 //  HotPorspects
 //
-//  Created by Mauro Grillo on 02/01/2024.
+//  Created by Mauro Grillo on 14/02/2024.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var prospects = Prospects()
-
     var body: some View {
         TabView {
             ProspectsView(filter: .none)
@@ -35,7 +33,6 @@ struct ContentView: View {
                     Label("Me", systemImage: "person.crop.square")
                 }
         }
-        .environmentObject(prospects)
     }
 }
 
