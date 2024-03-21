@@ -53,7 +53,7 @@ struct ContentView: View {
                 timeRemaining -= 1
             }
         }
-        .onChange(of: scenePhase) { newPhase in
+        .onChange(of: scenePhase) { _, newPhase in
             appIsActive = newPhase == .active && !cards.isEmpty
         }
         // Workaround to fix iOS 14 issue that shows an empty view when trying to open the sheet for the first time

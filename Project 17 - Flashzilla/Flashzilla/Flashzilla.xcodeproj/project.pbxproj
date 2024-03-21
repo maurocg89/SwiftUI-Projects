@@ -18,6 +18,10 @@
 		50006F5E2B4DC9C700DE718D /* HitTestingPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */; };
 		50006F612B4DD00100DE718D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F602B4DD00100DE718D /* SettingsView.swift */; };
 		50006F642B4F1A9900DE718D /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50006F632B4F1A9900DE718D /* SummaryView.swift */; };
+		503FC6DD2BACAD0A00FD4DA4 /* FlashzillaPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC6DC2BACAD0A00FD4DA4 /* FlashzillaPlaygroundApp.swift */; };
+		503FC6DF2BACAD0A00FD4DA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC6DE2BACAD0A00FD4DA4 /* ContentView.swift */; };
+		503FC6E12BACAD0B00FD4DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503FC6E02BACAD0B00FD4DA4 /* Assets.xcassets */; };
+		503FC6E42BACAD0B00FD4DA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503FC6E32BACAD0B00FD4DA4 /* Preview Assets.xcassets */; };
 		50B03FDE2B4733B200A65EFC /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */; };
 		50B03FE02B4733B200A65EFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B03FDF2B4733B200A65EFC /* ContentView.swift */; };
 		50B03FE22B4733B400A65EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B03FE12B4733B400A65EFC /* Assets.xcassets */; };
@@ -40,6 +44,11 @@
 		50006F572B4DC9C700DE718D /* HitTestingPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestingPlayground.swift; sourceTree = "<group>"; };
 		50006F602B4DD00100DE718D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		50006F632B4F1A9900DE718D /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		503FC6DA2BACAD0A00FD4DA4 /* FlashzillaPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashzillaPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		503FC6DC2BACAD0A00FD4DA4 /* FlashzillaPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaPlaygroundApp.swift; sourceTree = "<group>"; };
+		503FC6DE2BACAD0A00FD4DA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		503FC6E02BACAD0B00FD4DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		503FC6E32BACAD0B00FD4DA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50B03FDA2B4733B200A65EFC /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		50B03FDF2B4733B200A65EFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		503FC6D72BACAD0A00FD4DA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50B03FD72B4733B200A65EFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,10 +103,31 @@
 			path = Summary;
 			sourceTree = "<group>";
 		};
+		503FC6DB2BACAD0A00FD4DA4 /* FlashzillaPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				50B03FEC2B47349400A65EFC /* Playground */,
+				503FC6DC2BACAD0A00FD4DA4 /* FlashzillaPlaygroundApp.swift */,
+				503FC6DE2BACAD0A00FD4DA4 /* ContentView.swift */,
+				503FC6E02BACAD0B00FD4DA4 /* Assets.xcassets */,
+				503FC6E22BACAD0B00FD4DA4 /* Preview Content */,
+			);
+			path = FlashzillaPlayground;
+			sourceTree = "<group>";
+		};
+		503FC6E22BACAD0B00FD4DA4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				503FC6E32BACAD0B00FD4DA4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		50B03FD12B4733B200A65EFC = {
 			isa = PBXGroup;
 			children = (
 				50B03FDC2B4733B200A65EFC /* Flashzilla */,
+				503FC6DB2BACAD0A00FD4DA4 /* FlashzillaPlayground */,
 				50B03FDB2B4733B200A65EFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				50B03FDA2B4733B200A65EFC /* Flashzilla.app */,
+				503FC6DA2BACAD0A00FD4DA4 /* FlashzillaPlayground.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +147,6 @@
 				50CFD2FE2B48828B00A9B7A5 /* Extensions */,
 				50CFD2F82B487F5D00A9B7A5 /* Models */,
 				50CFD2F22B487F1000A9B7A5 /* Views */,
-				50B03FEC2B47349400A65EFC /* Playground */,
 				50B03FDD2B4733B200A65EFC /* FlashzillaApp.swift */,
 				50B03FDF2B4733B200A65EFC /* ContentView.swift */,
 				50B03FE12B4733B400A65EFC /* Assets.xcassets */,
@@ -197,6 +234,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		503FC6D92BACAD0A00FD4DA4 /* FlashzillaPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 503FC6E72BACAD0B00FD4DA4 /* Build configuration list for PBXNativeTarget "FlashzillaPlayground" */;
+			buildPhases = (
+				503FC6D62BACAD0A00FD4DA4 /* Sources */,
+				503FC6D72BACAD0A00FD4DA4 /* Frameworks */,
+				503FC6D82BACAD0A00FD4DA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlashzillaPlayground;
+			productName = FlashzillaPlayground;
+			productReference = 503FC6DA2BACAD0A00FD4DA4 /* FlashzillaPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
 		50B03FD92B4733B200A65EFC /* Flashzilla */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50B03FE92B4733B400A65EFC /* Build configuration list for PBXNativeTarget "Flashzilla" */;
@@ -221,9 +275,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					503FC6D92BACAD0A00FD4DA4 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					50B03FD92B4733B200A65EFC = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -243,11 +300,21 @@
 			projectRoot = "";
 			targets = (
 				50B03FD92B4733B200A65EFC /* Flashzilla */,
+				503FC6D92BACAD0A00FD4DA4 /* FlashzillaPlayground */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		503FC6D82BACAD0A00FD4DA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503FC6E42BACAD0B00FD4DA4 /* Preview Assets.xcassets in Resources */,
+				503FC6E12BACAD0B00FD4DA4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50B03FD82B4733B200A65EFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +327,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		503FC6D62BACAD0A00FD4DA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503FC6DF2BACAD0A00FD4DA4 /* ContentView.swift in Sources */,
+				503FC6DD2BACAD0A00FD4DA4 /* FlashzillaPlaygroundApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50B03FD62B4733B200A65EFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +363,77 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		503FC6E52BACAD0B00FD4DA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FlashzillaPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = 62YR6KL763;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.grillo.mauro.FlashzillaPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		503FC6E62BACAD0B00FD4DA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FlashzillaPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = 62YR6KL763;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.grillo.mauro.FlashzillaPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		50B03FE72B4733B400A65EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -321,6 +468,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -382,6 +530,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -409,6 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = Flashzilla/Flashzilla.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
 				DEVELOPMENT_TEAM = 62YR6KL763;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -424,7 +574,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -448,6 +598,7 @@
 				CODE_SIGN_ENTITLEMENTS = Flashzilla/Flashzilla.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashzilla/Preview Content\"";
 				DEVELOPMENT_TEAM = 62YR6KL763;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -463,7 +614,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -482,6 +633,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		503FC6E72BACAD0B00FD4DA4 /* Build configuration list for PBXNativeTarget "FlashzillaPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503FC6E52BACAD0B00FD4DA4 /* Debug */,
+				503FC6E62BACAD0B00FD4DA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50B03FD52B4733B200A65EFC /* Build configuration list for PBXProject "Flashzilla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
