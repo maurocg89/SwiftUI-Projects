@@ -7,14 +7,9 @@
 
 import CoreImage
 import CoreImage.CIFilterBuiltins
-import PhotosUI
-import StoreKit
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("filterCount") var filterCount = 0
-    @Environment(\.requestReview) var requestReview
-
     @State private var image: Image?
     @State private var filterIntensity = 0.5
     @State private var radiusFilter = 0.5
@@ -22,78 +17,70 @@ struct ContentView: View {
     @State private var showIntensitySlider = true
     @State private var showRadiusSlider = true
     @State private var showScaleSlider = true
-
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
-
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
 
     @State private var showingFilterSheet = false
 
-    @State private var selectedItem: PhotosPickerItem?
-
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
+                ZStack {
+                    Rectangle()
+                        .fill(.secondary)
 
-                Spacer()
+                    Text("Tap to select a picture")
+                        .foregroundColor(.white)
+                        .font(.headline)
 
-                PhotosPicker(selection: $selectedItem) {
-                    if let image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } else {
-                        ContentUnavailableView("No Picture", systemImage: "photo.badge.plus", description: Text("Tap to import a photo"))
-                    }
+                    image?
+                        .resizable()
+                        .scaledToFit()
                 }
-                .buttonStyle(.plain)
-                .onChange(of: selectedItem) {
-                    loadImageUpdated()
+                .onTapGesture {
+                    showingImagePicker = true
                 }
 
                 if image != nil {
                     Text("Current Filter: \(currentFilter.name)")
                         .padding(.vertical)
-
-                    Spacer()
-
-                    if showIntensitySlider {
-                        HStack {
-                            Text("Intensity")
-                            Slider(value: $filterIntensity)
-                                .onChange(of: filterIntensity) {
-                                    applyProcessing()
-                                }
-                        }
-                        .padding(.vertical)
-                    }
-
-                    if showRadiusSlider {
-                        HStack {
-                            Text("Radius")
-                            Slider(value: $radiusFilter)
-                                .onChange(of: radiusFilter) {
-                                    applyProcessing()
-                                }
-                        }
-                        .padding(.bottom)
-                    }
-
-                    if showScaleSlider {
-                        HStack {
-                            Text("Scale")
-                            Slider(value: $scaleFilter)
-                                .onChange(of: scaleFilter) {
-                                    applyProcessing()
-                                }
-                        }
-                        .padding(.bottom)
-                    }
                 }
 
+                if showIntensitySlider {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: $filterIntensity)
+                            .onChange(of: filterIntensity) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.vertical)
+                }
+
+                if showRadiusSlider {
+                    HStack {
+                        Text("Radius")
+                        Slider(value: $radiusFilter)
+                            .onChange(of: radiusFilter) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.bottom)
+                }
+
+                if showScaleSlider {
+                    HStack {
+                        Text("Scale")
+                        Slider(value: $scaleFilter)
+                            .onChange(of: scaleFilter) { _ in
+                                applyProcessing()
+                            }
+                    }
+                    .padding(.bottom)
+                }
 
                 HStack {
                     Button("Change Filter") {
@@ -103,19 +90,16 @@ struct ContentView: View {
 
                     Spacer()
 
-                    if let image {
-                        ShareLink(item: image, preview: SharePreview("Instafilter image", image: image))
-                    }
-                    //                    Button("Save", action: save)
-                    //                        .disabled(buttonDisabled)
+                    Button("Save", action: save)
+                        .disabled(buttonDisabled)
                 }
-            } // VStack
+            }
             .padding([.horizontal, .bottom])
             .navigationTitle("Instafilter")
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(image: $inputImage)
             }
-            .onChange(of: inputImage) {
+            .onChange(of: inputImage) { _ in
                 loadImage()
             }
             .confirmationDialog("Select a filter", isPresented: $showingFilterSheet) {
@@ -135,11 +119,9 @@ struct ContentView: View {
             }
         }
     }
-
     var buttonDisabled: Bool {
         image == nil
     }
-
     func loadImage() {
         guard let inputImage else { return }
         let beginImage = CIImage(image: inputImage)
@@ -147,35 +129,21 @@ struct ContentView: View {
         applyProcessing()
     }
 
-    func loadImageUpdated() {
-        Task {
-            guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
-            guard let inputImage = UIImage(data: imageData) else { return }
-
-            let beginImage = CIImage(image: inputImage)
-            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-            applyProcessing()
-        }
-    }
-
     func save() {
         guard let processedImage else { return }
 
         let imageSaver = ImageSaver()
-
         imageSaver.successHandler = {
             print("Success!")
         }
         imageSaver.errorHandler = {
             print("Oops! \($0.localizedDescription)")
         }
-
         imageSaver.writeToPhotoAlbum(image: processedImage)
     }
-
+    
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
-
         if inputKeys.contains(kCIInputIntensityKey) {
             currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
             showIntensitySlider = true
@@ -194,9 +162,7 @@ struct ContentView: View {
         } else {
             showScaleSlider = false
         }
-
         guard let outputImage = currentFilter.outputImage else { return }
-
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)
@@ -204,16 +170,8 @@ struct ContentView: View {
         }
     }
 
-    @MainActor func setFilter(_ filter: CIFilter) {
+    func setFilter(_ filter: CIFilter) {
         currentFilter = filter
-        loadImageUpdated()
-        filterCount += 1
-        if filterCount % 20 == 0 {
-            requestReview()
-        }
+        loadImage()
     }
-}
-
-#Preview {
-    ContentView()
 }
