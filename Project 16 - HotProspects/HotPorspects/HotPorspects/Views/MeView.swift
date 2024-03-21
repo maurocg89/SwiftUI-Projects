@@ -2,7 +2,7 @@
 //  MeView.swift
 //  HotPorspects
 //
-//  Created by Mauro Grillo on 03/01/2024.
+//  Created by Mauro Grillo on 14/02/2024.
 //
 
 import CoreImage
@@ -10,8 +10,8 @@ import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct MeView: View {
-    @State private var name = "Anonymous"
-    @State private var emailAddress = "you@yoursite.com"
+    @AppStorage("name") private var name = "Anonymous"
+    @AppStorage("emailAddress") private var emailAddress = "your@yoursite.com"
     @State private var qrCode = UIImage()
 
     let context = CIContext()
@@ -35,18 +35,13 @@ struct MeView: View {
                     .scaledToFit()
                     .frame(width: 200, height: 200)
                     .contextMenu {
-                        Button {
-                            let imageSaver = ImageSaver()
-                            imageSaver.writeToPhotoAlbum(image: qrCode)
-                        } label: {
-                            Label("Save to Photos", systemImage: "square.and.arrow.down")
-                        }
+                        ShareLink(item: Image(uiImage: qrCode), preview: SharePreview("My QR Code", image: Image(uiImage: qrCode)))
                     }
             }
             .navigationTitle("Your code")
             .onAppear(perform: updateCode)
-            .onChange(of: name) { updateCode() }
-            .onChange(of: emailAddress) { updateCode() }
+            .onChange(of: name, updateCode)
+            .onChange(of: emailAddress, updateCode)
         }
     }
 
@@ -65,6 +60,7 @@ struct MeView: View {
 
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
+
 }
 
 #Preview {

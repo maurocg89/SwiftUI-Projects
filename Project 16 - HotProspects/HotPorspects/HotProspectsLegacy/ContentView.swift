@@ -1,41 +1,44 @@
 //
-//  ContentViewSD.swift
-//  HotPorspects
+//  ContentView.swift
+//  HotProspectsLegacy
 //
-//  Created by Mauro Grillo on 14/02/2024.
+//  Created by Mauro Grillo on 21/03/2024.
 //
 
 import SwiftUI
 
-struct ContentViewSD: View {
+struct ContentView: View {
+    @StateObject var prospects = Prospects()
+
     var body: some View {
         TabView {
-            ProspectsViewSD(filter: .none)
+            ProspectsView(filter: .none)
                 .tabItem {
                     Label("Everyone", systemImage: "person.3")
                 }
                 .tag("Everyone")
 
-            ProspectsViewSD(filter: .contacted)
+            ProspectsView(filter: .contacted)
                 .tabItem {
                     Label("Contacted", systemImage: "checkmark.circle")
                 }
                 .tag("Contacted")
 
-            ProspectsViewSD(filter: .uncontacted)
+            ProspectsView(filter: .uncontacted)
                 .tabItem {
                     Label("Uncontacted", systemImage: "questionmark.diamond")
                 }
                 .tag("Uncontacted")
 
-            MeViewSD()
+            MeView()
                 .tabItem {
                     Label("Me", systemImage: "person.crop.square")
                 }
         }
+        .environmentObject(prospects)
     }
 }
 
 #Preview {
-    ContentViewSD()
+    ContentView()
 }

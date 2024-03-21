@@ -8,8 +8,6 @@
 import SwiftUI
 import UserNotifications
 
-
-
 struct SchedulingLocalNotificationsPlayground: View {
     var body: some View {
         VStack {
