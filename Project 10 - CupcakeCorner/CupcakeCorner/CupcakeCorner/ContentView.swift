@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @StateObject var orderWrapper = OrderWrapper()
     @State private var order = Order()
 
     var body: some View {
@@ -35,7 +34,6 @@ struct ContentView: View {
 
                 Section {
                     NavigationLink("Delivery details") {
-//                        AddressView(orderWrapper: orderWrapper)
                         AddressView(order: order)
                     }
                 }

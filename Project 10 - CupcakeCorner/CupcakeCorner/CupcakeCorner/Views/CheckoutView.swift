@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CheckoutView: View {
-//    @ObservedObject var orderWrapper: OrderWrapper
     var order: Order
 
     @State private var alertTitle = ""
